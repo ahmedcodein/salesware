@@ -19,6 +19,6 @@ from django.urls import path, include
 from sales_databases import views as index_views
 
 urlpatterns = [
-    path('sales_database/', index_views.index, name='index'),
+    path('sales_databases/', index_views.index, name='index'),
     path('admin/', admin.site.urls),
 ]
