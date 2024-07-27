@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from sales_databases import views as index_views
 
 urlpatterns = [
-    path('sales_databases/', index_views.index, name='index'),
+    path(
+        'sales_databases/',
+        include('sales_databases.urls'),
+        name='sales_databases.urls'
+    ),
     path('admin/', admin.site.urls),
 ]
