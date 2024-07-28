@@ -1,0 +1,19 @@
+html, body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+}
+
+.table td, .table th {
+    color: #012B7A;
+}
+
+caption {
+    color: #012B7A;
+}
