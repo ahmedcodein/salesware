@@ -11,9 +11,14 @@ main {
 }
 
 .table td, .table th {
-    color: #012B7A;
+    color: #1172b8;
 }
 
 caption {
-    color: #012B7A;
+    color: #1172b8;
+}
+
+.salesware-color {
+    background-color: #1172b8;
+    color: #1172b8;
 }

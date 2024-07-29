@@ -16,14 +16,12 @@
 
 <body>
     <!-- Header goes here -->
-    <header class="mt-auto py-3">
+    <header class="mt-auto py-1">
         <div class="container">
-            <nav class="navbar navbar-expand-md salesware bg-primary">
+            <nav class="navbar navbar-expand-md salesware salesware-color">
                 <div class="container-fluid p-2">
                     <a class="navbar-brand text-white" href="#">
-                        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
-                            class="d-inline-block align-text-top">
-                        SalesWare
+                        <img src="/static/images/large_logo.png" alt="Logo" width="132" height="72">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,42 +50,32 @@
             </nav>
         </div>
     </header>
+    <div class="container">
+        <div class="salesware-color">
+            <hr>
+        </div>
+    </div>
     <!-- Main goes here -->
     <main>
         {% block content %}
         <!-- Content goes here -->
         {% endblock content %}
     </main>
+    <div class="container">
+        <div class="salesware-color">
+            <hr>
+        </div>
+    </div>
     <!-- Footer goes here -->
-    <footer class="mt-auto py-3">
-        <div class="container">
-            <div class="row bg-primary text-white">
-                <div class="col">
-                    <p class="m-2 text-center">&copy; Copyright | SalesWare</p>
-                </div>
-                <div class="col">
-                    <p class="m-2 text-center">SalesWare is for educational purposes only</p>
-                </div>
-                <div class="col">
-                    <ul class="m-2 text-center list-unstyled">
-                        <div class="container d-flex justify-content-center">
-                            <div class="row">
-                                <div class="col">
-                                    <li><a href="https://www.linkedin.com/in/ahmed-al-mudhafar-a5193883/"
-                                            target="_blank" rel="noopener" aria-label="author's Linkedin page"><i
-                                                class="fa-brands fa-linkedin pages-icons text-center fs-2 text-white"></i></a>
-                                    </li>
-                                </div>
-                                <div class="col">
-                                    <li><a href="https://github.com/ahmedcodein" target="_blank" rel="noopener"
-                                            aria-label="author's GitHub repository"><i
-                                                class="fa-brands fa-github pages-icons text-center fs-2 text-white"></i></a>
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
+    <footer class="mt-auto py-1">
+        <div class="container salesware-color text-white">
+            <div class="row align-items-center">
+                <div class="col text-center"><img src="/static/images/small_logo.png" alt="Small Logo" width="80"
+                        height="45"></div>
+                <div class="col d-none d-md-block text-center">&copy; Copyright | SalesWare</div>
+                <div class="col text-center"><a href="https://github.com/ahmedcodein" target="_blank" rel="noopener"
+                        aria-label="author's GitHub repository"><i
+                            class="fa-brands fa-github pages-icons fs-1 text-white"></i></a></div>
             </div>
         </div>
     </footer>
