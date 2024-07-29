@@ -11,10 +11,11 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Base HTML</title>
+    <title>SalesWare</title>
 </head>
 
 <body>
+    <!-- Header goes here -->
     <header class="mt-auto py-3">
         <div class="container">
             <nav class="navbar navbar-expand-md salesware bg-primary">
@@ -34,7 +35,7 @@
                                 <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Accounts</a>
+                                <a class="nav-link text-white" href="#">Prospects</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#">Products</a>
@@ -51,11 +52,13 @@
             </nav>
         </div>
     </header>
+    <!-- Main goes here -->
     <main>
         {% block content %}
-
+        <!-- Content goes here -->
         {% endblock content %}
     </main>
+    <!-- Footer goes here -->
     <footer class="mt-auto py-3">
         <div class="container">
             <div class="row bg-primary text-white">

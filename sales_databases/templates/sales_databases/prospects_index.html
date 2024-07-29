@@ -4,32 +4,32 @@
   <div class="row">
     <div class="col-12 table-responsive-lg">
       <table class="table table-bordered table-hover table-sm">
-        <caption class="caption-top">List of Accounts</caption>
+        <caption class="caption-top">List of Prospects</caption>
         <thead>
           <tr>
             <th scope="col">Company</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
-            <th scope="col">Email Address</th>
-            <th scope="col">Job Title</th>
+            <th scope="col">Email</th>
+            <th scope="col">Title</th>
             <th scope="col">Industry</th>
             <th scope="col">Country</th>
-            <th scope="col">Account Owner</th>
+            <th scope="col">Owner</th>
             <th scope="col">Created Date</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
-          {% for account in object_list %}
+          {% for prospect in object_list %}
           <tr>
-            <td>{{account.company}}</td>
-            <td>{{account.first_name}}</td>
-            <td>{{account.last_name}}</td>
-            <td>{{account.email}}</td>
-            <td>{{account.job_title}}</td>
-            <td>{{account.industry}}</td>
-            <td>{{account.country}}</td>
-            <td>{{account.account_owner}}</td>
-            <td>{{ account.created_on|date:"Y-m-d" }}</td>
+            <td>{{prospect.company}}</td>
+            <td>{{prospect.first_name}}</td>
+            <td>{{prospect.last_name}}</td>
+            <td>{{prospect.email}}</td>
+            <td>{{prospect.job_title}}</td>
+            <td>{{prospect.industry}}</td>
+            <td>{{prospect.country}}</td>
+            <td>{{prospect.owner}}</td>
+            <td>{{ prospect.created_on|date:"Y-m-d" }}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -37,4 +37,4 @@
     </div>
   </div>
 </div>
-{% endblock %}
+{% endblock content %}

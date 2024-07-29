@@ -3,20 +3,25 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-class Account(models.Model):
+class Prospect(models.Model):
     """
-    Instantiates a new Account object
+    Instantiates a new Prospect object
     Define the relationship with the User who
-    instantiates the Account object
+    instantiates the Prospect object
     """
-    company = models.CharField(max_length=60, default=None, null=False)
+    company = models.CharField(
+        max_length=60,
+        unique=True,
+        default=None,
+        null=False,
+        )
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40, default=None, null=False)
     email = models.EmailField(default=None, null=False)
-    job_title = models.CharField(max_length=60, default=None, null=True)
+    title = models.CharField(max_length=60, default=None, null=True)
     industry = models.CharField(max_length=60, default=None, null=False)
     country = models.CharField(max_length=60, default=None, null=False)
-    account_owner = models.ForeignKey(
+    owner = models.ForeignKey(
         User, on_delete=models.CASCADE,
         default=None,
         null=False,
@@ -30,14 +35,14 @@ class Account(models.Model):
 
     class Meta:
         """
-        Sort the Accounts alphabetically
+        Sort the Prospects alphabetically
         """
         ordering = ["company"]
 
     def __str__(self):
         """
         Returns a the company name string as
-        a representation of the Account object
+        a representation of the Prospect object
         """
         return self.company
 
@@ -48,8 +53,17 @@ class Product(models.Model):
     Define the relationship with the User who
     instantiates the Product object
     """
-    product_name = models.CharField(max_length=60, default=None, null=False)
-    price = models.IntegerField(default=None, null=False)
+    name = models.CharField(
+        max_length=60,
+        unique=True,
+        default=None,
+        null=False,
+        )
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=None,
+        null=False)
     CURRENCY_OPTIONS = (
         ('EUR', 'EUR'),
         ('USD', 'USD'),
@@ -61,7 +75,7 @@ class Product(models.Model):
         default="EUR",
         )
 
-    sales_manager = models.ForeignKey(
+    owner = models.ForeignKey(
         User, on_delete=models.CASCADE,
         default=None,
         null=False,
@@ -77,7 +91,7 @@ class Product(models.Model):
         """
         Sort the Products alphabetically
         """
-        ordering = ["product_name"]
+        ordering = ["name"]
 
     def product_price(self):
         return f"Product Price {self.currency} {self.price}"
@@ -85,6 +99,6 @@ class Product(models.Model):
     def __str__(self):
         """
         Returns a the product name string as
-        a representation of the Account object
+        a representation of the Product object
         """
-        return self.product_name
+        return self.name
