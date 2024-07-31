@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <ul class="list-group">
+            <li class="list-group-item">{{prospect.company}}</li>
+            <li class="list-group-item">{{prospect.first_name}}</li>
+            <li class="list-group-item">{{prospect.last_name}}</li>
+            <li class="list-group-item">{{prospect.email}}</li>
+            <li class="list-group-item">{{prospect.job_title}}</li>
+            <li class="list-group-item">{{prospect.industry}}</li>
+        </ul>
+    </div>
+</div>
+{% endblock content %}
