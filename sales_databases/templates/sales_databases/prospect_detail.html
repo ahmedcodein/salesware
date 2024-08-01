@@ -1,16 +1,14 @@
-{% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <ul class="list-group">
-            <li class="list-group-item">{{prospect.company}}</li>
-            <li class="list-group-item">{{prospect.first_name}}</li>
-            <li class="list-group-item">{{prospect.last_name}}</li>
-            <li class="list-group-item">{{prospect.email}}</li>
-            <li class="list-group-item">{{prospect.job_title}}</li>
-            <li class="list-group-item">{{prospect.industry}}</li>
-        </ul>
-    </div>
-</div>
+Company: {{ prospect.company }}
+First Name: {{ prospect.first_name }}
+Last Name: {{ prospect.last_name }}
+Email: {{ prospect.email }}
+Job Title: {{ prospect.job_title }}
+Industry: {{ prospect.industry }}
+Country: {{ prospect.country }}
+Owner: {{ prospect.owner }}
+Created On: {{ prospect.created_on | date:"Y-m-d" }}
+Last Updated: {{ prospect.updated_at |date:"Y-m-d" }}
+
 {% endblock content %}
