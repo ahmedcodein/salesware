@@ -10,15 +10,53 @@ main {
     flex-grow: 1;
 }
 
+/* Salesware Brand Color */
+
+.salesware-color {
+    background-color: #1172b8;
+}
+
+/* Navbar style */
+
+.navbar {
+    background-color: #1172b8;
+    color: #fff;
+}
+
+.navbar-toggler {
+    border-color: #fff;
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%)
+}
+
+.nav-link {
+    color: #fff;
+    background-color: #1172b8;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #1172b8;
+    border-width: 0px;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #fff;
+    background-color: #1172b8;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #fff;
+}
+
+/* Table Style */
+
 .table td, .table th {
     color: #1172b8;
 }
 
 caption {
-    color: #1172b8;
-}
-
-.salesware-color {
-    background-color: #1172b8;
     color: #1172b8;
 }
