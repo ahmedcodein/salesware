@@ -1,25 +1,36 @@
-{% extends "account/base_manage.html" %}
+{% extends "base.html" %}
 {% load allauth i18n %}
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Out" %}
-    {% endelement %}
-    {% element p %}
-        {% trans 'Are you sure you want to sign out?' %}
-    {% endelement %}
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-        {% slot body %}
-            {% csrf_token %}
-            {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 d-flex salesware-txt-color justify-content-center p-1 border rounded">
+            <div class="centered-content">
+                <h1>{% trans "Sign Out" %}</h1>
+                <div class="row mt-3 mb-3">
+                    <div>{% trans 'Are you sure you want to sign out?' %}
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3">
+                    <form action="{% url 'account_logout' %}" class="login" method="Post">
+                        {% csrf_token %}
+                        {{ form.as_p}}
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+                        {% endif %}
+                        <button type="submit" class="btn btn-primary btn-lg">{% trans "Sign Out" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 d-flex justify-content-center p-1 border rounded">
+            <div class="centered-content">
+                <img src="/static/images/large_logo.png" class="img-fluid" alt="SalesWare Large Logo">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

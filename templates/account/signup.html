@@ -1,38 +1,38 @@
-{% extends "account/base_entrance.html" %}
+{% extends "base.html" %}
 {% load allauth i18n %}
 {% block head_title %}
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Up" %}
-    {% endelement %}
-    {% setvar link %}
-        <a href="{{ login_url }}">
-        {% endsetvar %}
-        {% setvar end_link %}
-        </a>
-    {% endsetvar %}
-    {% element p %}
-        {% blocktranslate %}Already have an account? Then please {{ link }}sign in{{ end_link }}.{% endblocktranslate %}
-    {% endelement %}
-    {% if not SOCIALACCOUNT_ONLY %}
-        {% url 'account_signup' as action_url %}
-        {% element form form=form method="post" action=action_url tags="entrance,signup" %}
-            {% slot body %}
-                {% csrf_token %}
-                {% element fields form=form unlabeled=True %}
-                {% endelement %}
-                {{ redirect_field }}
-            {% endslot %}
-            {% slot actions %}
-                {% element button tags="prominent,signup" type="submit" %}
-                    {% trans "Sign Up" %}
-                {% endelement %}
-            {% endslot %}
-        {% endelement %}
-    {% endif %}
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 d-flex salesware-txt-color justify-content-center p-1 border rounded">
+            <div class="centered-content">
+                <h1>{% trans "Sign Up" %}</h1>
+                <div class="row mt-3 mb-3">
+                    <div>
+                        {% blocktranslate %}Already a <strong>SalesWare</strong> user? then please
+                        <a class="salesware-txt-color" href="{{ login_url }}">Sign In</a>.
+                        {% endblocktranslate %}
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3">
+                    <form action="{% url 'account_signup' %}" class="login" method="Post">
+                        {% csrf_token %}
+                        {{ form.as_p}}
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+                        {% endif %}
+                        <button type="submit" class="btn btn-primary btn-lg">{% trans "Sign Up" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 d-flex justify-content-center p-1 border rounded">
+            <div class="centered-content">
+                <img src="/static/images/large_logo.png" class="img-fluid" style="max-width: 100%; height: 100%;" alt="SalesWare Large Logo">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
