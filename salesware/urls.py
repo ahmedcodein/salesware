@@ -21,9 +21,9 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path(
-        'sales_databases/',
+        '',
         include('sales_databases.urls'),
-        name='sales_databases.urls'
+        name='home'
     ),
     path(
         'summernote/',

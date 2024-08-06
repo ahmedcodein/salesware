@@ -2,7 +2,6 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
-{% url 'prospects' as 'sales_databases/prospects_url' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +29,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md">
                 <div class="container-fluid p-2">
-                    <a class="navbar-brand text-white" href="#">
+                    <a class="navbar-brand text-white" href="{% url 'prospects' %}">
                         <img src="/static/images/medium_logo.png" alt="Logo" width="132" height="72">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
