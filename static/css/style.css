@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100vh;
 }
 
@@ -6,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 main {
     flex-grow: 1;
 }
@@ -50,18 +52,21 @@ main {
     border-width: 0px;
 }
 
-.nav-link:focus, .nav-link:hover {
+.nav-link:focus,
+.nav-link:hover {
     color: #fff;
     background-color: #1172b8;
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
     color: #fff;
 }
 
 /* Table Style */
 
-.table td, .table th {
+.table td,
+.table th {
     color: #1172b8;
 }
 
@@ -70,22 +75,31 @@ caption {
 }
 
 /* Django AllAuth templates specific style */
-#id_login, #id_password, #id_password1, #id_username, #id_password2 {
+#id_login,
+#id_password,
+#id_password1,
+#id_username,
+#id_password2 {
     color: #1172b8;
     border-width: 1px;
     opacity: 1;
 }
 
-label[for="id_password"], label[for="id_password1"] {
+label[for="id_password"],
+label[for="id_password1"] {
     padding-right: 5px;
 }
 
-.helptext, #id_email, label[for="id_email"] {
+.helptext,
+#id_email,
+label[for="id_email"] {
     display: none;
 }
 
-label[for="id_username"], label[for="id_password1"], label[for="id_password2"] {
-    display:block;
+label[for="id_username"],
+label[for="id_password1"],
+label[for="id_password2"] {
+    display: block;
 }
 
 form.login ul {
@@ -103,7 +117,7 @@ form.login li {
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #1172b8;
     --bs-btn-hover-border-color: #1172b8;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #1172b8;
     --bs-btn-active-border-color: #1172b8;
