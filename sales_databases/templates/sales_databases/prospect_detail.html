@@ -1,14 +1,27 @@
 {% block content %}
 
-Company: {{ prospect.company }}
-First Name: {{ prospect.first_name }}
-Last Name: {{ prospect.last_name }}
-Email: {{ prospect.email }}
-Job Title: {{ prospect.job_title }}
-Industry: {{ prospect.industry }}
-Country: {{ prospect.country }}
-Owner: {{ prospect.owner }}
-Created On: {{ prospect.created_on | date:"Y-m-d" }}
-Last Updated: {{ prospect.updated_at |date:"Y-m-d" }}
-
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="mb-3 salesware-txt-color">
+                <label for="company-name" class="form-label mt-1 mb-1 ms-1">Company Name:</label>
+                <input type="text" class="form-control" id="company-name" value="{{ prospect.company }}" disabled readonly>
+                <label for="first-name" class="form-label mt-1 mb-1">First Name:</label>
+                <input type="text" class="form-control" id="first-name" value="{{ prospect.first_name}}" disabled readonly>
+                <label for="last-name" class="form-label mt-1 mb-1">Last Name:</label>
+                <input type="text" class="form-control" id="last-name" value="{{ prospect.last_name}}" disabled readonly>
+                <label for="email" class="form-label mt-1 mb-1">Email:</label>
+                <input type="email" class="form-control" id="email" value="{{ prospect.email}}" disabled readonly>
+                <label for="job-title" class="form-label mt-1 mb-1">Job Title:</label>
+                <input type="text" class="form-control " id="job-title" value="{{ prospect.title}}" disabled readonly>
+                <label for="industry" class="form-label mt-1 mb-1">Industry:</label>
+                <input type="text" class="form-control" id="industry" value="{{ prospect.industry}}" disabled readonly>
+                <label for="country" class="form-label mt-1 mb-1">Country:</label>
+                <input type="text" class="form-control" id="country" value="{{ prospect.country}}" disabled readonly>
+                <label for="Owner" class="form-label mt-1 mb-1">Owner:</label>
+                <input type="text" class="form-control" id="owner" value="{{ prospect.owner}}" disabled readonly>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

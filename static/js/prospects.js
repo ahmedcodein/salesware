@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const prospectModal = document.getElementById('staticBackdrop');
-    console.log(prospectModal)
+    const openProspectDetailModal = document.getElementById('open-prospect-detail-modal');
+    console.log(openProspectDetailModal)
 
-    prospectModal.addEventListener('show.bs.modal', function(event) {
+    openProspectDetailModal.addEventListener('show.bs.modal', function(event) {
 
         let anchor = event.relatedTarget;
         console.log('anchor attributes=', anchor)
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url)
         .then(response => response.text())
         .then(data => {
-            prospectModal.querySelector('.modal-body').innerHTML = data
+            openProspectDetailModal.querySelector('.modal-body').innerHTML = data
         })
     });
 });

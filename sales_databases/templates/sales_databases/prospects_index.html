@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+<!-- Table list all the prospects in the database -->
 <div class="container">
   <div class="row">
     <div class="col-12 table-responsive-lg">
@@ -22,7 +24,9 @@
         <tbody class="table-group-divider">
           {% for prospect in object_list %}
           <tr>
-            <td><a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-url="{% url 'prospect_detail' prospect.id %}">{{prospect.company}}</a></td>
+            <td><!-- Anchor trigger modal for open prospect detail -->
+              <a href="#" data-bs-toggle="modal" data-bs-target="#open-prospect-detail-modal"
+                data-url="{% url 'prospect_detail' prospect.id %}" class="salesware-txt-color">{{prospect.company}}</a></td>
             <td>{{prospect.first_name}}</td>
             <td>{{prospect.last_name}}</td>
             <td>{{prospect.email}}</td>
@@ -39,24 +43,36 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Open Prospect Detail Modal -->
+<div class="modal fade" id="open-prospect-detail-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="open-prospect-detail-modal-label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Prospect Details</h1>
+      <div class="modal-header salesware-background-color">
+        <h1 class="modal-title fs-5 text-white" id="open-prospect-detail-modal-label">Prospect Details</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <!-- Prospect Detail appears here -->
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+      <div class="modal-footer salesware-background-color text-white">
+        <div class="container">
+          <div class="row">
+            <div class="d-flex align-items-start">
+              <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo" width="80"
+                  height="45"></div>
+              <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
+                  data-bs-dismiss="modal">Close</button></div>
+              <div class="p-2"><button type="button" class="btn btn-success mt-1">Update</button></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+
 {% endblock content %}
 
 {% block extras %}
