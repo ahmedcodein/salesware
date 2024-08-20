@@ -126,3 +126,11 @@ form.login li {
     --bs-btn-disabled-bg: #1172b8;
     --bs-btn-disabled-border-color: #1172b8;
 }
+
+/* Modal Specific Styles */
+.response-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+}
