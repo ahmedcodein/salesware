@@ -36,6 +36,7 @@ def create_new_prospect(request):
         if new_prospect.is_valid():
             prospect = new_prospect.save(commit=False)
             prospect.owner = request.user
+            prospect.save()
             return JsonResponse(
                 {
                     'success': True,
