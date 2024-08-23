@@ -4,21 +4,19 @@
         <div class="col">
             <div class="mb-3 salesware-txt-color">
                 <label for="company-name" class="form-label mt-1 mb-1 ms-1">Company Name:</label>
-                <input type="text" class="form-control" id="company-name" value="{{ prospect.company }}" autocomplete="organization" disabled readonly>
+                <input type="text" class="form-control" id="company-name" name="company" value="{{ prospect.company }}" autocomplete="organization" required>
                 <label for="first-name" class="form-label mt-1 mb-1">First Name:</label>
-                <input type="text" class="form-control" id="first-name" value="{{ prospect.first_name}}" autocomplete="name" disabled readonly>
+                <input type="text" class="form-control" id="first-name" name="first_name" value="{{ prospect.first_name }}" autocomplete="name" required>
                 <label for="last-name" class="form-label mt-1 mb-1">Last Name:</label>
-                <input type="text" class="form-control" id="last-name" value="{{ prospect.last_name}}" autocomplete="family-name" disabled readonly>
+                <input type="text" class="form-control" id="last-name" name="last_name" value="{{ prospect.last_name }}" autocomplete="family-name" required>
                 <label for="email" class="form-label mt-1 mb-1">Email:</label>
-                <input type="email" class="form-control" id="email" value="{{ prospect.email}}" autocomplete="email" disabled readonly>
+                <input type="email" class="form-control" id="email" name="email" value="{{ prospect.email }}" autocomplete="email" required>
                 <label for="job-title" class="form-label mt-1 mb-1">Job Title:</label>
-                <input type="text" class="form-control " id="job-title" value="{{ prospect.title}}" autocomplete="organization-title" disabled readonly>
+                <input type="text" class="form-control " id="job-title" name="title" value="{{ prospect.title }}" autocomplete="organization-title" required>
                 <label for="industry" class="form-label mt-1 mb-1">Industry:</label>
-                <input type="text" class="form-control" id="industry" value="{{ prospect.industry}}" autocomplete="organization" disabled readonly>
+                <input type="text" class="form-control" id="industry" name="industry" value="{{ prospect.industry }}" autocomplete="organization" required>
                 <label for="country" class="form-label mt-1 mb-1">Country:</label>
-                <input type="text" class="form-control" id="country" value="{{ prospect.country}}" autocomplete="country" disabled readonly>
-                <label for="owner" class="form-label mt-1 mb-1">Owner:</label>
-                <input type="text" class="form-control" id="owner" value="{{ prospect.owner}}" autocomplete="given-name" disabled readonly>
+                <input type="text" class="form-control" id="country" name="country" value="{{ prospect.country }}" autocomplete="country" required>
             </div>
         </div>
     </div>

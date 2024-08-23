@@ -17,6 +17,9 @@ class ProspectIndex(generic.ListView):
 
 def prospect_detail(request, id):
     prospect = get_object_or_404(Prospect, pk=id)
+    # Collect the prospect id and save it
+    # to be accessed later by other views
+    request.session['prospect_id'] = id
 
     return render(
         request,
@@ -59,3 +62,40 @@ def create_new_prospect(request):
                 'new_prospect': new_prospect
             }
         )
+
+
+def prospect_edit(request):
+    """
+    This view handles a Post request for updating
+    any of the prospect fields
+    """
+    if request.method == 'POST':
+        prospect_id = request.session.get('prospect_id', 'Default Value')
+        prospect = get_object_or_404(Prospect, pk=prospect_id)
+        prospect_edit = ProspectForm(request.POST, instance=prospect)
+        f_condition = prospect_edit.is_valid()
+        s_condition = prospect.owner == request.user
+        t_condition = request.user.is_superuser
+        if f_condition and (s_condition or t_condition):
+            prospect = prospect_edit.save(commit=False)
+            prospect.save()
+            return JsonResponse(
+                {
+                    'success': True,
+                    'message': 'The prospect is successfully updated!'
+                }
+            )
+        elif prospect_edit.is_valid() and prospect.owner is not request.user:
+            return JsonResponse(
+                {
+                    'success': False,
+                    'message': 'Update denied, unauthorized user'
+                }
+            )
+        else:
+            return JsonResponse(
+                {
+                    'success': False,
+                    'message': 'The prospect is not updated!'
+                }
+            )

@@ -22,5 +22,10 @@ urlpatterns = [
         'create_new_prospect/',
         views.create_new_prospect,
         name='create_new_prospect'
+    ),
+    path(
+        'prospect_edit/',
+        views.prospect_edit,
+        name='prospect_edit'
     )
 ]

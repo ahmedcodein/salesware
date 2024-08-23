@@ -55,4 +55,35 @@ document.addEventListener('DOMContentLoaded', function() {
             });          
         });
     });
+
+    // Submit the edit post request to the database to update prospect data
+    document.getElementById('edit-delete-prospect-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const editProspectBtn = document.getElementById('edit-prospect-btn');
+        const editedProspectForm = event.target;
+        const data = new FormData(editedProspectForm);
+
+        fetch(editedProspectForm.action, {
+            method: 'POST',
+            body: data,
+        })
+        // Display the response message after Post request
+        // is sent for updating the prospect
+        // and displays the response it on the same modal window
+        .then(response => response.json())
+        .then(data => {
+            const message = data.message;
+            const closeEditDeleteProspectBtn = document.getElementById('edit-delete-prospect-close-btn');
+            const openProspectDetailModalCloseBtn = document.getElementById('open-prospect-detail-modal-close-btn')
+            document.getElementById('open-prospect-detail-modal-body').innerHTML = message;
+            editProspectBtn.style.display = 'none';
+            document.getElementById('delete-prospect-btn').style.display = 'none';
+            closeEditDeleteProspectBtn.addEventListener('click', function() {
+                location.reload()
+            })
+            openProspectDetailModalCloseBtn.addEventListener('click', function() {
+                location.reload()
+            })        
+        });
+    });
 });

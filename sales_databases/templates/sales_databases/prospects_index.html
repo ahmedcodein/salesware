@@ -97,11 +97,14 @@
     <div class="modal-content">
       <div class="modal-header salesware-background-color">
         <h1 class="modal-title fs-5 text-white" id="open-prospect-detail-modal-label">Prospect Details</h1>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" id="open-prospect-detail-modal-close-btn"></button>
       </div>
-      <div class="modal-body" id="open-prospect-detail-modal-body">
-        <!-- Prospect Detail appears here -->
-      </div>
+      <form method="post" id="edit-delete-prospect-form" action="{% url 'prospect_edit' %}">
+        <div class="modal-body" id="open-prospect-detail-modal-body">
+          <!-- Prospect Detail appears here -->
+        </div>
+        {% csrf_token %}
+      </form>
       <div class="modal-footer salesware-background-color text-white">
         <div class="container">
           <div class="row">
@@ -109,9 +112,10 @@
               <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo" width="80"
                   height="45"></div>
               <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
-                  data-bs-dismiss="modal">Close</button></div>
-              <div class="p-2"><button type="button" class="btn btn-success mt-1">Update</button></div>
-              <div class="p-2"><button type="button" class="btn btn-danger mt-1">Delete</button></div>
+                  data-bs-dismiss="modal" id="edit-delete-prospect-close-btn">Close</button></div>
+              <div class="p-2"><button type="submit" form="edit-delete-prospect-form" class="btn btn-success mt-1"
+                  id="edit-prospect-btn">Update</button></div>
+              <div class="p-2"><button type="button" class="btn btn-danger mt-1" id="delete-prospect-btn">Delete</button></div>
             </div>
           </div>
         </div>
