@@ -27,5 +27,10 @@ urlpatterns = [
         'prospect_edit/',
         views.prospect_edit,
         name='prospect_edit'
+    ),
+    path(
+        'prospect_delete/',
+        views.prospect_delete,
+        name='prospect_delete'
     )
 ]

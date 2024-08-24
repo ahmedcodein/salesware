@@ -57,13 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Submit the edit post request to the database to update prospect data
-    document.getElementById('edit-delete-prospect-form').addEventListener('submit', function(event) {
+    document.getElementById('edit-prospect-btn').addEventListener('click', function(event) {
         event.preventDefault();
         const editProspectBtn = document.getElementById('edit-prospect-btn');
-        const editedProspectForm = event.target;
+        const editedProspectForm = document.getElementById('edit-delete-prospect-form');
         const data = new FormData(editedProspectForm);
 
-        fetch(editedProspectForm.action, {
+        fetch('/prospect_edit/', {
             method: 'POST',
             body: data,
         })
@@ -78,6 +78,38 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('open-prospect-detail-modal-body').innerHTML = message;
             editProspectBtn.style.display = 'none';
             document.getElementById('delete-prospect-btn').style.display = 'none';
+            closeEditDeleteProspectBtn.addEventListener('click', function() {
+                location.reload()
+            })
+            openProspectDetailModalCloseBtn.addEventListener('click', function() {
+                location.reload()
+            })        
+        });
+    });
+    
+    // Submit the delete post request to the database to update prospect data
+    document.getElementById('delete-prospect-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        const editProspectBtn = document.getElementById('edit-prospect-btn')
+        const deleteProspectBtn = document.getElementById('delete-prospect-btn');
+        const editedProspectForm = document.getElementById('edit-delete-prospect-form');
+        const data = new FormData(editedProspectForm);
+
+        fetch('/prospect_delete/', {
+            method: 'POST',
+            body: data,
+        })
+        // Display the response message after Post request
+        // is sent for deleting the prospect
+        // and displays the response on the same modal window
+        .then(response => response.json())
+        .then(data => {
+            const message = data.message;
+            const closeEditDeleteProspectBtn = document.getElementById('edit-delete-prospect-close-btn');
+            const openProspectDetailModalCloseBtn = document.getElementById('open-prospect-detail-modal-close-btn')
+            document.getElementById('open-prospect-detail-modal-body').innerHTML = message;
+            editProspectBtn.style.display = 'none';
+            deleteProspectBtn.style.display = 'none';
             closeEditDeleteProspectBtn.addEventListener('click', function() {
                 location.reload()
             })

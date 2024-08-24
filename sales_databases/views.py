@@ -99,3 +99,31 @@ def prospect_edit(request):
                     'message': 'The prospect is not updated!'
                 }
             )
+
+
+def prospect_delete(request):
+    """
+    This view handles the delete request of
+    a prospect
+    """
+    prospect_id = request.session.get('prospect_id', 'Default Value')
+    prospect = get_object_or_404(Prospect, pk=prospect_id)
+
+    f_condition = prospect.owner == request.user
+    s_condition = request.user.is_superuser
+
+    if f_condition or s_condition:
+        prospect.delete()
+        return JsonResponse(
+            {
+                'success': True,
+                'message': 'The Prospect is successfully deleted'
+            }
+        )
+    else:
+        return JsonResponse(
+            {
+                'success': False,
+                'message': 'Deletion denied, unauthorized user'
+            }
+        )
