@@ -88,12 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Submit the delete post request to the database to update prospect data
-    document.getElementById('delete-prospect-btn').addEventListener('click', function(event) {
+    document.getElementById('prospect-delete-confirmed-btn').addEventListener('click', function(event) {
         event.preventDefault();
-        const editProspectBtn = document.getElementById('edit-prospect-btn')
-        const deleteProspectBtn = document.getElementById('delete-prospect-btn');
         const editedProspectForm = document.getElementById('edit-delete-prospect-form');
         const data = new FormData(editedProspectForm);
+
+        const prospectDeleteConfirmedBtn = document.getElementById('prospect-delete-confirmed-btn')
+        const prospectDeleteCloseConfirmModalXBtn = document.getElementById('prospect-delete-close-confirm-modal-x-btn')
+        const prospectDeleteCloseConfirmModalBtn = document.getElementById('prospect-delete-close-confirm-modal-btn')
 
         fetch('/prospect_delete/', {
             method: 'POST',
@@ -105,17 +107,14 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const message = data.message;
-            const closeEditDeleteProspectBtn = document.getElementById('edit-delete-prospect-close-btn');
-            const openProspectDetailModalCloseBtn = document.getElementById('open-prospect-detail-modal-close-btn')
-            document.getElementById('open-prospect-detail-modal-body').innerHTML = message;
-            editProspectBtn.style.display = 'none';
-            deleteProspectBtn.style.display = 'none';
-            closeEditDeleteProspectBtn.addEventListener('click', function() {
+            prospectDeleteConfirmedBtn.style.display = 'none'
+            document.getElementById('confirm-delete-prospect-modal-body').innerHTML = message;
+            prospectDeleteCloseConfirmModalXBtn.addEventListener('click', function() {
                 location.reload()
             })
-            openProspectDetailModalCloseBtn.addEventListener('click', function() {
+            prospectDeleteCloseConfirmModalBtn.addEventListener('click', function() {
                 location.reload()
-            })        
+            })      
         });
     });
 });

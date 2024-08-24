@@ -118,7 +118,8 @@
                   id="edit-delete-prospect-close-btn">Close</button></div>
               <div class="p-2"><button type="submit" form="edit-delete-prospect-form" class="btn btn-success mt-1"
                   id="edit-prospect-btn">Update</button></div>
-              <div class="p-2"><button type="button" form="edit-delete-prospect-form" class="btn btn-danger mt-1" id="delete-prospect-btn">Delete</button></div>
+              <div class="p-2"><button type="button" class="btn btn-danger mt-1" data-bs-toggle="modal"
+                  data-bs-target="#confirm-delete-prospect-btn">Delete</button></div>
             </div>
           </div>
         </div>
@@ -126,6 +127,36 @@
     </div>
   </div>
 </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirm-delete-prospect-btn" tabindex="-1"
+  aria-labelledby="confirm-delete-prospect-btn-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header salesware-background-color">
+        <h1 class="modal-title fs-5 text-white" id="confirm-delete-prospect-btn-label">Prospect is about to be deleted!
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="prospect-delete-close-confirm-modal-x-btn"></button>
+      </div>
+      <div class="modal-body response-message salesware-txt-color" id="confirm-delete-prospect-modal-body">
+        Are sure you want to delete this prospect?
+      </div>
+      <div class="modal-footer salesware-background-color text-white">
+        <div class="container">
+          <div class="row">
+            <div class="d-flex align-items-start">
+              <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo" width="80"
+                  height="45"></div>
+              <div class="p-2"><button type="button" class="btn btn-secondary mt-1" data-bs-dismiss="modal" id="prospect-delete-close-confirm-modal-btn">Close</button>
+              </div>
+              <div class="p-2"><button type="submit" form="edit-delete-prospect-form" class="btn btn-danger mt-1" id="prospect-delete-confirmed-btn">Confirm</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endif %}
 {% endblock content %}
