@@ -73,11 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const message = data.message;
+            const deleteProspectBtn = document.getElementById('delete-prospect-btn')
             const closeEditDeleteProspectBtn = document.getElementById('edit-delete-prospect-close-btn');
             const openProspectDetailModalCloseBtn = document.getElementById('open-prospect-detail-modal-close-btn')
             document.getElementById('open-prospect-detail-modal-body').innerHTML = message;
             editProspectBtn.style.display = 'none';
-            document.getElementById('delete-prospect-btn').style.display = 'none';
+            deleteProspectBtn.style.display = 'none';
             closeEditDeleteProspectBtn.addEventListener('click', function() {
                 location.reload()
             })
