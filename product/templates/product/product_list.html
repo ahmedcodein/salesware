@@ -20,7 +20,11 @@
                 <tbody class="table-group-divider">
                     {% for product in object_list %}
                     <tr>
-                        <td>{{ product.name }}</td>
+                        <td><!-- Anchor Element to trigger the open product detail modal -->
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#open-product-detail-modal"
+                                data-url="{% url 'product_detail' product.id %}"
+                                class="salesware-txt-color">{{product.name}}</a>
+                        </td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.currency }}</td>
                         <td>{{ product.owner }}</td>
@@ -32,5 +36,48 @@
         </div>
     </div>
 </div>
+
+<!-- Open product Detail Modal -->
+<div class="modal fade" id="open-product-detail-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="open-product-detail-modal-label" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header salesware-background-color">
+                <h1 class="modal-title fs-5 text-white" id="open-product-detail-modal-label">Product Details</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                    id="open-product-detail-modal-close-btn"></button>
+            </div>
+            <form method="post" id="edit-delete-product-form">
+                <div class="modal-body response-message salesware-txt-color" id="open-product-detail-modal-body">
+                    <!-- product Detail appears here -->
+                </div>
+                {% csrf_token %}
+            </form>
+            <div class="modal-footer salesware-background-color text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo"
+                                    width="80" height="45"></div>
+                            <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
+                                    data-bs-dismiss="modal" id="edit-delete-product-close-btn">Close</button></div>
+                            <div class="p-2"><button type="submit" form="edit-delete-product-form"
+                                    class="btn btn-success mt-1" id="edit-product-btn">Update</button></div>
+                            <div class="p-2"><button type="button" class="btn btn-danger mt-1" data-bs-toggle="modal"
+                                    data-bs-target="#confirm-delete-product-btn" id="delete-product-btn">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endif %}
 {% endblock content %}
+
+{% block extras %}
+
+<script src="{% static 'js/product.js' %}" defer></script>
+
+{% endblock %}
