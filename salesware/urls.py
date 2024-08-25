@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(
         '',
-        include('sales_databases.urls'),
+        include('prospect.urls'),
         name='home'
     ),
     path(

@@ -8,7 +8,7 @@
     <div class="col-4">
       <!-- Button trigger modal that holds the new prospect form -->
       <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-        data-bs-target="#open-create-new-prospect-modal" action="{% url 'create_new_prospect' %}">
+        data-bs-target="#open-create-new-prospect-modal" action="{% url 'prospect_create' %}">
         +Prospect
       </button>
     </div>
@@ -25,7 +25,7 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
           id="create-new-prospect-close-btn"></button>
       </div>
-      <form method="post" action="{% url 'create_new_prospect' %}" id="create-new-prospect-form">
+      <form method="post" action="{% url 'prospect_create' %}" id="create-new-prospect-form">
         <div class="modal-body response-message salesware-txt-color" id="open-create-new-prospect-modal-body">
           <!-- Here goes the From content provided in prospect_create.html -->
         </div>

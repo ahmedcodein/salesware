@@ -8,7 +8,7 @@ urlpatterns = [
     path(
         '',
         views.ProspectIndex.as_view(),
-        name='prospects'
+        name='prospect_list'
     ),
     # URL to display the prospect detail
     path(
@@ -19,9 +19,9 @@ urlpatterns = [
     # URL to display New Prospect Form
     # and to submit the new prospect data
     path(
-        'create_new_prospect/',
-        views.create_new_prospect,
-        name='create_new_prospect'
+        'prospect_create/',
+        views.prospect_create,
+        name='prospect_create'
     ),
     path(
         'prospect_edit/',

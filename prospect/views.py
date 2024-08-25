@@ -12,7 +12,7 @@ class ProspectIndex(generic.ListView):
     in the database
     """
     queryset = Prospect.objects.all().order_by('company')
-    template_name = "sales_databases/prospects_index.html"
+    template_name = "prospect/prospect_index.html"
 
 
 def prospect_detail(request, id):
@@ -23,12 +23,12 @@ def prospect_detail(request, id):
 
     return render(
         request,
-        "sales_databases/prospect_detail.html",
+        "prospect/prospect_detail.html",
         {"prospect": prospect}
     )
 
 
-def create_new_prospect(request):
+def prospect_create(request):
     """
     This view handles two requests: Get and Post
     If Post, it handles the creation of new
@@ -57,7 +57,7 @@ def create_new_prospect(request):
         new_prospect = ProspectForm()
         return render(
             request,
-            'sales_databases/prospect_create.html',
+            'prospect/prospect_create.html',
             {
                 'new_prospect': new_prospect
             }

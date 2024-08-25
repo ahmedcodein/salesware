@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
-    'sales_databases',
+    'prospect',
 ]
 
 SITE_ID = 1
