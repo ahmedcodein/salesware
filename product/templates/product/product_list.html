@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<!-- Table list all the products in the database -->
+<div class=" container">
+    <div class="row">
+        <div class="col-12 table-responsive-lg">
+            <table class="table table-bordered table-hover table-sm">
+                <caption class="caption-top">List of Product</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Currency</th>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Created Date</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for product in object_list %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.currency }}</td>
+                        <td>{{ product.owner }}</td>
+                        <td>{{ product.created_on | date:"Y-m-d" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}

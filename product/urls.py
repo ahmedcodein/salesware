@@ -3,10 +3,10 @@ from django.urls import path
 
 
 urlpatterns = [
-    # URL to display the prospect detail
+    # URL to display the product detail
     path(
         '',
-        views.product_index,
-        name='product_index'
+        views.ProductList.as_view(),
+        name='product_list'
     ),
 ]
