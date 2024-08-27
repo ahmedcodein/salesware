@@ -27,4 +27,9 @@ urlpatterns = [
         views.product_edit,
         name='product_edit'
     ),
+    path(
+        'product_delete/',
+        views.product_delete,
+        name='product_delete'
+    ),
 ]

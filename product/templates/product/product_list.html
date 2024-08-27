@@ -122,6 +122,40 @@
         </div>
     </div>
 </div>
+
+<!-- Modal to open the product delete confirmation message  -->
+<div class="modal fade" id="confirm-delete-product-btn" tabindex="-1" aria-labelledby="confirm-delete-product-btn-label"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header salesware-background-color">
+                <h1 class="modal-title fs-5 text-white" id="confirm-delete-product-btn-label">Product is about to be
+                    deleted!
+                </h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                    id="product-delete-close-confirm-modal-x-btn"></button>
+            </div>
+            <div class="modal-body response-message salesware-txt-color" id="confirm-delete-product-modal-body">
+                Are sure you want to delete this Product?
+            </div>
+            <div class="modal-footer salesware-background-color text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo"
+                                    width="80" height="45"></div>
+                            <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
+                                    data-bs-dismiss="modal" id="product-delete-close-confirm-modal-btn">Close</button>
+                            </div>
+                            <div class="p-2"><button type="submit" form="edit-delete-product-form"
+                                    class="btn btn-danger mt-1" id="product-delete-confirmed-btn">Confirm</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endif %}
 {% endblock content %}
 

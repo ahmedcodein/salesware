@@ -84,7 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
     editProductBtn.addEventListener('click', function(event) {
         event.preventDefault();
         const data = new FormData(editedProductForm);
-        editProductRecord(urlProductEdit, data, openProductDetailModalBody, editProductBtn, deleteProductBtn, closeEditDeleteProductBtn, openProductDetailModalCloseBtn)
+        editProductRecord(
+            urlProductEdit,
+            data,
+            openProductDetailModalBody,
+            editProductBtn,
+            deleteProductBtn,
+            closeEditDeleteProductBtn,
+            openProductDetailModalCloseBtn
+        )
     });
 
     function editProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn, fourthBtn) {
@@ -110,5 +118,48 @@ document.addEventListener('DOMContentLoaded', function() {
             })        
         });
 
+    }
+    // Product Delete
+    const productDeleteConfirmedBtn = document.getElementById('product-delete-confirmed-btn');
+    const urlProductDelete = 'product_delete/';
+    const confirmDeleteProductModalBody = document.getElementById('confirm-delete-product-modal-body');    
+    const productDeleteCloseConfirmModalXBtn = document.getElementById('product-delete-close-confirm-modal-x-btn');
+    const productDeleteCloseConfirmModalBtn = document.getElementById('product-delete-close-confirm-modal-btn');
+
+    // Submit the delete post request to the database to update product data
+    document.getElementById('product-delete-confirmed-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        const data = new FormData(editedProductForm);
+        
+        deleteProductRecord(
+            urlProductDelete,
+            data,
+            confirmDeleteProductModalBody,
+            productDeleteConfirmedBtn,
+            productDeleteCloseConfirmModalXBtn,
+            productDeleteCloseConfirmModalBtn,
+        );
+    });
+
+    function deleteProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn) {
+        fetch(url, {
+            method: 'POST',
+            body: data,
+        })
+        // Display the response message after Post request
+        // is sent for deleting the product
+        // and displays the response on the same modal window
+        .then(response => response.json())
+        .then(data => {
+            const message = data.message;
+            body.innerHTML = message;
+            firstBtn.style.display = 'none'
+            secondBtn.addEventListener('click', function() {
+                location.reload()
+            })
+            thirdBtn.addEventListener('click', function() {
+                location.reload()
+            })      
+        });
     }
 });

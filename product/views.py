@@ -184,3 +184,31 @@ def product_edit(request):
                                 """
                             }
                         )
+
+
+def product_delete(request):
+    """
+    This view handles the delete request of
+    a product
+    """
+    product_id = request.session.get('product_id', 'Default Value')
+    product = get_object_or_404(Product, pk=product_id)
+
+    f_condition = product.owner == request.user
+    s_condition = request.user.is_superuser
+
+    if f_condition or s_condition:
+        product.delete()
+        return JsonResponse(
+            {
+                'success': True,
+                'message': "The Product is successfully deleted!"
+            }
+        )
+    else:
+        return JsonResponse(
+            {
+                'success': False,
+                'message': 'Deletion denied, unauthorized user'
+            }
+        )
