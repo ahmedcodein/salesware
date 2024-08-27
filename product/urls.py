@@ -22,4 +22,9 @@ urlpatterns = [
         views.product_create,
         name='product_create'
     ),
+    path(
+        'product_edit/',
+        views.product_edit,
+        name='product_edit'
+    ),
 ]

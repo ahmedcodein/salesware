@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     });
     
+    /* This function handles the user request to create new product
+    and the subsequent response to the relevant modal */
     function createNewProduct(url, data, body, firstBtn, secondBtn, thirdBtn) {
         fetch(url, {
             method: 'POST',
@@ -68,5 +70,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 location.reload()
             });
         });
+    }
+
+    // Product edit
+    const editProductBtn = document.getElementById('edit-product-btn');
+    const editedProductForm = document.getElementById('edit-delete-product-form');
+    const urlProductEdit = 'product_edit/'
+    const deleteProductBtn = document.getElementById('delete-product-btn')
+    const closeEditDeleteProductBtn = document.getElementById('edit-delete-product-close-btn');
+    const openProductDetailModalCloseBtn = document.getElementById('open-product-detail-modal-close-btn')
+
+    // Submit the edit post request to the database to update product data
+    editProductBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        const data = new FormData(editedProductForm);
+        editProductRecord(urlProductEdit, data, openProductDetailModalBody, editProductBtn, deleteProductBtn, closeEditDeleteProductBtn, openProductDetailModalCloseBtn)
+    });
+
+    function editProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn, fourthBtn) {
+        fetch(url, {
+            method: 'POST',
+            body: data,
+        })
+        // Display the response message after Post request
+        // is sent for updating the product
+        // and displays the response it on the same modal window
+        .then(response => response.json())
+        .then(data => {
+            const message = data.message;
+            
+            body.innerHTML = message;
+            firstBtn.style.display = 'none';
+            secondBtn.style.display = 'none';
+            thirdBtn.addEventListener('click', function() {
+                location.reload()
+            })
+            fourthBtn.addEventListener('click', function() {
+                location.reload()
+            })        
+        });
+
     }
 });

@@ -36,9 +36,9 @@ def product_create(request):
     product and save it to the database
     """
     if request.method == 'POST':
-        new_product = ProductForm(request.POST)
-        if new_product.is_valid():
-            product = new_product.save(commit=False)
+        product_create = ProductForm(request.POST)
+        if product_create.is_valid():
+            product = product_create.save(commit=False)
             product.owner = request.user
             product.save()
             return JsonResponse(
@@ -48,9 +48,8 @@ def product_create(request):
                 }
             )
         else:
-            for field, errors in new_product.errors.as_data().items():
+            for field, errors in product_create.errors.as_data().items():
                 for error in errors:
-                    print(error.code)
                     if error.code == 'required':
                         return JsonResponse(
                             {
@@ -99,11 +98,89 @@ def product_create(request):
                         )
 
     else:
-        new_product = ProductForm()
+        product_create = ProductForm()
         return render(
             request,
             'product/product_create.html',
             {
-                'new_product': new_product
+                'product_create': product_create
             }
         )
+
+
+def product_edit(request):
+    """
+    This view handles a Post request for updating
+    any of the product fields
+    """
+    if request.method == 'POST':
+        product_id = request.session.get('product_id', 'Default Value')
+        product = get_object_or_404(Product, pk=product_id)
+        product_edit = ProductForm(request.POST, instance=product)
+        f_condition = product_edit.is_valid()
+        s_condition = product.owner == request.user
+        t_condition = request.user.is_superuser
+        if f_condition and (s_condition or t_condition):
+            product = product_edit.save(commit=False)
+            product.save()
+            return JsonResponse(
+                {
+                    'success': True,
+                    'message': 'The product is successfully updated!'
+                }
+            )
+        elif product_edit.is_valid() and product.owner is not request.user:
+            return JsonResponse(
+                {
+                    'success': False,
+                    'message': 'Update denied, unauthorized user'
+                }
+            )
+        else:
+            for field, errors in product_edit.errors.as_data().items():
+                for error in errors:
+                    if error.code == 'required':
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                The Product {field.capitalize()}
+                                field is required!
+                                Please try again!
+                                """
+                            }
+                        )
+                    elif error.code == 'unique':
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                This Product {field.capitalize()}
+                                already exists!
+                                """
+                            }
+                        )
+                    elif error.code == 'invalid':
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                The Product {field.capitalize()}
+                                must be a number!
+                                """
+                            }
+                        )
+                    else:
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                The Product {field.capitalize()}
+                                has the following error: {error}!
+                                """
+                            }
+                        )
