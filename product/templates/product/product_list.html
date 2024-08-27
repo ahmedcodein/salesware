@@ -2,6 +2,55 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
+<!-- Container holds the button needed to open the create new product form Modal -->
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <!-- Button trigger modal that holds the new product form -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#open-create-new-product-modal" action="{% url 'product_create' %}">
+                +Product
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Create New product Modal -->
+<div class="modal fade" id="open-create-new-product-modal" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="open-create-new-product-modal-label" aria-hidden="false">
+    <div class=" modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header salesware-background-color">
+                <h1 class="modal-title fs-5 text-white" id="open-create-new-product-modal-label">Create New Product
+                </h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                    id="create-new-product-close-btn"></button>
+            </div>
+            <form method="post" action="{% url 'product_create' %}" id="create-new-product-form">
+                <div class="modal-body response-message salesware-txt-color" id="open-create-new-product-modal-body">
+                    <!-- Here goes the From content provided in product_create.html -->
+                </div>
+                {% csrf_token %}
+            </form>
+            <div class="modal-footer salesware-background-color text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo"
+                                    width="80" height="45"></div>
+                            <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
+                                    data-bs-dismiss="modal" id="create-new-product-cancel-btn">Cancel</button>
+                            </div>
+                            <div class="p-2"><button type="submit" form="create-new-product-form"
+                                    class="btn btn-success mt-1" id="create-new-product-btn">Create</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Table list all the products in the database -->
 <div class=" container">
     <div class="row">
@@ -37,7 +86,7 @@
     </div>
 </div>
 
-<!-- Open product Detail Modal -->
+<!-- Modal that opens the product detail -->
 <div class="modal fade" id="open-product-detail-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="open-product-detail-modal-label" aria-hidden="false">
     <div class="modal-dialog">

@@ -15,4 +15,11 @@ urlpatterns = [
         views.product_detail,
         name='product_detail'
     ),
+    # URL to display New Product Form
+    # and to submit the new Product data
+    path(
+        'product_create/',
+        views.product_create,
+        name='product_create'
+    ),
 ]
