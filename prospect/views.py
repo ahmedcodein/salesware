@@ -6,13 +6,13 @@ from django.http import JsonResponse
 
 
 # Create your views here.
-class ProspectIndex(generic.ListView):
+class ProspectList(generic.ListView):
     """
     The view handles the presentations of all the prospects
     in the database
     """
     queryset = Prospect.objects.all().order_by('company')
-    template_name = "prospect/prospect_index.html"
+    template_name = "prospect/prospect_list.html"
 
 
 def prospect_detail(request, id):

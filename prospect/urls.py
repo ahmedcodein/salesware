@@ -7,7 +7,7 @@ urlpatterns = [
     # prospect in the database
     path(
         '',
-        views.ProspectIndex.as_view(),
+        views.ProspectList.as_view(),
         name='prospect_list'
     ),
     # URL to display the prospect detail
