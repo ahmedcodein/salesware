@@ -35,9 +35,9 @@ def prospect_create(request):
     prospect and save it to the database
     """
     if request.method == 'POST':
-        new_prospect = ProspectForm(request.POST)
-        if new_prospect.is_valid():
-            prospect = new_prospect.save(commit=False)
+        prospect_create = ProspectForm(request.POST)
+        if prospect_create.is_valid():
+            prospect = prospect_create.save(commit=False)
             prospect.owner = request.user
             prospect.save()
             return JsonResponse(
@@ -47,19 +47,52 @@ def prospect_create(request):
                 }
             )
         else:
-            return JsonResponse(
-                {
-                    'success': False,
-                    'message': 'The record already exists in the database!'
-                }
-            )
+            for field, errors in prospect_create.errors.as_data().items():
+                for error in errors:
+                    if error.code == 'required':
+                        prospect_field_name = " ".join(
+                            part.capitalize() for part in field.split("_")
+                        )
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                The prospect {prospect_field_name}
+                                field is required!
+                                Please try again!
+                                """
+                            }
+                        )
+                    elif error.code == 'unique':
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                This prospect {prospect_field_name}
+                                already exists!
+                                """
+                            }
+                        )
+                    else:
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                The prospect {prospect_field_name}
+                                has the following error: {error}!
+                                """
+                            }
+                        )
     else:
-        new_prospect = ProspectForm()
+        prospect_create = ProspectForm()
         return render(
             request,
             'prospect/prospect_create.html',
             {
-                'new_prospect': new_prospect
+                'prospect_create': prospect_create
             }
         )
 
@@ -85,7 +118,7 @@ def prospect_edit(request):
                     'message': 'The prospect is successfully updated!'
                 }
             )
-        elif prospect_edit.is_valid() and prospect.owner is not request.user:
+        elif (f_condition and not s_condition) or (f_condition and not t_condition):
             return JsonResponse(
                 {
                     'success': False,
@@ -93,12 +126,45 @@ def prospect_edit(request):
                 }
             )
         else:
-            return JsonResponse(
-                {
-                    'success': False,
-                    'message': 'The prospect is not updated!'
-                }
-            )
+            for field, errors in prospect_edit.errors.as_data().items():
+                for error in errors:
+                    if error.code == 'required':
+                        prospect_field_name = " ".join(
+                            part.capitalize() for part in field.split("_")
+                        )
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                The prospect {prospect_field_name}
+                                field is required!
+                                Please try again!
+                                """
+                            }
+                        )
+                    elif error.code == 'unique':
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                This prospect {prospect_field_name}
+                                already exists!
+                                """
+                            }
+                        )
+                    else:
+                        return JsonResponse(
+                            {
+                                'success': False,
+                                'message':
+                                f"""
+                                The prospect {prospect_field_name}
+                                has the following error: {error}!
+                                """
+                            }
+                        )
 
 
 def prospect_delete(request):
@@ -108,7 +174,6 @@ def prospect_delete(request):
     """
     prospect_id = request.session.get('prospect_id', 'Default Value')
     prospect = get_object_or_404(Prospect, pk=prospect_id)
-
     f_condition = prospect.owner == request.user
     s_condition = request.user.is_superuser
 

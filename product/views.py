@@ -96,7 +96,6 @@ def product_create(request):
                                 """
                             }
                         )
-
     else:
         product_create = ProductForm()
         return render(
