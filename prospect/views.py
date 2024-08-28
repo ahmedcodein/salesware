@@ -13,6 +13,7 @@ class ProspectList(generic.ListView):
     """
     queryset = Prospect.objects.all().order_by('company')
     template_name = "prospect/prospect_list.html"
+    paginate_by = 15
 
 
 def prospect_detail(request, id):
@@ -118,7 +119,8 @@ def prospect_edit(request):
                     'message': 'The prospect is successfully updated!'
                 }
             )
-        elif (f_condition and not s_condition) or (f_condition and not t_condition):
+        elif ((f_condition and not s_condition) or
+        (f_condition and not t_condition)):
             return JsonResponse(
                 {
                     'success': False,

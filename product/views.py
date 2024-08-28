@@ -14,6 +14,7 @@ class ProductList(generic.ListView):
     """
     queryset = Product.objects.all().order_by('name')
     template_name = "product/product_list.html"
+    paginate_by = 15
 
 
 def product_detail(request, id):
