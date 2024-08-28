@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const url = event.target.action;
         const data = new FormData(event.target);
 
-        createDeleteProduct(
+        createProductRecord(
             url,
             data,
             openCreateNewProductModalBody,
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const data = new FormData(editedProductForm);
         
-        createDeleteProduct(
+        deleteProductRecord(
             urlProductDelete,
             data,
             confirmDeleteProductModalBody,
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
     /* This function handles the user request to create new 
-    or delete product and the subsequent response to the relevant modal */
-    function createDeleteProduct(url, data, body, firstBtn, secondBtn, thirdBtn) {
+    and the subsequent response to the relevant modal */
+    function createProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn) {
         fetch(url, {
             method: 'POST',
             body: data,
@@ -129,6 +129,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 location.reload()
             })
             fourthBtn.addEventListener('click', function() {
+                location.reload()
+            })        
+        });
+    }
+
+    // This function handle the product edit request
+    function deleteProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn) {
+        fetch(url, {
+            method: 'POST',
+            body: data,
+        })
+        .then(response => response.json())
+        .then(data => {
+            const message = data.message;            
+            body.innerHTML = message;
+            firstBtn.style.display = 'none';
+            secondBtn.addEventListener('click', function() {
+                location.reload()
+            })
+            thirdBtn.addEventListener('click', function() {
                 location.reload()
             })        
         });

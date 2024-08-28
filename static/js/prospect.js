@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const url = event.target.action;
         const data = new FormData(event.target);
 
-        createDeleteProspect(
+        createProspectRecord(
             url,
             data,
             openCreateNewProspectModalBody,
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const data = new FormData(editedProspectForm);
         
-        createDeleteProspect(
+        deleteProspectRecord(
             urlProspectDelete,
             data,
             confirmDeleteProspectModalBody,
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     /* This function handles the user request to create new 
     or delete prospect and the subsequent response to the relevant modal */
-    function createDeleteProspect(url, data, body, firstBtn, secondBtn, thirdBtn) {
+    function createProspectRecord(url, data, body, firstBtn, secondBtn, thirdBtn) {
         fetch(url, {
             method: 'POST',
             body: data,
@@ -131,6 +131,26 @@ document.addEventListener('DOMContentLoaded', function() {
             fourthBtn.addEventListener('click', function() {
                 location.reload()
             })        
+        });
+    }
+    /* This function handles the user request to 
+    delete prospect and the subsequent response to the relevant modal */
+    function deleteProspectRecord(url, data, body, firstBtn, secondBtn, thirdBtn) {
+        fetch(url, {
+            method: 'POST',
+            body: data,
+        })
+        .then(response => response.json())
+        .then(data => {
+            const message = data.message;
+            body.innerHTML = message;
+            firstBtn.style.display = 'none';
+            secondBtn.addEventListener('click', function() {
+                location.reload()
+            })
+            thirdBtn.addEventListener('click', function() {
+                location.reload()
+            });
         });
     }
 });
