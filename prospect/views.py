@@ -120,7 +120,7 @@ def prospect_edit(request):
                 }
             )
         elif ((f_condition and not s_condition) or
-        (f_condition and not t_condition)):
+              (f_condition and not t_condition)):
             return JsonResponse(
                 {
                     'success': False,
@@ -130,10 +130,10 @@ def prospect_edit(request):
         else:
             for field, errors in prospect_edit.errors.as_data().items():
                 for error in errors:
+                    prospect_field_name = " ".join(
+                        part.capitalize() for part in field.split("_")
+                    )
                     if error.code == 'required':
-                        prospect_field_name = " ".join(
-                            part.capitalize() for part in field.split("_")
-                        )
                         return JsonResponse(
                             {
                                 'success': False,
