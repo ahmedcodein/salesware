@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<!-- Container holds the button needed to open the create new opportunity form Modal -->
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <!-- Button trigger modal that holds the new opportunity form -->
+            <a type="button" class="btn btn-primary" href="">
+                + Opportunity
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Table list all the opportunities in the database -->
+<div class=" container">
+    <div class="row">
+        <div class="col-12 table-responsive-lg">
+            <table class="table table-bordered table-hover table-sm">
+                <caption class="caption-top">List of Opportunities</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Lead</th>
+                        <th scope="col">Solution</th>
+                        <th scope="col">Winning Probability</th>
+                        <th scope="col">Estimated Value</th>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Created Date</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for opportunity in object_list %}
+                    <tr>
+                        <td><!-- Anchor Element to trigger the open opportunity detail modal -->
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#open-opportunity-detail-modal"
+                                data-url="" class="salesware-txt-color">{{opportunity.name}}</a>
+                        </td>
+                        <td>{{ opportunity.name }}</td>
+                        <td>{{ opportunity.lead }}</td>
+                        <td>{{ opportunity.solution }}</td>
+                        <td>{{ winning_probability }}</td>
+                        <td>{{ estimation }}</td>
+                        <td>{{ opportunity.owner }}</td>
+                        <td>{{ opportunity.created_on | date:"Y-m-d" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination pagination-sm">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                        {{ page_obj.previous_page_number }}</a>
+                </li>
+                {% endif %}
+                <li class="page-item disabled"><a class="page-link"
+                        href="?page={{ page_obj.number }}">{{page_obj.number}}</a></li>
+                {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                        {{ page_obj.next_page_number }}</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+{% endblock content %}
+
+{% block extras %}
+
+<script src="" defer></script>
+
+{% endblock %}

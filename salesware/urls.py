@@ -31,6 +31,11 @@ urlpatterns = [
         name='home'
     ),
     path(
+        'opportunity/',
+        include('opportunity.urls'),
+        name='opportunity'
+    ),
+    path(
         'product/',
         include('product.urls'),
         name='product'
