@@ -12,7 +12,7 @@ main {
     flex-grow: 1;
 }
 
-/* Salesware Brand Color */
+/* Salesware Brand Style */
 
 .salesware-background-color {
     background-color: #1172b8;
@@ -24,6 +24,10 @@ main {
 
 .salesware-border-color {
     border-color: #1172b8;
+}
+
+.salesware-h1-font {
+    font-size: x-large;
 }
 
 /* Navbar style */

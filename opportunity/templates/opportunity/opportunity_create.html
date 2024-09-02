@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-9 d-flex justify-content-center">
+            <h1 class="salesware-txt-color salesware-h1-font">Sales Process Flow</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-9">
+                <div class="progress" style="height: 30px">
+                    <div class="progress-bar salesware-background-color" id="opportunity-create-progress-bar" role="progressbar" style="width: 0%;"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Stage Lead</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class="form-inline my-2 my-lg-0" method="post" action="{% url 'opportunity_create' %}">
+    {% csrf_token %}
+    <div class="container salesware-txt-color">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4">
+                <label for="opportunity-create-name" class="form-label mt-1 mb-1 ms-1">Opportunity
+                    Name:</label>
+                <input name="name" type="text" class="form-control" id="opportunity-create-name"
+                    placeholder="Opportunity Name" autocomplete="organization" required>
+            </div>
+        </div>
+    </div>
+    <div class="container salesware-txt-color">
+        <div class="row mt-4 d-flex justify-content-center">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
+                <div>
+                    <label for="opportunity-create-prospect">Prospect Name:</label>
+                    <select id="opportunity-create-prospect" class="form-select" aria-label="Default select example">
+                        <option value="">Select prospect</option>
+                        {% for prospect in prospects %}
+                        <option value="{{ prospect }}">{{ prospect }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
+                <div>
+                    <label for="opportunity-create-product">Product Name:</label>
+                    <select id="opportunity-create-product" class="form-select" aria-label="Default select example">
+                        <option value="Default">Select Product</option>
+                        {% for product in products %}
+                        <option value="{{ product }}" data-price="{{ product.product_price }}">{{ product }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container salesware-txt-color">
+        <div class="row mt-4 d-flex justify-content-center">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
+                <div> <label for="opportunity-create-product-price">Product Price:</label>
+                    <input name="product-price" type="text" class="form-control" id="opportunity-create-product-price"
+                        placeholder="" autocomplete="organization" disabled>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
+                <div>
+                    <label for="opportunity-create-winning-probability">Probability of Winning:</label>
+                    <input name="winning_probability" type="text" class="form-control"
+                        id="opportunity-create-winning-probability" placeholder="" autocomplete="organization"
+                        disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container salesware-txt-color">
+        <div class="row mt-4 d-flex justify-content-center">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
+                <div> <label for="opportunity-create-status">Opportunity Status:</label>
+                    <input name="is_close" type="text" class="form-control" id="opportunity-create-status"
+                        placeholder="" autocomplete="" disabled>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
+                <div>
+                    <label for="opportunity-create-process-stage">Sales Process Stage:</label>
+                    <input name="process-stage" type="text" class="form-control"
+                        id="opportunity-create-process-stage" placeholder="" autocomplete=""
+                        disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container salesware-txt-color">
+        <div class="row mt-3 d-flex justify-content-center">
+            <div class="col-9">
+                <label for="opportunity-create-note" class="form-label mt-1 mb-1 ms-1">Description:</label>
+                <textarea name="note" type="text" class="form-control" id="opportunity-create-note"
+                    placeholder="Some detail about the opportunity..." autocomplete="" style="height: 200px;"
+                    required></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row justify-content-end">
+            <div class="col-4">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Create Opportunity</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endif %}
+{% endblock content %}
+{% block extras %}
+<script src="{% static 'js/opportunity.js' %}" defer></script>
+{% endblock extras %}
