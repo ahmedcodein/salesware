@@ -13,8 +13,9 @@
         <div class="row d-flex justify-content-center">
             <div class="col-9">
                 <div class="progress" style="height: 30px">
-                    <div class="progress-bar salesware-background-color" id="opportunity-create-progress-bar" role="progressbar" style="width: 0%;"
-                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Stage Lead</div>
+                    <div class="progress-bar salesware-background-color" id="opportunity-create-progress-bar"
+                        role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        Default</div>
                 </div>
             </div>
         </div>
@@ -38,7 +39,7 @@
                 <label for="opportunity-create-name" class="form-label mt-1 mb-1 ms-1">Opportunity
                     Name:</label>
                 <input name="name" type="text" class="form-control" id="opportunity-create-name"
-                    placeholder="Opportunity Name" autocomplete="organization" required>
+                    placeholder="Opportunity Name" required>
             </div>
         </div>
     </div>
@@ -47,10 +48,11 @@
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div>
                     <label for="opportunity-create-prospect">Prospect Name:</label>
-                    <select id="opportunity-create-prospect" class="form-select" aria-label="Default select example">
-                        <option value="">Select prospect</option>
+                    <select name="lead" id="opportunity-create-prospect" class="form-select form-control"
+                        aria-label="Default select example">
+                        <option value="">--Select prospect--</option>
                         {% for prospect in prospects %}
-                        <option value="{{ prospect }}">{{ prospect }}</option>
+                        <option value="{{ prospect.id }}">{{ prospect }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -58,10 +60,11 @@
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div>
                     <label for="opportunity-create-product">Product Name:</label>
-                    <select id="opportunity-create-product" class="form-select" aria-label="Default select example">
-                        <option value="Default">Select Product</option>
+                    <select name="solution" id="opportunity-create-product" class="form-select form-control"
+                        aria-label="Default select example">
+                        <option value="Default" selected>--Select Product--</option>
                         {% for product in products %}
-                        <option value="{{ product }}" data-price="{{ product.product_price }}">{{ product }}</option>
+                        <option value="{{ product.id }}" data-price="{{ product.product_price }}">{{ product }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -73,15 +76,19 @@
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div> <label for="opportunity-create-product-price">Product Price:</label>
                     <input name="product-price" type="text" class="form-control" id="opportunity-create-product-price"
-                        placeholder="" autocomplete="organization" disabled>
+                        value="" disabled>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div>
                     <label for="opportunity-create-winning-probability">Probability of Winning:</label>
-                    <input name="winning_probability" type="text" class="form-control"
-                        id="opportunity-create-winning-probability" placeholder="" autocomplete="organization"
-                        disabled>
+                    <select name="probability" id="opportunity-create-winning-probability"
+                        class="form-select form-control" aria-label="Default select example">
+                        <option value="25" selected>25%</option>
+                        <option value="50">50%</option>
+                        <option value="75">75%</option>
+                        <option value="100">100%</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -90,16 +97,23 @@
         <div class="row mt-4 d-flex justify-content-center">
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div> <label for="opportunity-create-status">Opportunity Status:</label>
-                    <input name="is_close" type="text" class="form-control" id="opportunity-create-status"
-                        placeholder="" autocomplete="" disabled>
+                    <select name="status" id="opportunity-create-status" class="form-select form-control"
+                        aria-label="Default select example">
+                        <option value="Default" selected></option>
+                        <option value="progress">In Progress</option>
+                    </select>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div>
-                    <label for="opportunity-create-process-stage">Sales Process Stage:</label>
-                    <input name="process-stage" type="text" class="form-control"
-                        id="opportunity-create-process-stage" placeholder="" autocomplete=""
-                        disabled>
+                    <label for="opportunity-create-sales-process-stage">Sales Process Stage:</label>
+                    <select name="sales_stage" id="opportunity-create-sales-process-stage"
+                        class="form-select form-control" aria-label="Default select example">
+                        <option value="Default" selected>--Select Opportunity Stage--</option>
+                        <option value="Lead">Lead</option>
+                        <option value="Proposal">Proposal</option>
+                        <option value="Negotiation">Negotiation</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -109,8 +123,7 @@
             <div class="col-9">
                 <label for="opportunity-create-note" class="form-label mt-1 mb-1 ms-1">Description:</label>
                 <textarea name="note" type="text" class="form-control" id="opportunity-create-note"
-                    placeholder="Some detail about the opportunity..." autocomplete="" style="height: 200px;"
-                    required></textarea>
+                    placeholder="Some detail about the opportunity..." style="height: 200px;" required></textarea>
             </div>
         </div>
     </div>

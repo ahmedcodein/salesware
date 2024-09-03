@@ -31,19 +31,54 @@ class Opportunity(models.Model):
         Product,
         on_delete=models.CASCADE,
         default=None,
+        blank=False,
         null=False,
     )
     note = models.CharField(
         max_length=500,
-        unique=False,
         default=None,
         null=True,
     )
+    PROBABILITY_OPTIONS = [
+        (25, '25%'),
+        (50, '50%'),
+        (75, '75%'),
+        (100, '100%'),
+    ]
     probability = models.IntegerField(
-        blank=False,
+        choices=PROBABILITY_OPTIONS,
         default=25,
+        blank=False,
+        null=False,
     )
-    is_closed = models.BooleanField(default=False)
+    STAGE = (
+        ('Lead', 'Lead'),
+        ('Proposal', 'Proposal'),
+        ('Negotiation', 'Negotiation'),
+        ('Close', 'Close')
+    )
+    sales_stage = models.CharField(
+        max_length=12,
+        choices=STAGE,
+        default="Lead",
+        blank=False,
+        null=False,
+    )
+    is_closed = models.BooleanField(
+        default=False
+    )
+    STATUS_OPTIONS = [
+        ('won', 'won'),
+        ('lost', 'lost'),
+        ('progress', 'progress')
+    ]
+    status = models.CharField(
+        max_length=8,
+        choices=STATUS_OPTIONS,
+        default='progress',
+        blank=False,
+        null=False,
+    )
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

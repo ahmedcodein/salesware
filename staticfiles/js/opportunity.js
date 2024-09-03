@@ -1,29 +1,14 @@
 $(document).ready(function () {
-    /* Select records with search functionality */
-    $('#opportunity-create-prospect').select2();
-    $('#opportunity-create-product').select2();
-    /* Variable relevant to Prospect Selection */
+    const opportunityCreateProspect = document.getElementById('opportunity-create-prospect')
     const opportunityCreateProduct = document.getElementById('opportunity-create-product')
     const opportunityCreateProductPrice = document.getElementById('opportunity-create-product-price');
-    const opportunityCreateWinningProbability = document.getElementById('opportunity-create-winning-probability')
-
-    /* Variable relevant to Product Selection */
-    const opportunityCreateProspect = document.getElementById('opportunity-create-prospect')
     const opportunityCreateStatus = document.getElementById('opportunity-create-status')
-    const opportunityCreateProcessStage = document.getElementById('opportunity-create-process-stage')
+    const opportunityCreateSalesProcessStage = document.getElementById('opportunity-create-sales-process-stage')
     const opportunityCreateProgressBar = document.getElementById('opportunity-create-progress-bar')
-  
-    /* Change Product related inputs to new values once prospect
-    /* is selected */
-
-    $(opportunityCreateProspect).on('change', function(event) {
-        changeProspectBySelection(
-            event,
-            opportunityCreateStatus,
-            opportunityCreateProcessStage,
-            opportunityCreateProgressBar,            
-        )
-    });
+    /* Select records with search functionality */
+    $(opportunityCreateProspect).select2();
+    $(opportunityCreateProduct).select2();
+    /* Variable relevant to Prospect Selection */
 
     /* Change Product related inputs to new values once product
     is selected */
@@ -31,35 +16,9 @@ $(document).ready(function () {
         changeProductBySelection(
             event,
             opportunityCreateProductPrice,
-            opportunityCreateWinningProbability,          
+            opportunityCreateStatus,       
         )
     });
-
-    /* Function that Changes Prospect related inputs to the new values once 
-    product is selected */
-    function changeProspectBySelection(
-        event,
-        firstFieldInput,
-        secondFieldInput,
-        thirdFieldInput
-
-    ){
-        const optionIndex = event.target.options.selectedIndex
-        const optionSelected = opportunityCreateProduct.options[optionIndex]
-        const productPrice = optionSelected.getAttribute('data-price')
-        if (productPrice === null) {
-            firstFieldInput.placeholder = ''
-            secondFieldInput.placeholder = ''
-            thirdFieldInput.setAttribute('aria-valuenow', '0')
-            thirdFieldInput.style.width = '0%'
-
-        } else {
-            firstFieldInput.placeholder = 'Open'
-            secondFieldInput.placeholder = 'Lead'
-            thirdFieldInput.setAttribute('aria-valuenow', '25')
-            thirdFieldInput.style.width = '25%'
-        }
-    };
 
     /* Function that Changes Product related inputs to the new values once 
     product is selected */
@@ -74,11 +33,49 @@ $(document).ready(function () {
         const productPrice = optionSelected.getAttribute('data-price')
         if (productPrice === null) {
             firstFieldInput.placeholder = ''
-            secondFieldInput.placeholder = ''
+            secondFieldInput.selectedIndex = 0
 
         } else {
             firstFieldInput.placeholder = productPrice
-            secondFieldInput.placeholder = '25%'
+            secondFieldInput.selectedIndex = 1
         }        
     }
-})
+    /* Change progress bar based on process stage */
+    $(opportunityCreateSalesProcessStage).on('change', function() {
+        progressBarControl(opportunityCreateSalesProcessStage)
+    });
+    /* This function handles changing the progress bar
+    attribute values based on the process stage */
+    function progressBarControl(progressBar){
+        const stage = progressBar.value
+        const stageInnerHtml = stage + ' ' + 'Stage'
+        const barWidth = {
+            Default: '0',
+            Lead: '25%',
+            Proposal: '50%',
+            Negotiation: '75%',
+        }
+        const ariaValueNow = {
+            Default: '0',
+            Lead: '25',
+            Proposal: '50',
+            Negotiation: '75',
+        }
+
+        for (const [key, value] of Object.entries(barWidth)){
+            if (stage === key){
+                opportunityCreateProgressBar.style.width = value
+                if (key === 'Default'){
+                    opportunityCreateProgressBar.innerHTML = ''
+                } else {
+                    opportunityCreateProgressBar.innerHTML = stageInnerHtml
+                }
+            }
+        }
+        for (const [key, value] of Object.entries(ariaValueNow)){
+            if (stage === key){
+                opportunityCreateProgressBar.setAttribute('aria-valuenow', value)
+            }
+        }
+    }
+});
