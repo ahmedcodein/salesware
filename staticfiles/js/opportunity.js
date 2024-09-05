@@ -5,6 +5,8 @@ $(document).ready(function () {
     const opportunityCreateStatus = document.getElementById('opportunity-create-status')
     const opportunityCreateSalesProcessStage = document.getElementById('opportunity-create-sales-process-stage')
     const opportunityCreateProgressBar = document.getElementById('opportunity-create-progress-bar')
+    const opportunityCreateForm = document.getElementById('opportunity-create-form')
+    const opportunityCreateSubmitModalBody = document.getElementById('opportunity-create-submit-modal-body')
     /* Select records with search functionality */
     $(opportunityCreateProspect).select2();
     $(opportunityCreateProduct).select2();
@@ -78,4 +80,30 @@ $(document).ready(function () {
             }
         }
     }
+    /* Submit the create new opportunity request and response over the modal
+    on the result of the creation action. Reset the opportunity_create page if
+    success */
+    const opportunityCreateSubmitBtn = document.getElementById('opportunity-create-submit-btn')
+    $(opportunityCreateSubmitBtn).on('click', function(){
+        form = new FormData(opportunityCreateForm)
+        url = opportunityCreateForm.action
+        fetch(url, {
+            method: 'POST',
+            body: form,
+        })
+        .then(response => response.json())
+        .then(data => {
+            opportunityCreateSubmitModalBody.innerHTML = data.message
+            $('#opportunity-create-modal-x-close').on('click', function() {
+                if (data.success) {
+                    location.reload()
+                }
+            })
+            $('#opportunity-create-modal-close').on('click', function() {
+                if (data.success) {
+                    location.reload()
+                }
+            })
+        })
+    })
 });

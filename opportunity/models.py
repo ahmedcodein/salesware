@@ -68,14 +68,14 @@ class Opportunity(models.Model):
         default=False
     )
     STATUS_OPTIONS = [
-        ('won', 'won'),
-        ('lost', 'lost'),
-        ('progress', 'progress')
+        ('Won', 'Won'),
+        ('Lost', 'Lost'),
+        ('In Progress', 'In Progress')
     ]
     status = models.CharField(
-        max_length=8,
+        max_length=11,
         choices=STATUS_OPTIONS,
-        default='progress',
+        default='In progress',
         blank=False,
         null=False,
     )
@@ -100,6 +100,6 @@ class Opportunity(models.Model):
     @property
     def estimation(self):
         est_value = f"""
-        {self.product.price * (int(self.winning_probability)/100)}
+        {(self.solution.price * self.probability/100)} {self.solution.currency}
         """
         return est_value

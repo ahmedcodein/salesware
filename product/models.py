@@ -50,8 +50,9 @@ class Product(models.Model):
         """
         ordering = ["name"]
 
+    @property
     def product_price(self):
-        return f"{self.currency} {self.price}"
+        return f"{self.price} {self.currency}"
 
     def __str__(self):
         """

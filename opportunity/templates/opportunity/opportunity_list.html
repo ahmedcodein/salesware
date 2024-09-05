@@ -25,10 +25,11 @@
                         <th scope="col">Name</th>
                         <th scope="col">Lead</th>
                         <th scope="col">Solution</th>
-                        <th scope="col">Winning Probability</th>
+                        <th scope="col">Product Price</th>
+                        <th scope="col">Wining Probability</th>
                         <th scope="col">Estimated Value</th>
-                        <th scope="col">Owner</th>
-                        <th scope="col">Created Date</th>
+                        <th scope="col">Sales Stage</th>
+                        <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -38,13 +39,13 @@
                             <a href="#" data-bs-toggle="modal" data-bs-target="#open-opportunity-detail-modal"
                                 data-url="" class="salesware-txt-color">{{opportunity.name}}</a>
                         </td>
-                        <td>{{ opportunity.name }}</td>
                         <td>{{ opportunity.lead }}</td>
                         <td>{{ opportunity.solution }}</td>
-                        <td>{{ winning_probability }}</td>
-                        <td>{{ estimation }}</td>
-                        <td>{{ opportunity.owner }}</td>
-                        <td>{{ opportunity.created_on | date:"Y-m-d" }}</td>
+                        <td>{{ opportunity.solution.product_price }}</td>
+                        <td>{{ opportunity.winning_probability }}</td>
+                        <td>{{ opportunity.estimation }}</td>
+                        <td>{{ opportunity.sales_stage }}</td>
+                        <td>{{ opportunity.status }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
