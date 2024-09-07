@@ -15,7 +15,7 @@
                 <div class="progress" style="height: 30px">
                     <div class="progress-bar salesware-background-color" id="opportunity-edit-delete-progress-bar"
                         role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                        Default</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,9 +61,6 @@
                     <select name="solution" id="opportunity-edit-delete-product" class="form-select form-control"
                         aria-label="Default select example">
                         <option value="{{ opportunity.solution.id  }}" selected>{{ opportunity.solution }}</option>
-                        {% for product in products %}
-                        <option value="{{ product.id }}" data-price="{{ product.product_price }}">{{ product }}</option>
-                        {% endfor %}
                     </select>
                 </div>
             </div>
@@ -74,7 +71,8 @@
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div> <label for="opportunity-edit-delete-product-price">Product Price:</label>
                     <input name="product-price" type="text" class="form-control"
-                        id="opportunity-edit-delete-product-price" value="" disabled>
+                        id="opportunity-edit-delete-product-price" value="{{opportunity.solution.product_price}}"
+                        disabled>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">

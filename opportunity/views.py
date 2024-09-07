@@ -122,7 +122,6 @@ def opportunity_edit(request):
             'opportunity_id', 'Default Value')
         opportunity = get_object_or_404(Opportunity, pk=opportunity_id)
         opportunity_edit = OpportunityForm(request.POST, instance=opportunity)
-        print(opportunity.lead)
         if opportunity_edit.is_valid():
             opportunity = opportunity_edit.save(commit=False)
             opportunity.owner = request.user

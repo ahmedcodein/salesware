@@ -82,6 +82,68 @@ $(document).ready(function () {
             }
         }
     }
+    /* Variables needed to progressBarEditLoad function */
+    const opportunityEditDeleteSalesProcessStage = document.getElementById('opportunity-edit-delete-sales-process-stage')
+    const opportunityEditDeleteProgressBar = document.getElementById('opportunity-edit-delete-progress-bar')
+    /* Load the original value of the Progress Bar when opportunity detail page is loaded */
+    progressBarEditLoad()
+    /* This function handles the loading of the original values of the Progress Bar 
+    when the opportunity page is loaded */
+    function progressBarEditLoad(){
+        const stage = opportunityEditDeleteSalesProcessStage.value
+        const stageInnerHtml = stage + ' ' + 'Stage'
+        const barWidth = {
+            Lead: '25%',
+            Proposal: '50%',
+            Negotiation: '75%',
+            Close: '100%',
+        }
+        for (const [key, value] of Object.entries(barWidth)){
+            if (stage === key){
+                opportunityEditDeleteProgressBar.style.width = value
+                opportunityEditDeleteProgressBar.innerHTML = stageInnerHtml
+            }
+        }
+        const ariaValueNow = {
+            Lead: '25',
+            Proposal: '50',
+            Negotiation: '75',
+            Close: '100'
+        }
+        for (const [key, value] of Object.entries(ariaValueNow)){
+            if (stage === key){
+                opportunityEditDeleteProgressBar.setAttribute('aria-valuenow', value)
+            }
+        }
+    }
+    /* Change the progress bar values along with sales process stage */
+    $(opportunityEditDeleteSalesProcessStage).on('click', function() {
+        let stage = opportunityEditDeleteSalesProcessStage.value
+        let stageInnerHtml = stage + ' ' + 'Stage'
+        const barWidth = {
+            Lead: '25%',
+            Proposal: '50%',
+            Negotiation: '75%',
+            Close: '100%',
+        }
+        for (const [key, value] of Object.entries(barWidth)){
+            if (stage === key){
+                opportunityEditDeleteProgressBar.style.width = value
+                opportunityEditDeleteProgressBar.innerHTML = stageInnerHtml
+            }
+        }
+        const ariaValueNow = {
+            Lead: '25',
+            Proposal: '50',
+            Negotiation: '75',
+            close: '100'
+        }
+        for (const [key, value] of Object.entries(ariaValueNow)){
+            if (stage === key){
+                opportunityEditDeleteProgressBar.setAttribute('aria-valuenow', value)
+            }
+        }
+    })
     /* Submit the create new opportunity request and response over the modal
     on the result of the creation action. Reset the opportunity_create page if
     success */
