@@ -85,8 +85,14 @@ $(document).ready(function () {
     /* Variables needed to progressBarEditLoad function */
     const opportunityEditDeleteSalesProcessStage = document.getElementById('opportunity-edit-delete-sales-process-stage')
     const opportunityEditDeleteProgressBar = document.getElementById('opportunity-edit-delete-progress-bar')
+    /* The if statement is here to prevent reading
+    opportunityEditDeleteSalesProcessStage as null when the opportunity
+    detail page is open */
+    if (opportunityEditDeleteSalesProcessStage === null) {
+    } else {
     /* Load the original value of the Progress Bar when opportunity detail page is loaded */
-    progressBarEditLoad()
+        progressBarEditLoad()
+    }
     /* This function handles the loading of the original values of the Progress Bar 
     when the opportunity page is loaded */
     function progressBarEditLoad(){
