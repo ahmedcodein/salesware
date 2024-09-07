@@ -6,7 +6,9 @@ $(document).ready(function () {
     const opportunityCreateSalesProcessStage = document.getElementById('opportunity-create-sales-process-stage')
     const opportunityCreateProgressBar = document.getElementById('opportunity-create-progress-bar')
     const opportunityCreateForm = document.getElementById('opportunity-create-form')
+    const opportunityEditDeleteForm = document.getElementById('opportunity-edit-delete-form')
     const opportunityCreateSubmitModalBody = document.getElementById('opportunity-create-submit-modal-body')
+    const opportunityEditDeleteSubmitModalBody = document.getElementById('opportunity-edit-delete-submit-modal-body')
     /* Select records with search functionality */
     $(opportunityCreateProspect).select2();
     $(opportunityCreateProduct).select2();
@@ -100,6 +102,33 @@ $(document).ready(function () {
                 }
             })
             $('#opportunity-create-modal-close').on('click', function() {
+                if (data.success) {
+                    location.reload()
+                }
+            })
+        })
+    })
+
+    /* Submit the create new opportunity request and response over the modal
+    on the result of the creation action. Reset the opportunity_create page if
+    success */
+    const opportunityEditDeleteSubmitBtn = document.getElementById('opportunity-edit-delete-submit-btn')
+    $(opportunityEditDeleteSubmitBtn).on('click', function(){
+        form = new FormData(opportunityEditDeleteForm)
+        url = opportunityEditDeleteForm.action
+        fetch(url, {
+            method: 'POST',
+            body: form,
+        })
+        .then(response => response.json())
+        .then(data => {
+            opportunityEditDeleteSubmitModalBody.innerHTML = data.message
+            $('#opportunity-edit-delete-modal-x-close').on('click', function() {
+                if (data.success) {
+                    location.reload()
+                }
+            })
+            $('#opportunity-edit-delete-modal-close').on('click', function() {
                 if (data.success) {
                     location.reload()
                 }

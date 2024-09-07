@@ -35,9 +35,9 @@
                 <tbody class="table-group-divider">
                     {% for opportunity in object_list %}
                     <tr>
-                        <td><!-- Anchor Element to trigger the open opportunity detail modal -->
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#open-opportunity-detail-modal"
-                                data-url="" class="salesware-txt-color">{{opportunity.name}}</a>
+                        <td><!-- Anchor Element to trigger the open opportunity detail page -->
+                            <a href="{% url 'opportunity_detail' opportunity.id%}"
+                                class="salesware-txt-color">{{opportunity.name}}</a>
                         </td>
                         <td>{{ opportunity.lead }}</td>
                         <td>{{ opportunity.solution }}</td>

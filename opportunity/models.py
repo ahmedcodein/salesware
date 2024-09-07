@@ -51,7 +51,7 @@ class Opportunity(models.Model):
         blank=False,
         null=False,
     )
-    STAGE = (
+    STAGE_OPTIONS = (
         ('Lead', 'Lead'),
         ('Proposal', 'Proposal'),
         ('Negotiation', 'Negotiation'),
@@ -59,7 +59,7 @@ class Opportunity(models.Model):
     )
     sales_stage = models.CharField(
         max_length=12,
-        choices=STAGE,
+        choices=STAGE_OPTIONS,
         default="Lead",
         blank=False,
         null=False,
