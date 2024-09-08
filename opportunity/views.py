@@ -184,3 +184,31 @@ def opportunity_edit(request):
                                 """
                             }
                         )
+
+
+def opportunity_delete(request):
+    """
+    This view handles the delete request of
+    an opportunity
+    """
+    opportunity_id = request.session.get('opportunity_id', 'Default Value')
+    opportunity = get_object_or_404(Opportunity, pk=opportunity_id)
+
+    f_condition = opportunity.owner == request.user
+    s_condition = request.user.is_superuser
+
+    if f_condition or s_condition:
+        opportunity.delete()
+        return JsonResponse(
+            {
+                'success': True,
+                'message': "The Opportunity is successfully deleted!"
+            }
+        )
+    else:
+        return JsonResponse(
+            {
+                'success': False,
+                'message': 'Deletion denied, unauthorized user'
+            }
+        )

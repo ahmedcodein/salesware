@@ -9,6 +9,7 @@ $(document).ready(function () {
     const opportunityEditDeleteForm = document.getElementById('opportunity-edit-delete-form')
     const opportunityCreateSubmitModalBody = document.getElementById('opportunity-create-submit-modal-body')
     const opportunityEditSubmitModalBody = document.getElementById('opportunity-edit-submit-modal-body')
+    const opportunityDeleteSubmitModalBody = document.getElementById('opportunity-delete-submit-modal-body')
     /* Select records with search functionality */
     $(opportunityCreateProspect).select2();
     $(opportunityCreateProduct).select2();
@@ -201,5 +202,25 @@ $(document).ready(function () {
                 }
             })
         })
+    })
+    /* Submit the edit opportunity request and response over the modal
+    on the result of the edit action */
+    const opportunityDeleteSubmitBtn = document.getElementById('opportunity-delete-submit-btn')
+    $(opportunityDeleteSubmitBtn).on('click', function(){
+        form = new FormData(opportunityEditDeleteForm)
+        url = '/opportunity/opportunity_delete/'
+        fetch(url, {
+            method: 'POST',
+            body: form,
+        })
+        .then(response => response.json())
+        .then(data => {
+            opportunityDeleteSubmitModalBody.innerHTML = data.message
+        })
+    })
+    /* Get the user back to the opportunity list page after the
+    opportunity deletion */
+    $('#opportunity-delete-modal-close').on('click', function() {
+        window.location.href = '/opportunity/'
     })
 });

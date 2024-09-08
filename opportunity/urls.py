@@ -25,4 +25,9 @@ urlpatterns = [
         views.opportunity_edit,
         name='opportunity_edit'
     ),
+    path(
+        'opportunity_delete/',
+        views.opportunity_delete,
+        name='opportunity_delete'
+    ),
 ]
