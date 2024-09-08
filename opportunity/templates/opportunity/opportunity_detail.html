@@ -139,8 +139,8 @@
                     data-bs-target="#opportunity-edit-submit-modal">
                     Update
                 </button>
-                <button type="button" id="opportunity-delete-submit-btn" class="btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#opportunity-delete-submit-modal">
+                <button type="button" id="opportunity-delete-btn" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#opportunity-delete-confirm-modal">
                     Delete
                 </button>
             </div>
@@ -149,8 +149,8 @@
 </form>
 
 <!-- Modal to feedback if opportunity edit is success or not -->
-<div class="modal fade" id="opportunity-edit-submit-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="opportunity-edit-submit-modal-label" aria-hidden="true">
+<div class="modal fade" id="opportunity-edit-submit-modal" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="opportunity-edit-submit-modal-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header salesware-background-color">
@@ -177,18 +177,19 @@
     </div>
 </div>
 
-<!-- Modal to feedback if opportunity delete is success or not -->
-<div class="modal fade" id="opportunity-delete-submit-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="opportunity-delete-submit-modal-label" aria-hidden="true">
+<!-- Modal to ask the user if the deletion is truly necessary -->
+<div class="modal fade" id="opportunity-delete-confirm-modal" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="opportunity-delete-confirm-modal-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header salesware-background-color">
-                <h1 class="modal-title fs-5 text-white" id="opportunity-delete-submit-modal-label">Delete Opportunity</h1>
+                <h1 class="modal-title fs-5 text-white" id="opportunity-delete-confirm-modal-label">Delete Opportunity
+                </h1>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                    id="opportunity-delete-modal-x-close" aria-label="Close"></button>
+                    id="opportunity-delete-confirm-modal-x-close" aria-label="Close"></button>
             </div>
-            <div class="modal-body response-message salesware-txt-color" id="opportunity-delete-submit-modal-body">
-                ...
+            <div class="modal-body response-message salesware-txt-color" id="opportunity-delete-confirm-modal-body">
+                Are you sure you want to delete this Opportunity?
             </div>
             <div class="modal-footer salesware-background-color text-white">
                 <div class="container">
@@ -197,7 +198,39 @@
                             <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo"
                                     width="80" height="45"></div>
                             <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
-                                    data-bs-dismiss="modal" id="opportunity-delete-modal-close">Close</button></div>
+                                    data-bs-dismiss="modal" id="opportunity-delete-confirm-modal-close">Close</button>
+                            </div>
+                            <div class="p-2"><button type="button" class="btn btn-danger mt-1" data-bs-dismiss="modal"
+                                    id="opportunity-delete-confirm-modal-btn" data-bs-toggle="modal"
+                                    data-bs-target="#opportunity-delete-message-modal">Confirm</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="opportunity-delete-message-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="opportunity-delete-message-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header salesware-background-color">
+                <h1 class="modal-title fs-5 text-white" id="opportunity-delete-message-modal-label">Modal title</h1>
+                <button type="button" id="opportunity-delete-message-modal-x-close" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body response-message salesware-txt-color" id="opportunity-delete-message-modal-body">
+                <!-- Here goes the deletion action response -->
+            </div>
+            <div class="modal-footer salesware-background-color text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo"
+                                    width="80" height="45"></div>
+                            <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
+                                    data-bs-dismiss="modal" id="opportunity-delete-message-modal-close">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
