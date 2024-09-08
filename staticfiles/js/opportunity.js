@@ -8,7 +8,7 @@ $(document).ready(function () {
     const opportunityCreateForm = document.getElementById('opportunity-create-form')
     const opportunityEditDeleteForm = document.getElementById('opportunity-edit-delete-form')
     const opportunityCreateSubmitModalBody = document.getElementById('opportunity-create-submit-modal-body')
-    const opportunityEditDeleteSubmitModalBody = document.getElementById('opportunity-edit-delete-submit-modal-body')
+    const opportunityEditSubmitModalBody = document.getElementById('opportunity-edit-submit-modal-body')
     /* Select records with search functionality */
     $(opportunityCreateProspect).select2();
     $(opportunityCreateProduct).select2();
@@ -177,26 +177,25 @@ $(document).ready(function () {
         })
     })
 
-    /* Submit the create new opportunity request and response over the modal
-    on the result of the creation action. Reset the opportunity_create page if
-    success */
-    const opportunityEditDeleteSubmitBtn = document.getElementById('opportunity-edit-delete-submit-btn')
-    $(opportunityEditDeleteSubmitBtn).on('click', function(){
+    /* Submit the edit opportunity request and response over the modal
+    on the result of the edit action */
+    const opportunityEditSubmitBtn = document.getElementById('opportunity-edit-submit-btn')
+    $(opportunityEditSubmitBtn).on('click', function(){
         form = new FormData(opportunityEditDeleteForm)
-        url = opportunityEditDeleteForm.action
+        url = '/opportunity/opportunity_edit/'
         fetch(url, {
             method: 'POST',
             body: form,
         })
         .then(response => response.json())
         .then(data => {
-            opportunityEditDeleteSubmitModalBody.innerHTML = data.message
-            $('#opportunity-edit-delete-modal-x-close').on('click', function() {
+            opportunityEditSubmitModalBody.innerHTML = data.message
+            $('#opportunity-edit-modal-x-close').on('click', function() {
                 if (data.success) {
                     location.reload()
                 }
             })
-            $('#opportunity-edit-delete-modal-close').on('click', function() {
+            $('#opportunity-edit-modal-close').on('click', function() {
                 if (data.success) {
                     location.reload()
                 }

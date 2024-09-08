@@ -31,8 +31,7 @@
     </div>
 </div>
 
-<form id="opportunity-edit-delete-form" class="form-inline my-2 my-lg-0" method="post"
-    action="{% url 'opportunity_edit' %}">
+<form id="opportunity-edit-delete-form" class="form-inline my-2 my-lg-0" method="post">
     {% csrf_token %}
     <div class="container salesware-txt-color">
         <div class="row d-flex justify-content-center">
@@ -136,8 +135,8 @@
         <div class="row justify-content-end">
             <div class="col-4">
                 <!-- Button trigger modal to handle user response on the creation of new opportunity -->
-                <button type="button" id="opportunity-edit-delete-submit-btn" class="btn btn-primary"
-                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" id="opportunity-edit-submit-btn" class="btn btn-primary"
+                    data-bs-toggle="modal" data-bs-target="#opportunity-edit-submit-modal">
                     Update
                 </button>
             </div>
@@ -146,16 +145,16 @@
 </form>
 
 <!-- Modal to feedback if opportunity creation is success or not -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="opportunity-edit-submit-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="opportunity-edit-submit-modal-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header salesware-background-color">
-                <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">New Opportunity</h1>
+                <h1 class="modal-title fs-5 text-white" id="opportunity-edit-submit-modal-label">New Opportunity</h1>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                    id="opportunity-edit-delete-modal-x-close" aria-label="Close"></button>
+                    id="opportunity-edit-modal-x-close" aria-label="Close"></button>
             </div>
-            <div class="modal-body response-message salesware-txt-color" id="opportunity-edit-delete-submit-modal-body">
+            <div class="modal-body response-message salesware-txt-color" id="opportunity-edit-submit-modal-body">
                 ...
             </div>
             <div class="modal-footer salesware-background-color text-white">
@@ -165,7 +164,7 @@
                             <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.png" alt="Small Logo"
                                     width="80" height="45"></div>
                             <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
-                                    data-bs-dismiss="modal" id="opportunity-edit-delete-modal-close"
+                                    data-bs-dismiss="modal" id="opportunity-edit-modal-close"
                                     action="{% url 'opportunity_list' %}">Close</button></div>
                         </div>
                     </div>
