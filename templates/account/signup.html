@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load allauth i18n %}
 {% block head_title %}
-    {% trans "Signup" %}
+{% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
 <div class="container">
@@ -11,9 +11,9 @@
                 <h1>{% trans "Sign Up" %}</h1>
                 <div class="row mt-3 mb-3">
                     <div>
-                        {% blocktranslate %}Already a <strong>SalesWare</strong> user? then please
+                        {% block translate %}Already a <strong>SalesWare</strong> user? then please
                         <a class="salesware-txt-color" href="{{ login_url }}">Sign In</a>.
-                        {% endblocktranslate %}
+                        {% endblock translate %}
                     </div>
                 </div>
                 <div class="row mt-3 mb-3">
@@ -30,7 +30,8 @@
         </div>
         <div class="col-xl-6 d-flex justify-content-center p-1 border rounded">
             <div class="centered-content">
-                <img src="/static/images/large_logo.png" class="img-fluid" style="max-width: 100%; height: 100%;" alt="SalesWare Large Logo"/>
+                <img src="/static/images/large_logo.png" class="img-fluid" style="max-width: 100%; height: 100%;"
+                    alt="SalesWare Large Logo">
             </div>
         </div>
     </div>
