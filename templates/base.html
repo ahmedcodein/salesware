@@ -36,8 +36,9 @@
         <div class="container">
             <nav class="navbar navbar-expand-md">
                 <div class="container-fluid p-2">
-                    <a class="navbar-brand text-white" href="{% url 'prospect_list' %}">
-                        <img src="/static/images/medium_logo.png" alt="Logo" width="132" height="74" style="object-fit: cover;">
+                    <a class="navbar-brand text-white" href="{% url 'home' %}">
+                        <img src="/static/images/medium_logo.png" alt="Logo" width="132" height="74"
+                            style="object-fit: cover;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +48,8 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{% url 'prospect_list' %}">Prospects</a>
@@ -60,7 +62,7 @@
                             </li>
                             {% else %}
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             {% endif %}
                             <!-- Navbar Dropdown menu starts here -->
