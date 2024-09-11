@@ -9,4 +9,10 @@ urlpatterns = [
         views.home,
         name='home'
     ),
+    # URL to display the contact page
+    path(
+        'contact/',
+        views.contact,
+        name='contact'
+    ),
 ]

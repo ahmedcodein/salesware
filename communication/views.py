@@ -12,3 +12,14 @@ def home(request):
         request,
         'communication/home.html',
     )
+
+
+def contact(request):
+    """
+    View function that views the contact
+    page
+    """
+    return render(
+        request,
+        'communication/contact.html'
+    )
