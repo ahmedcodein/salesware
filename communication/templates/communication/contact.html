@@ -28,9 +28,8 @@
         <div class="col-12 col-sm-9 col-md-8 col-lg-6">
             <form id="contact-form" method="post">
                 <div class="mb-3">
-                    <label for="contact-form-recipient" class="form-label">Recipient:</label>
                     <input type="name" name="recipient" class="form-control" id="contact-form-recipient"
-                        value="SalesWare Support" readonly>
+                        value="SalesWare Support" hidden readonly>
                 </div>
                 <div class="mb-3">
                     <label for="contact-form-sender" class="form-label">Your Name:</label>
@@ -53,12 +52,43 @@
                         placeholder="Your message goes here ...." rows="3" required></textarea>
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <!-- Form submit button and modal opener for showing the send status-->
+                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#contact-form-send-modal">Send</button>
                 </div>
             </form>
         </div>
     </div>
 </section>
+
+<!-- Modal to handel the display of the send action status-->
+<div class="modal fade" id="contact-form-send-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="contact-form-send-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header salesware-background-color">
+                <h1 class="modal-title fs-5 text-white" id="contact-form-send-modal-label">Form Submission Status</h1>
+                <button type="button" id="contact-form-send-modal-x-close-btn" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body response-message salesware-txt-color" id="contact-form-send-modal-body">
+                ...
+            </div>
+            <div class="modal-footer salesware-background-color text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="d-flex align-items-start">
+                            <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.jpg" alt="Small Logo"
+                                    width="80" height="45"></div>
+                            <div class="p-2"><button type="button" id="contact-form-send-modal-close-btn" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extras %}
