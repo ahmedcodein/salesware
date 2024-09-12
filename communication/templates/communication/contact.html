@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section class="container text-center" id="contact-heading">
+<div class="container text-center" id="contact-heading">
     <div class="row">
         <div class="col-12">
             <h1 class="text-muted">Contact Support</h1>
@@ -21,19 +21,19 @@
         </div>
     </div>
     <hr>
-</section>
+</div>
 
-<section class="container">
+<div class="container">
     <div class="row justify-content-sm-center">
         <div class="col-12 col-sm-9 col-md-8 col-lg-6">
             <form id="contact-form" method="post">
                 <div class="mb-3">
-                    <input type="name" name="recipient" class="form-control" id="contact-form-recipient"
+                    <input type="text" name="recipient" class="form-control" id="contact-form-recipient"
                         value="SalesWare Support" hidden readonly>
                 </div>
                 <div class="mb-3">
                     <label for="contact-form-sender" class="form-label">Your Name:</label>
-                    <input type="name" name="sender" class="form-control" id="contact-form-sender"
+                    <input type="text" name="sender" class="form-control" id="contact-form-sender"
                         placeholder="Your Name" required>
                 </div>
                 <div class="mb-3">
@@ -59,7 +59,7 @@
             </form>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Modal to handel the display of the send action status-->
 <div class="modal fade" id="contact-form-send-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
