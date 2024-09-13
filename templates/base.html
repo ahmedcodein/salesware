@@ -2,6 +2,11 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'home' as home_url %}
+{% url 'prospect_list' as prospect_url %}
+{% url 'product_list' as product_url %}
+{% url 'opportunity_list' as opportunity_url %}
+{% url 'contact' as contact_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,24 +58,27 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+                                <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{% url 'prospect_list' %}">Prospects</a>
+                                <a class="nav-link text-white {% if request.path == prospect_url %}active{% endif %}"
+                                    href="{% url 'prospect_list' %}">Prospects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{% url 'product_list' %}">Products</a>
+                                <a class="nav-link text-white {% if request.path == product_url %}active{% endif %}"
+                                    href="{% url 'product_list' %}">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{% url 'opportunity_list' %}">Opportunity</a>
+                                <a class="nav-link text-white {% if request.path == opportunity_url %}active{% endif %}"
+                                    href="{% url 'opportunity_list' %}">Opportunity</a>
                             </li>
                             {% else %}
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+                                <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}"" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page"
-                                    href="{% url 'contact' %}">Contact</a>
+                                <a class="nav-link {% if request.path == contact_url %}active{% endif %} text-white"
+                                    aria-current="page" href="{% url 'contact' %}">Contact</a>
                             </li>
                             {% endif %}
                             <!-- Navbar Dropdown menu starts here -->
@@ -83,7 +91,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item nav-link {% if request.path == logout_url %}active{% endif %}"
                                             href="{% url 'account_logout' %}">Sign out</a></li>
-                                    <li><a class="dropdown-item nav-link {% if request.path == login_url %}active{% endif %}"
+                                    <li><a class="dropdown-item nav-link {% if request.path == contact_url %}active{% endif %}"
                                             href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
                                 {% else %}
