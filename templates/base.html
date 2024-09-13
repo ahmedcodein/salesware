@@ -19,8 +19,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- EmailJs -->
@@ -35,11 +37,11 @@
 
 <body>
     <!-- Header goes here -->
-    <header class="mt-auto py-1">
-        <div class="container">
-            <nav class="navbar navbar-expand-md">
-                <div class="container-fluid p-2">
-                    <a class="navbar-brand text-white" href="{% url 'home' %}">
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand text-white" href="/">
                         <img src="/static/images/medium_logo.jpg" alt="Logo" width="132" height="74"
                             style="object-fit: cover;">
                     </a>
@@ -51,8 +53,7 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page"
-                                    href="{% url 'home' %}">Home</a>
+                                <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{% url 'prospect_list' %}">Prospects</a>
@@ -65,8 +66,7 @@
                             </li>
                             {% else %}
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page"
-                                    href="{% url 'home' %}">Home</a>
+                                <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active text-white" aria-current="page"
@@ -102,29 +102,21 @@
                             <!-- Navbar Dropdown menu ends here -->
                         </ul>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
     </header>
-    <div class="container">
-        <div class="salesware-background-color">
-            <hr>
-        </div>
-    </div>
+    <hr>
     <!-- Main goes here -->
     <main>
         {% block content %}
         <!-- Content goes here -->
         {% endblock content %}
     </main>
-    <div class="container">
-        <div class="salesware-background-color">
-            <hr>
-        </div>
-    </div>
+    <hr>
     <!-- Footer goes here -->
-    <footer class="mt-auto py-1">
-        <div class="container salesware-background-color text-white">
+    <footer>
+        <div class="container-fluid salesware-background-color text-white">
             <div class="row align-items-center">
                 <div class="col text-center"><img src="/static/images/small_logo.jpg" alt="Small Logo" width="80"
                         height="45"></div>
@@ -135,10 +127,8 @@
             </div>
         </div>
     </footer>
-
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/9e92da5b95.js" crossorigin="anonymous"></script>
-
     {% block extras %}
     {% endblock %}
 </body>
