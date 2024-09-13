@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     new prospect if the user does click!*/
     // Open the modal to display the new prospect form 
     openCreateNewProspectModal.addEventListener('show.bs.modal', function(event) {
-        const urlNewProspectForm = event.relatedTarget.getAttribute('action');
+        const urlNewProspectForm = event.relatedTarget.getAttribute('data-url');
         openProspectDetail(urlNewProspectForm, openCreateNewProspectModalBody)
     });
     // Submit the post request to the database to create new prospect

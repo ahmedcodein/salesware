@@ -124,7 +124,7 @@
         <div class="row mt-3 d-flex justify-content-center">
             <div class="col-9">
                 <label for="opportunity-create-note" class="form-label mt-1 mb-1 ms-1">Note/Description:</label>
-                <textarea name="note" type="text" class="form-control" id="opportunity-create-note"
+                <textarea name="note" class="form-control" id="opportunity-create-note"
                     placeholder="Some detail about the opportunity..." autocomplete="on" style="height: 200px;" required></textarea>
             </div>
         </div>
@@ -161,7 +161,7 @@
                             <div class="flex-grow-1 p-2"><img src="/static/images/small_logo.jpg" alt="Small Logo"
                                     width="80" height="45"></div>
                             <div class="p-2"><button type="button" class="btn btn-secondary mt-1"
-                                    data-bs-dismiss="modal" id="opportunity-create-modal-close" action="{% url 'opportunity_list' %}" >Close</button></div>
+                                    data-bs-dismiss="modal" id="opportunity-create-modal-close">Close</button></div>
                         </div>
                     </div>
                 </div>

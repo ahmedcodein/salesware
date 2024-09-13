@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     new product if the user does click!*/
     // Open the modal to display the new product form 
     openCreateNewProductModal.addEventListener('show.bs.modal', function(event) {
-        const urlNewProductForm = event.relatedTarget.getAttribute('action');
+        const urlNewProductForm = event.relatedTarget.getAttribute('data-url');
         openProductDetail(urlNewProductForm, openCreateNewProductModalBody)
     });
     // Submit the post request to the database to create new product
