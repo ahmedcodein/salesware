@@ -17,6 +17,11 @@ main {
 .salesware-background-color {
     background-color: #213E60;
 }
+.salesware-background-color-glass {
+    border: 1px solid #0E253F;
+    box-shadow: 10px 5px 5px  #0E253F ;
+    background-color: rgb(33, 62, 96, .35);
+}
 
 .salesware-txt-color {
     color: #213E60;
