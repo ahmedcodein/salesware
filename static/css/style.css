@@ -145,6 +145,11 @@ form.login li {
     --bs-btn-disabled-border-color: #213E60;
 }
 
+.errorlist {
+    color: #dc3545;
+    font-weight: bolder;
+}
+
 /* Modal Specific Styles */
 .response-message {
     display: flex;
