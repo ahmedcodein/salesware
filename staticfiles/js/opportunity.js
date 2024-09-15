@@ -17,11 +17,11 @@ $(document).ready(function () {
 
     /* Change Product related inputs to new values once product
     is selected */
-    $(opportunityCreateProduct).on('change', function(event) {
+    $(opportunityCreateProduct).on('change', function (event) {
         changeProductBySelection(
             event,
             opportunityCreateProductPrice,
-            opportunityCreateStatus,       
+            opportunityCreateStatus,
         )
     });
 
@@ -43,15 +43,15 @@ $(document).ready(function () {
         } else {
             firstFieldInput.placeholder = productPrice
             secondFieldInput.selectedIndex = 1
-        }        
+        }
     }
     /* Change progress bar based on process stage */
-    $(opportunityCreateSalesProcessStage).on('change', function() {
+    $(opportunityCreateSalesProcessStage).on('change', function () {
         progressBarControl(opportunityCreateSalesProcessStage)
     });
     /* This function handles changing the progress bar
     attribute values based on the process stage */
-    function progressBarControl(progressBar){
+    function progressBarControl(progressBar) {
         const stage = progressBar.value
         const stageInnerHtml = stage + ' ' + 'Stage'
         const barWidth = {
@@ -67,18 +67,18 @@ $(document).ready(function () {
             Negotiation: '75',
         }
 
-        for (const [key, value] of Object.entries(barWidth)){
-            if (stage === key){
+        for (const [key, value] of Object.entries(barWidth)) {
+            if (stage === key) {
                 opportunityCreateProgressBar.style.width = value
-                if (key === 'Default'){
+                if (key === 'Default') {
                     opportunityCreateProgressBar.innerHTML = ''
                 } else {
                     opportunityCreateProgressBar.innerHTML = stageInnerHtml
                 }
             }
         }
-        for (const [key, value] of Object.entries(ariaValueNow)){
-            if (stage === key){
+        for (const [key, value] of Object.entries(ariaValueNow)) {
+            if (stage === key) {
                 opportunityCreateProgressBar.setAttribute('aria-valuenow', value)
             }
         }
@@ -89,14 +89,13 @@ $(document).ready(function () {
     /* The if statement is here to prevent reading
     opportunityEditDeleteSalesProcessStage as null when the opportunity
     detail page is open */
-    if (opportunityEditDeleteSalesProcessStage === null) {
-    } else {
-    /* Load the original value of the Progress Bar when opportunity detail page is loaded */
+    if (opportunityEditDeleteSalesProcessStage === null) {} else {
+        /* Load the original value of the Progress Bar when opportunity detail page is loaded */
         progressBarEditLoad()
     }
     /* This function handles the loading of the original values of the Progress Bar 
     when the opportunity page is loaded */
-    function progressBarEditLoad(){
+    function progressBarEditLoad() {
         const stage = opportunityEditDeleteSalesProcessStage.value
         const stageInnerHtml = stage + ' ' + 'Stage'
         const barWidth = {
@@ -105,8 +104,8 @@ $(document).ready(function () {
             Negotiation: '75%',
             Close: '100%',
         }
-        for (const [key, value] of Object.entries(barWidth)){
-            if (stage === key){
+        for (const [key, value] of Object.entries(barWidth)) {
+            if (stage === key) {
                 opportunityEditDeleteProgressBar.style.width = value
                 opportunityEditDeleteProgressBar.innerHTML = stageInnerHtml
             }
@@ -117,14 +116,14 @@ $(document).ready(function () {
             Negotiation: '75',
             Close: '100'
         }
-        for (const [key, value] of Object.entries(ariaValueNow)){
-            if (stage === key){
+        for (const [key, value] of Object.entries(ariaValueNow)) {
+            if (stage === key) {
                 opportunityEditDeleteProgressBar.setAttribute('aria-valuenow', value)
             }
         }
     }
     /* Change the progress bar values along with sales process stage */
-    $(opportunityEditDeleteSalesProcessStage).on('click', function() {
+    $(opportunityEditDeleteSalesProcessStage).on('click', function () {
         let stage = opportunityEditDeleteSalesProcessStage.value
         let stageInnerHtml = stage + ' ' + 'Stage'
         const barWidth = {
@@ -133,8 +132,8 @@ $(document).ready(function () {
             Negotiation: '75%',
             Close: '100%',
         }
-        for (const [key, value] of Object.entries(barWidth)){
-            if (stage === key){
+        for (const [key, value] of Object.entries(barWidth)) {
+            if (stage === key) {
                 opportunityEditDeleteProgressBar.style.width = value
                 opportunityEditDeleteProgressBar.innerHTML = stageInnerHtml
             }
@@ -145,8 +144,8 @@ $(document).ready(function () {
             Negotiation: '75',
             close: '100'
         }
-        for (const [key, value] of Object.entries(ariaValueNow)){
-            if (stage === key){
+        for (const [key, value] of Object.entries(ariaValueNow)) {
+            if (stage === key) {
                 opportunityEditDeleteProgressBar.setAttribute('aria-valuenow', value)
             }
         }
@@ -155,75 +154,75 @@ $(document).ready(function () {
     on the result of the creation action. Reset the opportunity_create page if
     success */
     const opportunityCreateSubmitBtn = document.getElementById('opportunity-create-submit-btn')
-    $(opportunityCreateSubmitBtn).on('click', function(){
+    $(opportunityCreateSubmitBtn).on('click', function () {
         form = new FormData(opportunityCreateForm)
         url = opportunityCreateForm.action
         fetch(url, {
-            method: 'POST',
-            body: form,
-        })
-        .then(response => response.json())
-        .then(data => {
-            opportunityCreateSubmitModalBody.innerHTML = data.message
-            $('#opportunity-create-modal-x-close').on('click', function() {
-                if (data.success) {
-                    location.reload()
-                }
+                method: 'POST',
+                body: form,
             })
-            $('#opportunity-create-modal-close').on('click', function() {
-                if (data.success) {
-                    location.reload()
-                }
+            .then(response => response.json())
+            .then(data => {
+                opportunityCreateSubmitModalBody.innerHTML = data.message
+                $('#opportunity-create-modal-x-close').on('click', function () {
+                    if (data.success) {
+                        window.location.href = '/opportunity/'
+                    }
+                })
+                $('#opportunity-create-modal-close').on('click', function () {
+                    if (data.success) {
+                        window.location.href = '/opportunity/'
+                    }
+                })
             })
-        })
     })
 
     /* Submit the edit opportunity request and response over the modal
     on the result of the edit action */
     const opportunityEditSubmitBtn = document.getElementById('opportunity-edit-submit-btn')
-    $(opportunityEditSubmitBtn).on('click', function(){
+    $(opportunityEditSubmitBtn).on('click', function () {
         form = new FormData(opportunityEditDeleteForm)
         url = '/opportunity/opportunity_edit/'
         fetch(url, {
-            method: 'POST',
-            body: form,
-        })
-        .then(response => response.json())
-        .then(data => {
-            opportunityEditSubmitModalBody.innerHTML = data.message
-            $('#opportunity-edit-modal-x-close').on('click', function() {
-                if (data.success) {
-                    location.reload()
-                }
+                method: 'POST',
+                body: form,
             })
-            $('#opportunity-edit-modal-close').on('click', function() {
-                if (data.success) {
-                    location.reload()
-                }
+            .then(response => response.json())
+            .then(data => {
+                opportunityEditSubmitModalBody.innerHTML = data.message
+                $('#opportunity-edit-modal-x-close').on('click', function () {
+                    if (data.success) {
+                        window.location.href = '/opportunity/'
+                    }
+                })
+                $('#opportunity-edit-modal-close').on('click', function () {
+                    if (data.success) {
+                        window.location.href = '/opportunity/'
+                    }
+                })
             })
-        })
     })
     /* Submit the edit opportunity request and response over the modal
     on the result of the edit action */
     const opportunityDeleteConfirmModalBtn = document.getElementById('opportunity-delete-confirm-modal-btn')
-    $(opportunityDeleteConfirmModalBtn).on('click', function(){
+    $(opportunityDeleteConfirmModalBtn).on('click', function () {
         form = new FormData(opportunityEditDeleteForm)
         url = '/opportunity/opportunity_delete/'
         fetch(url, {
-            method: 'POST',
-            body: form,
-        })
-        .then(response => response.json())
-        .then(data => {
-            opportunityDeleteMessageModalBody.innerHTML = data.message
-        })
+                method: 'POST',
+                body: form,
+            })
+            .then(response => response.json())
+            .then(data => {
+                opportunityDeleteMessageModalBody.innerHTML = data.message
+            })
     })
     /* Get the user back to the opportunity list page after the
     opportunity deletion */
-    $('#opportunity-delete-message-modal-close').on('click', function() {
+    $('#opportunity-delete-message-modal-close').on('click', function () {
         window.location.href = '/opportunity/'
     })
-    $('#opportunity-delete-message-modal-x-close').on('click', function() {
+    $('#opportunity-delete-message-modal-x-close').on('click', function () {
         window.location.href = '/opportunity/'
     })
 });
