@@ -126,14 +126,18 @@
         <div class="row mt-3 d-flex justify-content-center">
             <div class="col-9">
                 <label for="opportunity-edit-delete-note" class="form-label mt-1 mb-1 ms-1">Note/Description:</label>
-                <textarea name="note" class="form-control" autocomplete="on"
-                    id="opportunity-edit-delete-note" style="height: 200px;" required>{{opportunity.note}}</textarea>
+                <textarea name="note" class="form-control" autocomplete="on" id="opportunity-edit-delete-note"
+                    style="height: 200px;" required>{{opportunity.note}}</textarea>
             </div>
         </div>
     </div>
     <div class="container mt-4">
         <div class="row justify-content-end">
             <div class="col-4">
+                <!-- Button gets user back to the opportunity list page -->
+                <button type="button" id="opportunity-edit-delete-back-btn" class="btn btn-secondary">
+                    Back
+                </button>
                 <!-- Button trigger modal to handle user response on the creation of new opportunity -->
                 <button type="button" id="opportunity-edit-submit-btn" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#opportunity-edit-submit-modal">
@@ -211,13 +215,14 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="opportunity-delete-message-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="opportunity-delete-message-modal-label" aria-hidden="true">
+<div class="modal fade" id="opportunity-delete-message-modal" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="opportunity-delete-message-modal-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header salesware-background-color">
                 <h1 class="modal-title fs-5 text-white" id="opportunity-delete-message-modal-label">Modal title</h1>
-                <button type="button" id="opportunity-delete-message-modal-x-close" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" id="opportunity-delete-message-modal-x-close" class="btn-close btn-close-white"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body response-message salesware-txt-color" id="opportunity-delete-message-modal-body">
                 <!-- Here goes the deletion action response -->

@@ -222,7 +222,17 @@ $(document).ready(function () {
     $('#opportunity-delete-message-modal-close').on('click', function () {
         window.location.href = '/opportunity/'
     })
+    /* Get the user back to the opportunity list page after the
+    opportunity deletion */
     $('#opportunity-delete-message-modal-x-close').on('click', function () {
+        window.location.href = '/opportunity/'
+    })
+    /* Get the user back to the opportunity list page after clicking
+    on opportunity button */
+    $('#opportunity-edit-delete-back-btn').on('click', function () {
+        window.location.href = '/opportunity/'
+    })
+    $('#opportunity-create-back-btn').on('click', function () {
         window.location.href = '/opportunity/'
     })
 });

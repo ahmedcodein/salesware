@@ -125,13 +125,18 @@
             <div class="col-9">
                 <label for="opportunity-create-note" class="form-label mt-1 mb-1 ms-1">Note/Description:</label>
                 <textarea name="note" class="form-control" id="opportunity-create-note"
-                    placeholder="Some detail about the opportunity..." autocomplete="on" style="height: 200px;" required></textarea>
+                    placeholder="Some detail about the opportunity..." autocomplete="on" style="height: 200px;"
+                    required></textarea>
             </div>
         </div>
     </div>
     <div class="container mt-4">
         <div class="row justify-content-end">
             <div class="col-4">
+                <!-- Button gets user back to the opportunity list page -->
+                <button type="button" id="opportunity-create-back-btn" class="btn btn-secondary">
+                    Back
+                </button>
                 <!-- Button trigger modal to handle user response on the creation of new opportunity -->
                 <button type="button" id="opportunity-create-submit-btn" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">
@@ -149,7 +154,8 @@
         <div class="modal-content">
             <div class="modal-header salesware-background-color">
                 <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">New Opportunity</h1>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" id="opportunity-create-modal-x-close" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    id="opportunity-create-modal-x-close" aria-label="Close"></button>
             </div>
             <div class="modal-body response-message salesware-txt-color" id="opportunity-create-submit-modal-body">
                 ...
