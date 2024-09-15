@@ -3,7 +3,17 @@ from django.contrib.auth.models import User
 from prospect.models import Prospect
 from product.models import Product
 
+
 # Create your models here.
+class LowerCaseConverter(models.CharField):
+    """
+    Save value in upper case to prevent duplicate
+    unique fields instances in the database
+    """
+    def get_prep_value(self, value):
+        if value is not None:
+            value = value.upper()
+        return super().get_prep_value(value)
 
 
 class Opportunity(models.Model):
@@ -15,7 +25,7 @@ class Opportunity(models.Model):
     and the product the prospect wants to buy
     """
 
-    name = models.CharField(
+    name = LowerCaseConverter(
         max_length=60,
         unique=True,
         default=None,

@@ -3,13 +3,24 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+class LowerCaseConverter(models.CharField):
+    """
+    Save value in upper case to prevent duplicate
+    unique fields instances in the database
+    """
+    def get_prep_value(self, value):
+        if value is not None:
+            value = value.upper()
+        return super().get_prep_value(value)
+
+
 class Prospect(models.Model):
     """
     Instantiates a new Prospect object
     Define the relationship with the User who
     instantiates the Prospect object
     """
-    company = models.CharField(
+    company = LowerCaseConverter(
         max_length=60,
         unique=True,
         default=None,
