@@ -220,19 +220,25 @@ $(document).ready(function () {
     /* Get the user back to the opportunity list page after the
     opportunity deletion */
     $('#opportunity-delete-message-modal-close').on('click', function () {
-        window.location.href = '/opportunity/'
-    })
+        returnToList();
+    });
     /* Get the user back to the opportunity list page after the
     opportunity deletion */
     $('#opportunity-delete-message-modal-x-close').on('click', function () {
-        window.location.href = '/opportunity/'
-    })
+        returnToList();
+    });
     /* Get the user back to the opportunity list page after clicking
     on opportunity button */
     $('#opportunity-edit-delete-back-btn').on('click', function () {
-        window.location.href = '/opportunity/'
-    })
+        returnToList();
+    });
+    /* Get the user back to the opportunity list page after clicking
+    on back button */
     $('#opportunity-create-back-btn').on('click', function () {
+        returnToList()
+    });
+    /* Get the user to opportunity list page */
+    function returnToList() {
         window.location.href = '/opportunity/'
-    })
+    }
 });
