@@ -18,6 +18,10 @@ class ProductList(generic.ListView):
 
 
 def product_detail(request, id):
+    """
+    The view handles the display of a product record
+    detail
+    """
     product = get_object_or_404(Product, pk=id)
     # Collect the product id and save it
     # to be accessed later by other views

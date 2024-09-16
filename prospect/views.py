@@ -17,6 +17,10 @@ class ProspectList(generic.ListView):
 
 
 def prospect_detail(request, id):
+    """
+    The view handles the display of a prospect record
+    detail
+    """
     prospect = get_object_or_404(Prospect, pk=id)
     # Collect the prospect id and save it
     # to be accessed later by other views

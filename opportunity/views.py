@@ -20,6 +20,10 @@ class OpportunityList(generic.ListView):
 
 
 def opportunity_detail(request, id):
+    """
+    The view handles the display of an opportunity record
+    detail
+    """
     opportunity = get_object_or_404(Opportunity, pk=id)
     prospects = Prospect.objects.all()
     products = Product.objects.all()
@@ -39,6 +43,10 @@ def opportunity_detail(request, id):
 
 
 def opportunity_create(request):
+    """
+    The view handles the creation of new opportunity
+    record
+    """
     if request.method == 'GET':
         products = Product.objects.all()
         prospects = Prospect.objects.all()
@@ -204,7 +212,7 @@ def opportunity_edit(request):
 def opportunity_delete(request):
     """
     This view handles the delete request of
-    an opportunity
+    an opportunity record
     """
     opportunity_id = request.session.get('opportunity_id', 'Default Value')
     opportunity = get_object_or_404(Opportunity, pk=opportunity_id)
