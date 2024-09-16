@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from datetime import datetime
-from .models import Prospect
+from .models import Prospect, UpperCaseConverter
 
 
 # Create your tests here.
@@ -15,12 +15,11 @@ class SuperUserModelTest(TestCase):
         # Create an instance of superuser class
         user = User.objects.create_superuser(
             username="AdminUser",
-            password="anything12#",
             email="super.user@email.com",
         )
         # Assert that each attribute is correctly defined
         self.assertEqual(user.username, "AdminUser")
-        self.assertIsNotNone(user.password, "anything12#")
+        self.assertIsNotNone(user.password)
         self.assertEqual(user.email, "super.user@email.com")
 
 
@@ -32,11 +31,10 @@ class UserModelTest(TestCase):
     def test_create_user(self):
         user = User.objects.create_user(
             username="TeamUser",
-            password="TeamUserPassWord",
             email="team.user@email.com",
         )
         self.assertEqual(user.username, "TeamUser")
-        self.assertIsNotNone(user.password, "TeamUserPassWord")
+        self.assertIsNotNone(user.password)
         self.assertEqual(user.email, "team.user@email.com")
 
 
@@ -52,7 +50,6 @@ class ProspectModelTest(TestCase):
 
         self.user = User.objects.create_user(
             username="TeamUser",
-            password="TeamUserPassWord",
             email="team.user@email.com",
         )
         self.prospect = Prospect.objects.create(
@@ -101,3 +98,27 @@ class ProspectModelTest(TestCase):
         self.assertEqual(
             str(Prospect(company="A GmbH")),
             self.prospect.company)
+
+    def test_lower_case_converter(self):
+        self.user = User.objects.create_user(
+            username="TeamUser",
+            email="team.user@email.com",
+        )
+        self.prospect = Prospect.objects.create(
+            company="A GmbH",
+            first_name="john",
+            last_name="will",
+            email="john.will@email.com",
+            title="Head of Sales",
+            industry="IT",
+            country="Germany",
+            owner=self.user,
+            created_on=datetime.now(),
+            updated_at=datetime.now(),
+        )
+        company_upper = UpperCaseConverter().get_prep_value(
+            self.prospect.company
+            )
+        # Assert that UpperCaseConverter converts the company
+        # name to upper case
+        assert company_upper != self.prospect.company

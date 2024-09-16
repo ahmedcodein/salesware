@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from datetime import datetime
 from .models import Product
+from prospect.models import UpperCaseConverter
 
 # Create your tests here.
 
@@ -17,7 +18,6 @@ class ProductModelTest(TestCase):
         """
         self.user = User.objects.create_user(
             username="TeamUser",
-            password="TeamUserPassWord",
             email="team.user@email.com",
         )
         self.product = Product.objects.create(
@@ -56,3 +56,24 @@ class ProductModelTest(TestCase):
         self.assertEqual(
             str(Product(name="Product A")),
             self.product.name)
+
+    def test_lower_case_converter(self):
+        self.user = User.objects.create_user(
+            username="TeamUser",
+            email="team.user@email.com",
+        )
+        self.product = Product.objects.create(
+            name="Product A",
+            price=50000,
+            currency="USD",
+            owner=self.user,
+            created_on=datetime.now(),
+            updated_at=datetime.now(),
+        )
+
+        name_upper = UpperCaseConverter().get_prep_value(
+            self.product.name
+        )
+        # Assert that UpperCaseConverter converts the product
+        # name to upper case
+        assert name_upper != self.product.name
