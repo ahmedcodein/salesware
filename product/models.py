@@ -1,26 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
+from prospect.models import UpperCaseConverter
 
 
 # Create your models here.
-class LowerCaseConverter(models.CharField):
-    """
-    Save value in upper case to prevent duplicate
-    unique fields instances in the database
-    """
-    def get_prep_value(self, value):
-        if value is not None:
-            value = value.upper()
-        return super().get_prep_value(value)
-
-
 class Product(models.Model):
     """
     Instantiates a new Product object
     Define the relationship with the User who
     instantiates the Product object
     """
-    name = LowerCaseConverter(
+    name = UpperCaseConverter(
         max_length=60,
         unique=True,
         default=None,
