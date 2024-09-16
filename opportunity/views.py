@@ -117,20 +117,35 @@ def opportunity_create(request):
 
 
 def opportunity_edit(request):
+    """
+    This view handles a Post request for updating
+    any of the opportunity fields
+    """
     if request.method == 'POST':
         opportunity_id = request.session.get(
             'opportunity_id', 'Default Value')
         opportunity = get_object_or_404(Opportunity, pk=opportunity_id)
         opportunity_edit = OpportunityForm(request.POST, instance=opportunity)
-        if opportunity_edit.is_valid():
+        f_condition = opportunity_edit.is_valid()
+        s_condition = opportunity.owner == request.user
+        t_condition = request.user.is_superuser
+        "If the form is valid, only update if the owner or"
+        "the admin requests the update"
+        if f_condition and (s_condition or t_condition):
             opportunity = opportunity_edit.save(commit=False)
-            opportunity.owner = request.user
             opportunity.is_closed = False
             opportunity.save()
             return JsonResponse(
                 {
                     'success': True,
                     'message': 'The new opportunity is successfully updated!'
+                }
+            )
+        elif f_condition and opportunity.owner is not request.user:
+            return JsonResponse(
+                {
+                    'success': False,
+                    'message': 'Update denied, unauthorized user'
                 }
             )
         else:
@@ -196,7 +211,7 @@ def opportunity_delete(request):
 
     f_condition = opportunity.owner == request.user
     s_condition = request.user.is_superuser
-
+    "Only delete if the owner or the admin requests the delete"
     if f_condition or s_condition:
         opportunity.delete()
         return JsonResponse(

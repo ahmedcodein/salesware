@@ -30,6 +30,7 @@
                         <th scope="col">Estimated Value</th>
                         <th scope="col">Sales Stage</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Owner</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -46,6 +47,7 @@
                         <td>{{ opportunity.estimation }}</td>
                         <td>{{ opportunity.sales_stage }}</td>
                         <td>{{ opportunity.status }}</td>
+                        <td>{{ opportunity.owner }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
