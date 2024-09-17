@@ -5,9 +5,9 @@ from .views import (ProspectList, prospect_detail,
                     prospect_delete)
 
 
-# Create your tests here for product urls
-class TestProductUrls(TestCase):
-    # Test product urls Class
+# Create your tests here for prospect urls
+class TestProspectUrls(TestCase):
+    # Test prospect urls Class
     def test_prospect_list(self):
         # Test ProspectList Class view
         url = reverse('prospect_list')
