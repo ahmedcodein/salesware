@@ -57,7 +57,7 @@ class OpportunityModelTest(TestCase):
         )
 
     def test_create_opportunity(self):
-        # Test all the opportunity attribute values
+        # Test all Opportunity attributes' values
         self.assertEqual(self.opportunity.name, 'Test Opportunity')
         self.assertEqual(self.opportunity.lead.company, 'A GmbH')
         self.assertEqual(self.opportunity.solution.name, 'Product A')
@@ -72,11 +72,20 @@ class OpportunityModelTest(TestCase):
         self.assertIsInstance(self.opportunity.updated_at, datetime)
 
     def test_upper_case_converter(self):
+        # Test UpperCaseConverter Class on opportunity object
         opportunity_upper = UpperCaseConverter().get_prep_value(
             self.opportunity.name
         )
         assert opportunity_upper != self.opportunity.name
 
     def test_winning_probability_method(self):
+        # Test winning_probability property method
         winning_probability = self.opportunity.winning_probability
         self.assertEqual(winning_probability, '25%')
+
+    def test_estimation(self):
+        # Test estimation property method
+        est = self.opportunity.estimation
+        self.assertEqual(est, str(self.product.price *
+                                  self.opportunity.probability/100) +
+                         ' ' + self.product.currency)

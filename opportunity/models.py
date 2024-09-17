@@ -98,7 +98,6 @@ class Opportunity(models.Model):
 
     @property
     def estimation(self):
-        est_value = f"""
-        {(self.solution.price * self.probability/100)} {self.solution.currency}
-        """
+        est_value = str(self.solution.price * self.probability /
+                        100) + ' ' + self.solution.currency
         return est_value
