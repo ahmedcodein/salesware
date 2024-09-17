@@ -11,16 +11,19 @@ class SuperUserModelTest(TestCase):
     Test Django Superuser model
     """
 
-    def test_create_superuser(self):
-        # Create an instance of superuser class
-        user = User.objects.create_superuser(
+    def setUp(self):
+        # Create an instance of superuser
+        self.superuser = User.objects.create_superuser(
             username="AdminUser",
+            password=None,
             email="super.user@email.com",
         )
+
+    def test_create_superuser(self):
         # Assert that each attribute is correctly defined
-        self.assertEqual(user.username, "AdminUser")
-        self.assertIsNotNone(user.password)
-        self.assertEqual(user.email, "super.user@email.com")
+        self.assertEqual(self.superuser.username, "AdminUser")
+        self.assertIsNotNone(self.superuser.password)
+        self.assertEqual(self.superuser.email, "super.user@email.com")
 
 
 class UserModelTest(TestCase):
@@ -28,14 +31,19 @@ class UserModelTest(TestCase):
     Test Django user model
     """
 
-    def test_create_user(self):
-        user = User.objects.create_user(
+    def setUp(self):
+        # Create an instance of user
+        self.user = User.objects.create_user(
             username="TeamUser",
+            password=None,
             email="team.user@email.com",
         )
-        self.assertEqual(user.username, "TeamUser")
-        self.assertIsNotNone(user.password)
-        self.assertEqual(user.email, "team.user@email.com")
+
+    def test_create_user(self):
+        # Assert that each attribute is correctly defined
+        self.assertEqual(self.user.username, "TeamUser")
+        self.assertIsNotNone(self.user.password)
+        self.assertEqual(self.user.email, "team.user@email.com")
 
 
 class ProspectModelTest(TestCase):
@@ -43,7 +51,7 @@ class ProspectModelTest(TestCase):
     Test prospect Model
     """
 
-    def test_create_prospect(self):
+    def setUp(self):
         """
         Create User instance and two prospect instances
         """
@@ -76,8 +84,10 @@ class ProspectModelTest(TestCase):
             created_on=datetime.now(),
             updated_at=datetime.now()
         )
+
+    def test_create_prospect(self):
         # Assert that each attribute is accurately defined in
-        # the prospect model
+        # # the prospect model
         self.assertEqual(self.prospect.company, "A GmbH")
         self.assertEqual(self.prospect.first_name, "john")
         self.assertEqual(self.prospect.last_name, "will")
@@ -92,33 +102,20 @@ class ProspectModelTest(TestCase):
         # to multiple
         self.assertEqual(self.prospect.owner, self.user)
         self.assertEqual(self.prospect_b.owner, self.user)
+
+    def test_meta_ordering_method(self):
         # Test class Meta ordering
         self.assertEqual(Prospect._meta.ordering, ["company"])
+
+    def test_str_method(self):
         # Assert that the string method returns the company name
         self.assertEqual(
             str(Prospect(company="A GmbH")),
             self.prospect.company)
 
     def test_lower_case_converter(self):
-        self.user = User.objects.create_user(
-            username="TeamUser",
-            email="team.user@email.com",
-        )
-        self.prospect = Prospect.objects.create(
-            company="A GmbH",
-            first_name="john",
-            last_name="will",
-            email="john.will@email.com",
-            title="Head of Sales",
-            industry="IT",
-            country="Germany",
-            owner=self.user,
-            created_on=datetime.now(),
-            updated_at=datetime.now(),
-        )
+        # Test UpperCaseConverter Class on prospect object
         company_upper = UpperCaseConverter().get_prep_value(
             self.prospect.company
-            )
-        # Assert that UpperCaseConverter converts the company
-        # name to upper case
+        )
         assert company_upper != self.prospect.company
