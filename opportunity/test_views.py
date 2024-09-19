@@ -6,7 +6,7 @@ from .models import Opportunity
 from prospect.models import Prospect
 from product.models import Product
 
-# Create your tests here for product views
+# Create your tests here for opportunity views
 
 
 class TestOpportunityViews(TestCase):
