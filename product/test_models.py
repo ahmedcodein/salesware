@@ -11,7 +11,6 @@ class ProductModelTest(TestCase):
     """
     Test the Product Model
     """
-
     def setUp(self):
         """
         Create User instance and two Product instances
@@ -38,8 +37,10 @@ class ProductModelTest(TestCase):
         )
 
     def test_create_product_models(self):
-        # Assert that each attribute is accurately defined in
-        # the prospect model
+        """
+        Assert that each attribute is accurately defined in
+        the prospect model
+        """
         self.assertEqual(self.product.name, "Product A")
         self.assertEqual(self.product.price, 50000)
         self.assertEqual(self.product.currency, "USD")
@@ -52,22 +53,32 @@ class ProductModelTest(TestCase):
         self.assertEqual(self.product_b.owner, self.user)
 
     def test_meta_ordering_method_of_product_models(self):
-        # Test class Meta ordering
+        """
+        Test class Meta ordering
+        """
         self.assertEqual(Product._meta.ordering, ["name"])
 
     def test_str_method_of_product_models(self):
-        # Assert that string method returns the product name
+        """
+        Assert that string method returns the product name
+        """
         self.assertEqual(
             str(Product(name="Product A")),
             self.product.name)
 
     def test_product_price_method_of_product_models(self):
+        """
+        Assert that product price contains both the
+        currency and the amount of money
+        """
         price = self.product.product_price
         self.assertEqual(price, str(self.product.price) +
                          ' ' + self.product.currency)
 
     def test_upper_case_converter_on_product_models(self):
-        # Test UpperCaseConverter Class on product object
+        """
+        Test UpperCaseConverter Class on product object
+        """
         name_upper = UpperCaseConverter().get_prep_value(
             self.product.name
         )

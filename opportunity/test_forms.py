@@ -14,7 +14,9 @@ class TestOpportunityForm(TestCase):
     """
 
     def setUp(self):
-        # Create a test scenario
+        """
+        Establish a test scenario
+        """
         # Create a user
         self.user = User.objects.create_user(
             username="TeamUser",

@@ -28,7 +28,7 @@ class TestCommunicationViews(TestCase):
 
     def test_home_view(self):
         """
-        Test home view class
+        Test home view
         """
         response = self.client.get(self.hom_url)
         self.assertEqual(response.status_code, 200)
@@ -38,7 +38,7 @@ class TestCommunicationViews(TestCase):
 
     def test_contact_view(self):
         """
-        Test contact view class
+        Test contact view
         """
         response = self.client.get(self.contact_url)
         self.assertEqual(response.status_code, 200)

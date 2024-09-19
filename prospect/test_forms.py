@@ -8,7 +8,6 @@ class TestProspectForm(TestCase):
     """
     Test Prospect Form
     """
-
     def test_prospect_form_is_valid(self):
         """
         Test form is valid if all field

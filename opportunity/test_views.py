@@ -15,7 +15,9 @@ class TestOpportunityViews(TestCase):
     """
 
     def setUp(self):
-        # Create a test scenario
+        """
+        Create a test scenario
+        """
         self.client = Client()
         # Create a user
         self.user = User.objects.create_user(

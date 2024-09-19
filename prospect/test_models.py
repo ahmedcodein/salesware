@@ -30,8 +30,10 @@ class UserModelTest(TestCase):
     """
     Test Django user model
     """
-
     def setUp(self):
+        """
+        Establish test scenario
+        """
         # Create an instance of user
         self.user = User.objects.create_user(
             username="TeamUser",
@@ -40,7 +42,9 @@ class UserModelTest(TestCase):
         )
 
     def test_create_user(self):
-        # Assert that each attribute is correctly defined
+        """
+        Assert that each attribute is correctly defined
+        """
         self.assertEqual(self.user.username, "TeamUser")
         self.assertIsNotNone(self.user.password)
         self.assertEqual(self.user.email, "team.user@email.com")
@@ -50,12 +54,10 @@ class ProspectModelTest(TestCase):
     """
     Test prospect Model
     """
-
     def setUp(self):
         """
         Create User instance and two prospect instances
         """
-
         self.user = User.objects.create_user(
             username="TeamUser",
             email="team.user@email.com",
@@ -86,8 +88,10 @@ class ProspectModelTest(TestCase):
         )
 
     def test_create_prospect_models(self):
-        # Assert that each attribute is accurately defined in
-        # # the prospect model
+        """
+        Assert that each attribute is accurately defined in
+        the prospect model
+        """
         self.assertEqual(self.prospect.company, "A GmbH")
         self.assertEqual(self.prospect.first_name, "john")
         self.assertEqual(self.prospect.last_name, "will")
@@ -104,17 +108,23 @@ class ProspectModelTest(TestCase):
         self.assertEqual(self.prospect_b.owner, self.user)
 
     def test_meta_ordering_method_of_prospect_models(self):
-        # Test class Meta ordering
+        """
+        Test class Meta ordering
+        """
         self.assertEqual(Prospect._meta.ordering, ["company"])
 
     def test_str_method_of_prospect_models(self):
-        # Assert that the string method returns the company name
+        """
+        Assert that the string method returns the company name
+        """
         self.assertEqual(
             str(Prospect(company="A GmbH")),
             self.prospect.company)
 
     def test_upper_case_converter_on_prospect_models(self):
-        # Test UpperCaseConverter Class on prospect object
+        """
+        Test UpperCaseConverter Class on prospect object
+        """
         company_upper = UpperCaseConverter().get_prep_value(
             self.prospect.company
         )

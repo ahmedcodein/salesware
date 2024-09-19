@@ -11,7 +11,6 @@ class TestProductViews(TestCase):
     """
     Test product views class
     """
-
     def setUp(self):
         # Create a test scenario
         self.client = Client()
