@@ -37,7 +37,7 @@ class ProductModelTest(TestCase):
             updated_at=datetime.now(),
         )
 
-    def test_create_product(self):
+    def test_create_product_models(self):
         # Assert that each attribute is accurately defined in
         # the prospect model
         self.assertEqual(self.product.name, "Product A")
@@ -51,22 +51,22 @@ class ProductModelTest(TestCase):
         self.assertEqual(self.product.owner, self.user)
         self.assertEqual(self.product_b.owner, self.user)
 
-    def test_meta_ordering_method(self):
+    def test_meta_ordering_method_of_product_models(self):
         # Test class Meta ordering
         self.assertEqual(Product._meta.ordering, ["name"])
 
-    def test_str_method(self):
+    def test_str_method_of_product_models(self):
         # Assert that string method returns the product name
         self.assertEqual(
             str(Product(name="Product A")),
             self.product.name)
 
-    def test_product_price_method(self):
+    def test_product_price_method_of_product_models(self):
         price = self.product.product_price
         self.assertEqual(price, str(self.product.price) +
                          ' ' + self.product.currency)
 
-    def test_lower_case_converter(self):
+    def test_upper_case_converter_on_product_models(self):
         # Test UpperCaseConverter Class on product object
         name_upper = UpperCaseConverter().get_prep_value(
             self.product.name

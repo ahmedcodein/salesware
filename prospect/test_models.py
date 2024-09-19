@@ -85,7 +85,7 @@ class ProspectModelTest(TestCase):
             updated_at=datetime.now()
         )
 
-    def test_create_prospect(self):
+    def test_create_prospect_models(self):
         # Assert that each attribute is accurately defined in
         # # the prospect model
         self.assertEqual(self.prospect.company, "A GmbH")
@@ -103,17 +103,17 @@ class ProspectModelTest(TestCase):
         self.assertEqual(self.prospect.owner, self.user)
         self.assertEqual(self.prospect_b.owner, self.user)
 
-    def test_meta_ordering_method(self):
+    def test_meta_ordering_method_of_prospect_models(self):
         # Test class Meta ordering
         self.assertEqual(Prospect._meta.ordering, ["company"])
 
-    def test_str_method(self):
+    def test_str_method_of_prospect_models(self):
         # Assert that the string method returns the company name
         self.assertEqual(
             str(Prospect(company="A GmbH")),
             self.prospect.company)
 
-    def test_lower_case_converter(self):
+    def test_upper_case_converter_on_prospect_models(self):
         # Test UpperCaseConverter Class on prospect object
         company_upper = UpperCaseConverter().get_prep_value(
             self.prospect.company
