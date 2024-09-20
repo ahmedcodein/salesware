@@ -1,3 +1,4 @@
+/* jshint esnext: true */
 $(document).ready(function () {
     /* Create form variable */
     const contactForm = document.getElementById('contact-form');
@@ -21,23 +22,23 @@ $(document).ready(function () {
         const formDataValues = formDataExtractor(formData);
         const validDataForm = formDataValidator(formDataValues);
 
-        if (validDataForm) {            
+        if (validDataForm) {
             $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
                 type: 'POST',
                 data: formData,
                 contentType: false, // auto-detection
                 processData: false // no need to parse formData to string
             }).done(function () {
-                contactFormSendModal.show() /* Only show the modal when the form is valid */
+                contactFormSendModal.show(); /* Only show the modal when the form is valid */
                 contactFormSendModalBody.innerHTML = 'We received your email! We sent you a confirmation email.';
                 /* The next two function are introduced to reset the form
                 after successful form submission */
                 $(contactFormSendModalXCloseBtn).on('click', function () {
                     location.reload();
-                })
+                });
                 $(contactFormSendModalCloseBtn).on('click', function () {
                     location.reload();
-                })
+                });
             }).fail(function () {
                 contactFormSendModal.show(); /* Only show the modal when the form is valid */
                 contactFormSendModalBody.innerHTML = 'Oops...Something went wrong';
@@ -55,7 +56,8 @@ $(document).ready(function () {
         const formDataValues = [];
         formData.forEach((value) => {
             formDataValues.push(value);
-        }); return formDataValues
+        });
+        return formDataValues;
     }
     /** formDataValidator takes in the formDataValues array and filters
      * empty inputs if available and return false if there is/are empty
@@ -63,15 +65,15 @@ $(document).ready(function () {
      * false = formData are not valid
      * true = formData are valid
      */
-    function formDataValidator(formDataValues){
+    function formDataValidator(formDataValues) {
         let emptyValesStorage = [];
         let emptyValesStorageLength = 0;
         emptyValesStorage = formDataValues.filter(input => input.trim().length === 0);
         emptyValesStorageLength = emptyValesStorage.length;
         if (emptyValesStorageLength === 0) {
-            return true
+            return true;
         } else {
-            return false
+            return false;
         }
     }
 });

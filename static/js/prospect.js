@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Prospect edit related variables
     const editProspectBtn = document.getElementById('edit-prospect-btn');
     const editedProspectForm = document.getElementById('edit-delete-prospect-form');
-    const urlProspectEdit = 'prospect_edit/'
-    const deleteProspectBtn = document.getElementById('delete-prospect-btn')
+    const urlProspectEdit = 'prospect_edit/';
+    const deleteProspectBtn = document.getElementById('delete-prospect-btn');
     const closeEditDeleteProspectBtn = document.getElementById('edit-delete-prospect-close-btn');
-    const openProspectDetailModalCloseBtn = document.getElementById('open-prospect-detail-modal-close-btn')
+    const openProspectDetailModalCloseBtn = document.getElementById('open-prospect-detail-modal-close-btn');
     // Prospect Delete related variables
     const prospectDeleteConfirmedBtn = document.getElementById('prospect-delete-confirmed-btn');
     const urlProspectDelete = 'prospect_delete/';
@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
     to show the prospect detail*/
     openProspectDetailModal.addEventListener('show.bs.modal', function(event) {
         const urlProspectDetail = event.relatedTarget.getAttribute('data-url');
-        openProspectDetail(urlProspectDetail, openProspectDetailModalBody)
+        openProspectDetail(urlProspectDetail, openProspectDetailModalBody);
     });
     /* Listen to the create new prospect btn element, and observe if the user clicks to create
     new prospect if the user does click!*/
     // Open the modal to display the new prospect form 
     openCreateNewProspectModal.addEventListener('show.bs.modal', function(event) {
         const urlNewProspectForm = event.relatedTarget.getAttribute('data-url');
-        openProspectDetail(urlNewProspectForm, openCreateNewProspectModalBody)
+        openProspectDetail(urlNewProspectForm, openCreateNewProspectModalBody);
     });
     // Submit the post request to the database to create new prospect
     document.getElementById('create-new-prospect-form').addEventListener('submit', function(event) {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             openCreateNewProspectModalBody,
             createNewProspectBtn,
             createNewProspectCancelBtn,
-            closeCreateNewProspectModalBtn,
+            closeCreateNewProspectModalBtn
         );
     });
     // Submit the prospect edit post request to the database to update prospect data
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             deleteProspectBtn,
             closeEditDeleteProspectBtn,
             openProspectDetailModalCloseBtn
-        )
+        );
     });
     // Submit the delete post request to the database to delete prospect data
     document.getElementById('prospect-delete-confirmed-btn').addEventListener('click', function(event) {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             confirmDeleteProspectModalBody,
             prospectDeleteConfirmedBtn,
             prospectDeleteCloseConfirmModalXBtn,
-            prospectDeleteCloseConfirmModalBtn,
+            prospectDeleteCloseConfirmModalBtn
         );
     });
     /* This function handles the user request to open prospect detail
@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url)
         .then(response => response.text())
         .then(data => {
-            body.innerHTML = data
-        })
+            body.innerHTML = data;
+        });
     }
     /* This function handles the user request to create new 
     or delete prospect and the subsequent response to the relevant modal */
@@ -105,10 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
             secondBtn.innerHTML = 'Close';
             // Reset the Modal and the form to default state once closes
             secondBtn.addEventListener('click', function() {
-                location.reload()
-            })
+                location.reload();
+            });
             thirdBtn.addEventListener('click', function() {
-                location.reload()
+                location.reload();
             });
         });
     }
@@ -126,11 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
             firstBtn.style.display = 'none';
             secondBtn.style.display = 'none';
             thirdBtn.addEventListener('click', function() {
-                location.reload()
-            })
+                location.reload();
+            });
             fourthBtn.addEventListener('click', function() {
-                location.reload()
-            })        
+                location.reload();
+            });        
         });
     }
     /* This function handles the user request to 
@@ -146,10 +146,10 @@ document.addEventListener('DOMContentLoaded', function() {
             body.innerHTML = message;
             firstBtn.style.display = 'none';
             secondBtn.addEventListener('click', function() {
-                location.reload()
-            })
+                location.reload();
+            });
             thirdBtn.addEventListener('click', function() {
-                location.reload()
+                location.reload();
             });
         });
     }
