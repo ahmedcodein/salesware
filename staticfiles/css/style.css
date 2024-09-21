@@ -157,3 +157,8 @@ form.login li {
     align-items: center;
     font-size: larger;
 }
+
+/* Select2 customized color style */
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #6c757d;
+}
