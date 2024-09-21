@@ -1,157 +1,150 @@
-/* jshint esnext: true */
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Open product Detail related variables
-    const openProductDetailModal = document.getElementById('open-product-detail-modal');
-    const openProductDetailModalBody = document.getElementById('open-product-detail-modal-body');
-    // Open New product Form related variables
-    const openCreateNewProductModal = document.getElementById('open-create-new-product-modal');
-    const openCreateNewProductModalBody = document.getElementById('open-create-new-product-modal-body');
-    // product create related variables
-    const createNewProductBtn = document.getElementById('create-new-product-btn');
-    const closeCreateNewProductModalBtn = document.getElementById('create-new-product-close-btn');
-    const createNewProductCancelBtn = document.getElementById('create-new-product-cancel-btn');
-    // product edit related variables
-    const editProductBtn = document.getElementById('edit-product-btn');
-    const editedProductForm = document.getElementById('edit-delete-product-form');
-    const urlProductEdit = 'product_edit/';
-    const deleteProductBtn = document.getElementById('delete-product-btn');
-    const closeEditDeleteProductBtn = document.getElementById('edit-delete-product-close-btn');
-    const openProductDetailModalCloseBtn = document.getElementById('open-product-detail-modal-close-btn');
-    // product Delete related variables
-    const productDeleteConfirmedBtn = document.getElementById('product-delete-confirmed-btn');
-    const urlProductDelete = 'product_delete/';
-    const confirmDeleteProductModalBody = document.getElementById('confirm-delete-product-modal-body');
-    const productDeleteCloseConfirmModalXBtn = document.getElementById('product-delete-close-confirm-modal-x-btn');
-    const productDeleteCloseConfirmModalBtn = document.getElementById('product-delete-close-confirm-modal-btn');
-
-    /* Listen to the anchor element, and observe if the user clicks on any of the product's name
-    to show the product detail*/
-    openProductDetailModal.addEventListener('show.bs.modal', function (event) {
-        const urlProductDetail = event.relatedTarget.getAttribute('data-url');
-        openProductDetail(urlProductDetail, openProductDetailModalBody);
+    // Open product detail modal
+    document.getElementById('open-product-detail-modal').addEventListener('show.bs.modal', function (event) {
+        const url = event.relatedTarget.getAttribute('data-url');
+        const data = null;
+        const openProductDetailModalBody = document.getElementById('open-product-detail-modal-body');
+        const edit = false;
+        const del = false;
+        actionHandler(
+            url,
+            data,
+            openProductDetailModalBody,
+            edit,
+            del
+        );
     });
-    /* Listen to the create new product btn element, and observe if the user clicks to create
-    new product if the user does click!*/
-    // Open the modal to display the new product form 
-    openCreateNewProductModal.addEventListener('show.bs.modal', function (event) {
-        const urlNewProductForm = event.relatedTarget.getAttribute('data-url');
-        openProductDetail(urlNewProductForm, openCreateNewProductModalBody);
+    // Open create new product modal
+    document.getElementById('open-create-new-product-modal').addEventListener('show.bs.modal', function (event) {
+        const url = event.relatedTarget.getAttribute('data-url');
+        const data = null;
+        const openCreateNewProductModalBody = document.getElementById('open-create-new-product-modal-body');
+        const edit = false;
+        const del = false;
+        actionHandler(
+            url,
+            data,
+            openCreateNewProductModalBody,
+            edit,
+            del
+        );
     });
-    // Submit the post request to the database to create new product
+    // Create product record request
     document.getElementById('create-new-product-form').addEventListener('submit', function (event) {
         event.preventDefault();
-
         const url = event.target.action;
         const data = new FormData(event.target);
+        const openCreateNewProductModalBody = document.getElementById('open-create-new-product-modal-body');
+        const createNewProductBtn = document.getElementById('create-new-product-btn');
+        const createNewProductCancelBtn = document.getElementById('create-new-product-cancel-btn');
+        const closeCreateNewProductModalBtn = document.getElementById('create-new-product-close-btn');
+        const fourthBtn = null;
+        const edit = false;
+        const del = false;
 
-        createProductRecord(
+        actionHandler(
             url,
             data,
             openCreateNewProductModalBody,
             createNewProductBtn,
             createNewProductCancelBtn,
-            closeCreateNewProductModalBtn
+            closeCreateNewProductModalBtn,
+            fourthBtn,
+            edit,
+            del
         );
     });
-    // Submit the product edit post request to the database to update product data
-    editProductBtn.addEventListener('click', function (event) {
+    // Update product record request
+    document.getElementById('edit-product-btn').addEventListener('click', function (event) {
         event.preventDefault();
+        const url = 'product_edit/';
+        const editedProductForm = document.getElementById('edit-delete-product-form');
         const data = new FormData(editedProductForm);
-        editProductRecord(
-            urlProductEdit,
+        const openProductDetailModalBody = document.getElementById('open-product-detail-modal-body');
+        const editProductBtn = document.getElementById('edit-product-btn');
+        const deleteProductBtn = document.getElementById('delete-product-btn');
+        const closeEditDeleteProductBtn = document.getElementById('edit-delete-product-close-btn');
+        const openProductDetailModalCloseBtn = document.getElementById('open-product-detail-modal-close-btn');
+        const edit = true;
+        const del = false;
+        actionHandler(
+            url,
             data,
             openProductDetailModalBody,
             editProductBtn,
             deleteProductBtn,
             closeEditDeleteProductBtn,
-            openProductDetailModalCloseBtn
+            openProductDetailModalCloseBtn,
+            edit,
+            del
         );
     });
-    // Submit the delete post request to the database to delete product data
+    // Delete product record request
     document.getElementById('product-delete-confirmed-btn').addEventListener('click', function (event) {
         event.preventDefault();
+        const editedProductForm = document.getElementById('edit-delete-product-form');
         const data = new FormData(editedProductForm);
+        const url = 'product_delete/';
+        const confirmDeleteProductModalBody = document.getElementById('confirm-delete-product-modal-body');
+        const productDeleteConfirmedBtn = document.getElementById('product-delete-confirmed-btn');
+        const productDeleteCloseConfirmModalXBtn = document.getElementById('product-delete-close-confirm-modal-x-btn');
+        const productDeleteCloseConfirmModalBtn = document.getElementById('product-delete-close-confirm-modal-btn');
+        const fourthBtn = null;
+        const edit = false;
+        const del = true;
 
-        deleteProductRecord(
-            urlProductDelete,
+        actionHandler(
+            url,
             data,
             confirmDeleteProductModalBody,
             productDeleteConfirmedBtn,
             productDeleteCloseConfirmModalXBtn,
-            productDeleteCloseConfirmModalBtn
+            productDeleteCloseConfirmModalBtn,
+            fourthBtn,
+            edit,
+            del
         );
     });
-    /* This function handles the user request to open product detail
-    or the new product form */
-    function openProductDetail(url, body) {
-        fetch(url)
-            .then(response => response.text())
-            .then(data => {
-                body.innerHTML = data;
-            });
-    }
-    /* This function handles the user request to create new 
-    and the subsequent response to the relevant modal */
-    function createProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn) {
-        fetch(url, {
-                method: 'POST',
-                body: data,
-            })
-            .then(response => response.json())
-            .then(data => {
-                const message = data.message;
-                body.innerHTML = message;
-                firstBtn.style.display = 'none';
-                secondBtn.innerHTML = 'Close';
-                // Reset the Modal and the form to default state once closes
-                secondBtn.addEventListener('click', function () {
-                    location.reload();
+    /** This function handles user request to: create/read/update/delete product record. */
+    function actionHandler(url, data, body, firstBtn, secondBtn, thirdBtn, fourthBtn, edit, del) {
+        if (data === null) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    body.innerHTML = data;
                 });
-                thirdBtn.addEventListener('click', function () {
-                    location.reload();
+        } else {
+            fetch(url, {
+                    method: 'POST',
+                    body: data,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const message = data.message;
+                    body.innerHTML = message;
+                    firstBtn.style.display = 'none';
+                    if (!edit) {
+                        if (!del) {
+                            secondBtn.innerHTML = 'Close';
+                        }
+                        // Reset the Modal and the form to default state once closes
+                        secondBtn.addEventListener('click', function () {
+                            location.reload();
+                        });
+                        thirdBtn.addEventListener('click', function () {
+                            location.reload();
+                        });
+                    } else {
+                        secondBtn.style.display = 'none';
+                        // Reset the Modal and the form to default state once closes
+                        thirdBtn.addEventListener('click', function () {
+                            location.reload();
+                        });
+                        fourthBtn.addEventListener('click', function () {
+                            location.reload();
+                        });
+                    }
                 });
-            });
-    }
-    // This function handle the product edit request
-    function editProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn, fourthBtn) {
-        fetch(url, {
-                method: 'POST',
-                body: data,
-            })
-            .then(response => response.json())
-            .then(data => {
-                const message = data.message;
-
-                body.innerHTML = message;
-                firstBtn.style.display = 'none';
-                secondBtn.style.display = 'none';
-                thirdBtn.addEventListener('click', function () {
-                    location.reload();
-                });
-                fourthBtn.addEventListener('click', function () {
-                    location.reload();
-                });
-            });
-    }
-
-    // This function handle the product edit request
-    function deleteProductRecord(url, data, body, firstBtn, secondBtn, thirdBtn) {
-        fetch(url, {
-                method: 'POST',
-                body: data,
-            })
-            .then(response => response.json())
-            .then(data => {
-                const message = data.message;
-                body.innerHTML = message;
-                firstBtn.style.display = 'none';
-                secondBtn.addEventListener('click', function () {
-                    location.reload();
-                });
-                thirdBtn.addEventListener('click', function () {
-                    location.reload();
-                });
-            });
+        }
     }
 });
