@@ -108,7 +108,6 @@ else:
 CSRF_TRUSTED_ORIGINS = [
     "https://*.herokuapp.com",
     "https://*.codeinstitute-ide.net",
-    "https://ui.dev/amiresponsive"
 ]
 
 
