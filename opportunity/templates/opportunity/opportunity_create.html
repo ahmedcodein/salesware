@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
-
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-9 d-flex justify-content-center">
@@ -30,7 +29,6 @@
         </div>
     </div>
 </div>
-
 <form id="opportunity-create-form" class="form-inline my-2 my-lg-0" method="post"
     action="{% url 'opportunity_create' %}">
     {% csrf_token %}
@@ -82,7 +80,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div>
-                    <label for="opportunity-create-winning-probability">Probability of Winning:</label>
+                    <label for="opportunity-create-winning-probability">Winning Probability:</label>
                     <select name="probability" id="opportunity-create-winning-probability"
                         class="form-select form-control" aria-label="Default select example">
                         <option value="Default" selected>--Select Probability--</option>
@@ -142,7 +140,7 @@
                 <div class="col-4 col-sm-3 col-md-2 col-lg-1">
                     <!-- Button trigger modal to handle user response on the creation of new opportunity -->
                     <button type="button" id="opportunity-create-submit-btn" class="btn btn-success"
-                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        data-bs-toggle="modal" data-bs-target="#opportunity-create-modal">
                         create
                     </button>
                 </div>
@@ -151,19 +149,18 @@
         </div>
     </div>
 </form>
-
 <!-- Modal to feedback if opportunity creation is success or not -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="opportunity-create-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="opportunity-create-modal-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header salesware-background-color">
-                <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">New Opportunity</h1>
+                <h1 class="modal-title fs-5 text-white" id="opportunity-create-modal-label">New Opportunity</h1>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                     id="opportunity-create-modal-x-close" aria-label="Close"></button>
             </div>
             <div class="modal-body response-message salesware-txt-color" id="opportunity-create-submit-modal-body">
-                ...
+                <!-- Here goes the create action response -->
             </div>
             <div class="modal-footer salesware-background-color text-white">
                 <div class="container">
