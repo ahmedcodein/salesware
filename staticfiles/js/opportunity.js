@@ -101,8 +101,8 @@ $(document).ready(function () {
         const body = document.getElementById('opportunity-create-submit-modal-body');
         const CloseBtn = document.getElementById('opportunity-create-modal-close');
         const xCloseBtn = document.getElementById('opportunity-create-modal-x-close');
-        const create = true
-        const edit = false
+        const create = true;
+        const edit = false;
         actionHandler(url, data, body, CloseBtn, xCloseBtn, create, edit, create);
     });
     /* Edit opportunity record */
@@ -141,31 +141,27 @@ $(document).ready(function () {
                 if (edit || create) {
                     $(firstBtn).on('click', function () {
                         if (data.success) {
-                            returnToPage();
+                            window.location.href = ('/opportunity/');
                         }
                     });
                     $(secondBtn).on('click', function () {
                         if (data.success) {
-                            returnToPage();
+                            window.location.href = ('/opportunity/');
                         }
                     });
                 }
             });
     }
-    const backToBtn = document.getElementsByClassName('back')
-    returnToOpportunityList(backToBtn)
+    returnToOpportunityList();
     /** Loop over back class btn and get back to opportunity
      * list if use click on back class btn
      */
-    function returnToOpportunityList(backToBtn) {
+    function returnToOpportunityList() {
+        const backToBtn = document.getElementsByClassName('back');
         for (let i = 0; i < backToBtn.length; i++) {
             $(backToBtn[i]).on('click', function () {
-                returnToPage();
+                window.location.href = ('/opportunity/');
             });
         }
-    }
-    /** Get user back to the opportunity list page */
-    function returnToPage() {
-        window.location.href = ('/opportunity/');
     }
 });
