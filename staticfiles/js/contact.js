@@ -16,6 +16,7 @@ $(document).ready(function () {
         formData.append('service_id', 'service_cmj5z1c');
         formData.append('template_id', 'template_h8t73vr');
         formData.append('user_id', 'dxEqK4OEkA7Rdb0Tz');
+        formData.append('recipient', 'SalesWare Support');
 
         /* The validation step is added to prevent user from entering
         inputs with only spaces as apposed to valid characters */
