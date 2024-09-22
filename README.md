@@ -153,4 +153,5 @@ List the tools used in the project.
 
 ## 9 Acknowledgements
 
-Acknowledge any help received during the project.
+I would like to express my sincere gratitude to Mr. David Bowers for his outstanding mentorship. His follow up, the provision of additional time to answer questions are extraordinary. He always is available to offer the help in finding solutions and sharing his recommendations on further readings on a variety of related topic. Those spectacular traits of Mr. Bowers comes only second to his genuine passion of helping others to succeed. The PP4 is my last project under his mentorship, I truly hope that we cross paths again in the near future. 
+Finally, I would also like to thank my family for helping me by providing the continuous encouragement and with the valuable help with the manual testing.
