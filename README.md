@@ -1,5 +1,14 @@
 # SalesWare
 
+SalesWar is a sales process software tool. It aims to digitalize the sales activity in order to boost productivity of any sales team.
+The market entry of SalesWare is small businesses and startups. More specifically, those businesses that:
+ - are neither content with using excel sheets to track their sales activity due to complexity and generality
+ - nor can offered the subscription fees of the established Software tools like Microsoft Dynamic or SalesForce.
+
+SalesWare is built as a foundational module of a Customer Relationship Management (CRM) software. This then represents the ultimate vision of this project.
+
+Therefore, SalesWare in its current state should not be viewed as a solution that promises all the expected features an established sales process tool or a CRM tool is assumed to have, but rather as a minimum viable product that would allow the author to present the solution to the early adopters. This is in order to get the needed feedback as to what features are truly essential for those users to incorporate into the newer versions.
+
 ## 1 Introduction
 
 Briefly introduce my project here. What does it aim to do? Who is it for?
