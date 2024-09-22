@@ -11,9 +11,43 @@ Therefore, SalesWare in its current state should not be viewed as a solution tha
 
 ## 1 Introduction
 
-Briefly introduce my project here. What does it aim to do? Who is it for?
+SalesWare is developed to help sales team to digitalize their sales process and track opportunity progress. In this introduction, the user will find all the required information 
+to start working with the SalesWare.
 
-### 1.1 SalesWare User Manual
+In this section, we provide you with all the information required to use our solution, SalesWare. First we define the important terms and then provide a complete user manual which will help you start working with SalesWare.
+
+### 1.1 Getting Started
+
+Before embarking on how to use the tool, SalesWare user must be acquainted with few terms. These terms are user, admin, prospect, product and opportunity.
+
+Organization: an organization is an owner of SalesWare license. This organization consists of multiple departments. The ultimate user of the SalesWare within this organization is the Sales Department team members.
+
+Admin: The admin is a member of the organization Sales department. The admin has unlimited user permissions over the SalesWare application. To add some colors, the admin is the Head of Sales Department, or any other title that is responsible for the sales team of that organization.
+
+User: a user is a member of the organization sales department with limited user permission. Most likely, the user is a sales manager, business developer etc.
+
+Prospect: a prospect is an external firm that is interested in one or more of the organization offerings.
+
+Product: a product is one of the organization offerings. It can be either a product or a service.
+
+Opportunity: an opportunity is a chance of selling the defined product to the defined prospect
+
+Since the main terms now are established, we can provide some detail about the software main components. In the current version, SalesWare comes with four main components. These are:
+
+- **Prospect Management:**\
+  The prospect management concerns with the listing/reading/creating/updating/deleting a prospect record.
+- **Product Management;**\
+  The prospect management concerns with the listing/reading/creating/updating/deleting a product record. 
+- **Opportunity Management:**\
+  The Opportunity Management concerns with the listing/reading/creating/updating/deleting an opportunity record.  
+- **Communication Management:**\
+  This Communication Management concerns with the provisioning of information about SalesWare to the site visitor by providing some information about SalesWare for
+  and a place where the visitor can contact SalesWare for any technical question or subscription requests.
+  It also provides the user of the software the capability to contact toSalesware support team for any technical or non-technical requests.
+
+In the next section, we will see how these terms and components are implemented and used to track your sales deals in addition to how to sign up, sing in and contact our support team.
+
+### 1.2 SalesWare User Manual
 
 ## 2 Project Objective
 
