@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.codeinstitute-ide.net', '.herokuapp.com', 'https://ui.dev/amiresponsive']
+ALLOWED_HOSTS = ['.codeinstitute-ide.net', '.herokuapp.com']
 
 
 # Application definition
@@ -108,7 +108,6 @@ else:
 CSRF_TRUSTED_ORIGINS = [
     "https://*.herokuapp.com",
     "https://*.codeinstitute-ide.net",
-    "https://ui.dev/amiresponsive",
 ]
 
 
