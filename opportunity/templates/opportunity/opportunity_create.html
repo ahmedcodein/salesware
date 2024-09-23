@@ -48,8 +48,8 @@
                 <div>
                     <label for="opportunity-create-prospect">Prospect Name:</label>
                     <select name="lead" id="opportunity-create-prospect" class="form-select form-control"
-                        aria-label="Default select example">
-                        <option value="">--Select prospect--</option>
+                        aria-label="select prospect from the dropdown options">
+                        <option value="Default">--Select Prospect--</option>
                         {% for prospect in prospects %}
                         <option value="{{ prospect.id }}">{{ prospect }}</option>
                         {% endfor %}
@@ -60,7 +60,7 @@
                 <div>
                     <label for="opportunity-create-product">Product Name:</label>
                     <select name="solution" id="opportunity-create-product" class="form-select form-control"
-                        aria-label="Default select example">
+                        aria-label="select product from the dropdown options">
                         <option value="Default" selected>--Select Product--</option>
                         {% for product in products %}
                         <option value="{{ product.id }}" data-price="{{ product.product_price }}">{{ product }}</option>
@@ -82,8 +82,8 @@
                 <div>
                     <label for="opportunity-create-winning-probability">Winning Probability:</label>
                     <select name="probability" id="opportunity-create-winning-probability"
-                        class="form-select form-control" aria-label="Default select example">
-                        <option value="Default" selected>--Select Probability--</option>
+                        class="form-select form-control" aria-label="Select the Winning probability from the options>
+                        <option value=" Default" selected>--Select Probability--</option>
                         <option value="25">25%</option>
                         <option value="50">50%</option>
                         <option value="75">75%</option>
@@ -98,7 +98,7 @@
             <div class="col-12 col-sm-6 col-md-3 col-lg-4 col-xl-2 mt-2">
                 <div> <label for="opportunity-create-status">Opportunity Status:</label>
                     <select name="status" id="opportunity-create-status" class="form-select form-control"
-                        aria-label="Default select example">
+                        aria-label="Select opportunity status">
                         <option value="Default" selected>--Select Status--</option>
                         <option value="In Progress">In Progress</option>
                     </select>
@@ -108,7 +108,7 @@
                 <div>
                     <label for="opportunity-create-sales-process-stage">Sales Process Stage:</label>
                     <select name="sales_stage" id="opportunity-create-sales-process-stage"
-                        class="form-select form-control" aria-label="Default select example">
+                        class="form-select form-control" aria-label="Select opportunity sales stage">
                         <option value="Default" selected>--Select Stage--</option>
                         <option value="Lead">Lead</option>
                         <option value="Proposal">Proposal</option>
