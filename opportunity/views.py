@@ -146,7 +146,7 @@ def opportunity_edit(request):
             return JsonResponse(
                 {
                     'success': True,
-                    'message': 'The new opportunity is successfully updated!'
+                    'message': 'The opportunity is successfully updated!'
                 }
             )
         elif f_condition and opportunity.owner is not request.user:
