@@ -20,17 +20,17 @@ In this section, we provide you with all the information required to use our sol
 
 Before embarking on how to use the tool, SalesWare user must be acquainted with few terms. These terms are user, admin, prospect, product and opportunity.
 
-Organization: an organization is an owner of SalesWare license. This organization consists of multiple departments. The ultimate user of the SalesWare within this organization is the Sales Department team members.
+#### Organization: an organization is an owner of SalesWare license. This organization consists of multiple departments. The ultimate user of the SalesWare within this organization is the Sales Department team members.
 
-Admin: The admin is a member of the organization Sales department. The admin has unlimited user permissions over the SalesWare application. To add some colors, the admin is the Head of Sales Department, or any other title that is responsible for the sales team of that organization.
+#### Admin: The admin is a member of the organization Sales department. The admin has unlimited user permissions over the SalesWare application. To add some colors, the admin is the Head of Sales Department, or any other title that is responsible for the sales team of that organization.
 
-User: a user is a member of the organization sales department with limited user permission. Most likely, the user is a sales manager, business developer etc.
+#### User: a user is a member of the organization sales department with limited user permission. Most likely, the user is a sales manager, business developer etc.
 
-Prospect: a prospect is an external firm that is interested in one or more of the organization offerings.
+#### Prospect: a prospect is an external firm that is interested in one or more of the organization offerings.
 
-Product: a product is one of the organization offerings. It can be either a product or a service.
+#### Product: a product is one of the organization offerings. It can be either a product or a service.
 
-Opportunity: an opportunity is a chance of selling the defined product to the defined prospect
+#### Opportunity: an opportunity is a chance of selling the defined product to the defined prospect
 
 Since the main terms now are established, we can provide some detail about the software main components. In the current version, SalesWare comes with four main components. These are:
 
@@ -48,6 +48,8 @@ Since the main terms now are established, we can provide some detail about the s
 In the next section, we will see how these terms and components are implemented and used to track your sales deals in addition to how to sign up, sing in and contact our support team.
 
 ### 1.2 SalesWare User Manual
+
+The SalesWare User Manual is available on the following link: [User Manual](MANUAL.md)
 
 ## 2 Project Objective
 
