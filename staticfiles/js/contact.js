@@ -35,10 +35,10 @@ $(document).ready(function () {
                 /* The next two function are introduced to reset the form
                 after successful form submission */
                 $(contactFormSendModalXCloseBtn).on('click', function () {
-                    location.reload();
+                    window.location.href = ('/');
                 });
                 $(contactFormSendModalCloseBtn).on('click', function () {
-                    location.reload();
+                    window.location.href = ('/');
                 });
             }).fail(function () {
                 contactFormSendModal.show(); /* Only show the modal when the form is valid */
