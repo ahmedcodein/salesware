@@ -1,36 +1,43 @@
 # SalesWare
 
-SalesWar is a sales process software tool. It aims to digitalize the sales activity in order to boost productivity of any sales team.
-The market entry of SalesWare is small businesses and startups. More specifically, those businesses that:
- - are neither content with using excel sheets to track their sales activity due to complexity and generality
+**SalesWar** is a sales process software tool. It aims to digitalize the sales activity in order to boost the productivity of your sales team.
+The market entry of **SalesWare** is small businesses and startups. More specifically, those businesses that:
+ - are neither content with using excel sheets to track their sales activity due to complexity and generality.
  - nor can offered the subscription fees of the established Software tools like Microsoft Dynamic or SalesForce.
 
-SalesWare is built as a foundational module of a Customer Relationship Management (CRM) software. This then represents the ultimate vision of this project.
+**SalesWare** is built as a foundational module of a Customer Relationship Management (CRM) software. The envisioned CRM then represents the ultimate vision of this project. This vision includes other modules like MarketingWare, ServiceWare, SupportWare and DataWare. Moreover, each of those modules will integrate Data Analytics to bring additional value to our users.
 
-Therefore, SalesWare in its current state should not be viewed as a solution that promises all the expected features an established sales process tool or a CRM tool is assumed to have, but rather as a minimum viable product that would allow the author to present the solution to the early adopters. This is in order to get the needed feedback as to what features are truly essential for those users to incorporate into the newer versions.
+**SalesWare** in its current state should not be viewed as a solution that promises all the expected features an established sales process tool or a CRM tool is assumed to have. But rather as a minimum viable product (MVP) with the main purpose of getting the Author at the door step of potential buyers. Through their feedbacks and unique sales process, **SalesWare** can be further developed to evolve into much more sophisticated sales tool.
+
+![Main View](docs/introduction/amIresponsive.PNG)
 
 ## 1 Introduction
 
-SalesWare is developed to help sales team to digitalize their sales process and track opportunity progress. In this introduction, the user will find all the required information 
-to start working with the SalesWare.
+SalesWare is developed to help sales team to digitalize their sales process and track opportunities progress. In this introduction, the user will find all the required information to start working with the SalesWare.
 
 In this section, we provide you with all the information required to use our solution, SalesWare. First we define the important terms and then provide a complete user manual which will help you start working with SalesWare.
 
 ### 1.1 Getting Started
 
-Before embarking on how to use the tool, SalesWare user must be acquainted with few terms. These terms are user, admin, prospect, product and opportunity.
+Before embarking on how to use the tool, SalesWare user must be acquainted with few terms. These terms are organization, admin, user, prospect, product and opportunity.
 
-#### Organization: an organization is an owner of SalesWare license. This organization consists of multiple departments. The ultimate user of the SalesWare within this organization is the Sales Department team members.
+#### Organization:
+An organization is an owner of SalesWare license. This organization consists of multiple departments. The ultimate user of the SalesWare within this organization is the Sales Department team members.
 
-#### Admin: The admin is a member of the organization Sales department. The admin has unlimited user permissions over the SalesWare application. To add some colors, the admin is the Head of Sales Department, or any other title that is responsible for the sales team of that organization.
+#### Admin:
+The admin is a member of the organization Sales department. The admin has unlimited user permissions over the SalesWare application. To add some colors, the admin is the Head of Sales Department, or any other title that is responsible for the sales team of that organization.
 
-#### User: a user is a member of the organization sales department with limited user permission. Most likely, the user is a sales manager, business developer etc.
+#### User:
+A user is a member of the organization sales department with limited user permission. Most likely, the user is a sales manager, business developer etc.
 
-#### Prospect: a prospect is an external firm that is interested in one or more of the organization offerings.
+#### Prospect:
+A prospect is an external firm that is interested in one or more of the organization offerings.
 
-#### Product: a product is one of the organization offerings. It can be either a product or a service.
+#### Product:
+A product is one of the organization offerings. It can be either a product or a service.
 
-#### Opportunity: an opportunity is a chance of selling the defined product to the defined prospect
+#### Opportunity:
+An opportunity is a chance of selling the defined product to the defined prospect.
 
 Since the main terms now are established, we can provide some detail about the software main components. In the current version, SalesWare comes with four main components. These are:
 
@@ -41,11 +48,9 @@ Since the main terms now are established, we can provide some detail about the s
 - **Opportunity Management:**\
   The Opportunity Management concerns with the listing/reading/creating/updating/deleting an opportunity record.  
 - **Communication Management:**\
-  This Communication Management concerns with the provisioning of information about SalesWare to the site visitor by providing some information about SalesWare for
-  and a place where the visitor can contact SalesWare for any technical question or subscription requests.
-  It also provides the user of the software the capability to contact toSalesware support team for any technical or non-technical requests.
+  This Communication Management provides a communication means between SalesWare and its customer/users. 
 
-In the next section, we will see how these terms and components are implemented and used to track your sales deals in addition to how to sign up, sing in and contact our support team.
+  More information on each of the four component is provided in the next section. We will also explain how these terms and components are implemented and used to track your sales deals in addition to how to sign up, sing in and sign out of SalesWare.
 
 ### 1.2 SalesWare User Manual
 
