@@ -58,17 +58,23 @@ The SalesWare User Manual is available on the following link: [User Manual](MANU
 
 ## 2 Project Objective
 
-### 2.1 Project Overarching Objective
+This section is devoted to explain the rational behind developing SalesWare. It aims to answer the following questions:
 
-Describe the main goal of the project.
+Why SalesWare?
+What drives the author to develop SalesWare?
+Why the user should care about using SalesWare?
 
-### 2.2 Website Owner Objectives
+### 2.1 Project Objective
 
-List the objectives for the website owner.
+Sales activity is one of the main activities of any businesses. It produces important metrics of any organization. Senior-level executives use those metrics to analyze and evaluate the firm's health, competitions, product demands etc.. In addition, sales forecast drives most of the firm's future plans that touch upon every aspect of a business.
 
-### 2.3 Website User Objectives
+Having a sales software that collects, stores and present such data like, customers' data, firm's offerings, opportunities tracking, historical sales data, customer acquisition metrics and sales pipeline is , therefore, of a great help to the firm decision makers.
 
-Detail what the visitors of the website should be able to achieve.
+The Software As A Service (SAAS) has taped into this need. We witnessed in the last couple of decades an explode in the number of Sales tools and CRM systems. Yet, there is still a nontrivial number of organizations, small businesses and startups, use excel sheets or similar products to track and record their sales activity. This is due to the fact that the license cost of the sophisticated SAAS solutions are quite high making it a burden on those small businesses to acquire.
+
+On the other hand, tools like excel sheets are not designed to serve sales people. They are built for general purposes, hence they are not easy to use. Furthermore, the customization of such tools comes with high cost. In addition, any change to the firm sales activity in terms of process, business rules or metrics will lead to massive adaptation cost.
+
+All that led the author to consider developing a sales tool that can support those businesses by providing an affordable sales activity-tailored solution.
 
 ## 3 Design Concept
 
