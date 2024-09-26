@@ -56,15 +56,15 @@ Since the main terms now are established, we can provide some detail about the s
 
 The SalesWare User Manual is available on the following link: [User Manual](MANUAL.md)
 
-## 2 Project Objective
+## 2 Planing
+
+### 2.1 Project Objective
 
 This section is devoted to explain the rational behind developing SalesWare. It aims to answer the following questions:
 
 Why SalesWare?
 What drives the author to develop SalesWare?
 Why the user should care about using SalesWare?
-
-### 2.1 Project Objective
 
 Sales activity is one of the main activities of any businesses. It produces important metrics of any organization. Senior-level executives use those metrics to analyze and evaluate the firm's health, competitions, product demands etc.. In addition, sales forecast drives most of the firm's future plans that touch upon every aspect of a business.
 
@@ -76,36 +76,154 @@ On the other hand, tools like excel sheets are not designed to serve sales peopl
 
 All that led the author to consider developing a sales tool that can support those businesses by providing an affordable sales activity-tailored solution.
 
-## 3 Design Concept
+### 2.2 Design Concept
 
-### 3.1 Business Process
-### 3.2 Data Model
-### 3.3 Application Requirements
+The design concept of SalesWare is based on the general Reference Model used to develop an information system. This reference model is widely used in the enterprise architecture design. The adopted Reference Model core layers are Process, Data and application layers. The other two layers are the strategy and the infrastructure. The former is briefly explained in the previous section. It involves the strategic rational behind developing and/or integrating an enterprise solution to the business operation. The latter layer is the infrastructure layer. It is concerned with the infrastructure required to build and integrate the information system (solution). This layer is out of this project scope.
 
-## 4 Design Outlines
+The following subsections aim to provide a detailed account of the main three layers mentioned above to shed some light on how the solution is designed.
 
-Describe the structure of the website.
+#### 2.2.1 Process
 
-### 4.1 Wireframes
+The process layer covers the procedure of a specific activity within a firm's value chain. It is the corner stone of developing any enterprise information system solution. Hence, the author first has devised a generic sales process. This process is devised to help the development of the MVP. **SalesWare** *can be adapted to assume any other sales process upon a request from the user*.
+
+The devised sales process is shown in the figure below.
+
+![process](docs/design_concept/process.png)
+
+By establishing the process, the main entities and business rules can easily be extracted. Those entities and business rules are essential to design the data model, the logic to be implemented into the code and also to extract the general requirements of the application. For instance, one can observe that there are four entities that are essential to this business scenario. These are Prospect, Product and Opportunity. In addition, one can notice, that the process goes into different stages these are Lead, Proposal, Negotiation and finally Close. The process is said to be Closed if it is a Won or Lost. Such information are crucial to the development of the logical data model which is the subject of the next subsection.
+
+#### 2.2.2 Data
+
+This section is devoted to present the data model of SalesWare. The Data Model is built to reflect the business process described in the Process subsection. The data model implemented is depicted in the figure below.
+
+![Data Model](docs/design_concept/data.png)
+
+#### 2.2.3 Application
+
+The application layer is the last layer of the reference model. In the context of this project, the author first extracts only a list of high-level requirements of the application based on the outcomes of the process and data layers. Then the author uses this list as the basis for creating the Epics and breaks down those Epics into a comprehensive list of user stories. The list of the high-level requirements are listed below .
+
+- Account Management Capability\
+  Sign in, sing out and sign up, admin user with unlimited permissions, users with limited permissions, 
+- Prospect Management Capability\
+  read/create/update/delete of prospects
+- Product Management Capability\
+  read/create/update/delete of product
+- Opportunity Management Capability\
+  read/create/update/delete of opportunity
+- Communication Management Capability\
+  Means of communication between user/visitor and the software developer
+
+##### 2.2.3.1 Epics and User Stories
+
+Agile methodology is used to develop the Software. The high-level requirements presented in the previous section are followed to define the five Epics of the project. Those Epics are then broke down into 32 User Stories.
+
+**Epic SW-1 Account Management**\
+*Description:* A set of features that allows the site visitor to create user accounts and for the user to access and use the application features. Additionally, this part also concerns with dedicated features for the admin account.
+
+  - **Register a User account**
+    - As a Site Visitor, I can register as User so that I can log in securely into the website.
+  - **Store login information**
+    - As a Site User, I can store my login information securely so that I can logout and login again into the website.
+  - **Admin User Account**
+    - As a Site Admin, I can see all the Users so that I can control who has access to the software.
+  
+**Epic SW-2 Prospect Management**\
+*Description:* A set of features that allows the users to manage prospects entry.
+
+  - **Create Prospect Entry**
+    - As a Site User, I can create a new Prospect so that I can save it in the database.
+  - **Open and Read Prospect Entry**
+    - As a Site User, I can click on a Prospect name so that I can open and read its information.
+  - **Edit Prospect Entry**
+    - As a Site User, I can edit the Prospect information so that I can save any updated information about the prospect.
+  - **Delete Prospect Entry**
+    - As a Site User, I can delete the Prospect so that I can remove it from the database.
+  - **Prospect Name Case Sensitive**
+    - As a User, I can always save the prospect name in upper case in DB, so that I can not accidentally duplicate the name if I entered it as a whole or partially in lower case.
+  - **Prospect Page**
+    - As a Site User, I can view all the prospect in a dedicated page so that I can view all the prospects in an excel sheet-like display.
+
+**Epic SW-3 Product Management**\
+*Description:* A set of features that allows the users to manage product entry.
+
+  - **Products Page**
+    - As a Site User, I can view all the products in a dedicated page so that I can view all the products in an excel sheet-like display.
+  - **Create Product Entry**
+    - As a Site User, I can create a new Product so that I can save it in the database.
+  - **Open and Read Product**
+    - As a Site User, I can click on the Product name so that I can open and read its information.  
+  - **Edit Product Entry**
+    - As a Site User, I can edit the product information so that I can save any updated information about the product.
+  - **Delete Product Entry**
+    - As a Site User, I can delete the product so that I can remove it from the database.
+  - **Product Name Case Sensitive**
+    - As a User, I can always save the product name in upper case in DB, so that I can not accidentally duplicate the name if I entered it as a whole or partially in lower case.
+    
+**Epic SW-4 Opportunity Management**\
+*Description:* A set of features that allows the user to manage the sales cycle of a specific product according to the defined sales process and displays this cycle in a specialized dashboard
+
+  - **Opportunities Page**
+    - As A Site User, I can open the opportunity page, so that I can see the list of all the opportunities I have created.
+  - **Create Opportunity Entry**
+    - As a Site User, I can create new opportunity so that I can save it in the database.
+  - **Open and Read Opportunity**
+    - As a Site User, I can click on the opportunity to open it so that I can read its information.  
+  - **Edit Opportunity Entry**
+    - As a Site User, I can update the opportunity so that I can save any updates of that opportunity.
+  - **Delete Opportunity Entry**
+    - As a Site User, I can delete the opportunity so that I can remove it from the database.
+  - **Opportunity Name Case Sensitive**
+    - As a User, I can always save the opportunity name in upper case in DB, so that I cannot accidentally duplicate the name if I entered it as a whole or partially in lower case.
+  - **Return to Opportunity list**
+    - As a User, I can automatically return to the opportunity list page after creating/editing/deleting an opportunity record, so I can see the updated list after my action.  
+  - **Opportunity Back Button links to Opportunity List Page**
+    - As a User, I can click on a back button on the opportunity detail/create pages, so I can go back to the opportunity list page.
+  - **Opportunity Record Control**
+    - As a User, I cannot edit or delete Opportunity Record that i do not own unless I am the admin, so that I can ensure that I have a full control about the data that I create.
+
+**Epic SW-6 Communication Management**\
+*Description:* A set of feature to enable the user to communicate with SalesWare team
+
+  - **Home Page**
+    - As a Site Visitor, I can find an engaging and purposefully designed landing page so that I can feel appealed to create an account and use the application
+  - **Contact Page**
+    - As a Site Visitor or User, I can Contact the Website Developer so that I can get more information or purchase a customized version of the application
+  - **Email Received**
+    - As a Site Visitor or User, I can receive email message so that I can be sure that message to the site owner is received.
+  - **Confirmation Modal Message**
+    - As a Site Visitor or User, I can see a confirmation message that my message is sent once I sent the contact form so that I can know that i filled out the contact form correctly.
+  - **Contact Form Received**
+    - As a Site Owner, I can receive an email if a user sent a contact form, so that I can read what the user inquiry is.
+  - **Sign-Up or Sign-In Errors Related Messages**
+    - As a Site Visitor or User, I can see Sign-Up or Sign-In related errors with red color style, so I can distinguish them quickly from the rest of the text in the Sign-Up or Sign-In pages.
+  - **Link to Contact Page**
+    - As A User or Site Visitor, I can reach the contact page from the home page, so that I got directly to the contact page
+  - **Active Page** 
+    - As a Site Visitor or User, I can see the page I am in using a signifier, so that I can always know what page I am at.
+  
+Further detail on the Agile Methodology followed in this project is provided in the execution section.
+
+> **Note:** There is a discrepancy in the Epics numberings. Where Epic 5 is missing. This is due to the fact that Jira keeps the numbering continue even if an epic is deleted. The author deleted Epic 5 as this Epic is shifted to be part of the future work. The author touches upon this point in the section of Future Work.
+>  
+
+### 2.3 Wireframes
 
 Provide links to or embed images of the wireframes for:
 - Smartphone Version
 - Tablet Version
 - Desktop Version
 
-### 4.2 Color
+### 2.4 Color
 
 Talk about the color scheme of the website.
 
-### 4.3 Fonts
+### 2.5 Typography
 
 Detail the fonts used in the project.
 
 ## 5 Execution
 
 Outline the plan for developing the website.
-
-### 5.1 Development Methodology
 
 ### 5.1 Technologies Used
 
