@@ -208,10 +208,27 @@ Further detail on the Agile Methodology followed in this project is provided in 
 
 ### 2.3 Wireframes
 
-Provide links to or embed images of the wireframes for:
-- Smartphone Version
-- Tablet Version
-- Desktop Version
+The Wireframes design concept is structured in a way that reflects the sequence of the Epics presented in the Application requirements section. For example, Account Management consists of the pages that is responsible for Sign Up, Sign In and Sign Out and so on for the rest of the epics and their respective pages. The Wireframes designs presented in this section cover both PC and Mobile screen view scenarios.
+
+#### 2.3.1 Account Management
+
+![Sign in/up/out Management](docs/wireframes/sign_in_out_up.png)
+
+#### 2.3.2 Prospect Management
+
+![Prospect Management](docs/wireframes/prospect.png)
+
+#### 2.3.3 Product Management
+
+![Product Management](docs/wireframes/product.png)
+
+#### 2.3.4 Opportunity Management
+
+![Opportunity Management](docs/wireframes/opportunity.png)
+
+#### 2.3.5 Communication Management
+
+![Communication Management](docs/wireframes/communication.png)
 
 ### 2.4 Color
 
