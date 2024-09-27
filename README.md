@@ -232,11 +232,29 @@ The Wireframes design concept is structured in a way that reflects the sequence 
 
 ### 2.4 Color
 
-Talk about the color scheme of the website.
+The following color pallette is used for building up the website text, line breaks, buttons background the general background colors.
+
+![Color Pallet](docs/colors/color_palette.PNG)
+
+The following table explains the usage of those colors.
+
+| Color Code | Usage | Usage |
+| ----------- | ----------- | ----------- |
+| #ffffff: White | Buttons text, text over #0e253f |  |
+| #6c757d: Slate-gray | Close or Cancel background buttons, background color of select options elements | Bootstrap Secondary Background Color|
+| #198754: Sea-green | Update background button | Bootstrap Success Background Color  |
+| #dc3545: Rusty-red | Delete and Confirm buttons, Account Management error messages | Bootstrap Danger Background Color |
+| #213e60: Indigo-dye | Text over #ffffff Background | SalesWare Brand Text Color |
+| #0e253f: Oxford-blue | General background color, "Send" and "+" buttons  | SalesWare Brand Background Color |
+
+The contrast evaluation of the selected colors is provided in the figure below.
+
+![Contrast Grid](docs/colors/contrast_grid.PNG)
+
 
 ### 2.5 Typography
 
-Detail the fonts used in the project.
+No specific font is used for this project. The author decides to implement the default font.
 
 ## 5 Execution
 
