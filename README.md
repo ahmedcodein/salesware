@@ -256,13 +256,55 @@ The contrast evaluation of the selected colors is provided in the figure below.
 
 No specific font is used for this project. The author decides to implement the default font.
 
-## 5 Execution
+## 3 Execution
 
-Outline the plan for developing the website.
+The sections explains the execution activity. The section begins with the Technologies used to develop SalesWare. It also provides a summary about the agile methodology implemented with brief summary about the project management performance evaluation. Another subsection is devoted to list all SalesWare features followed by a comprehensive testing documentation. A separate subsection is dedicated to discuss the bugs and a brief discussion on the public API of EmailJS service. The section then concludes with subsection dedicated for the deployment procedure.
 
-### 5.1 Technologies Used
+### 3.1 Technologies Used
 
-List the technologies and tools used in the project.
+a List of the technologies and tools used to develop this project is provided below:
+
+| Technology | Description | 
+| ----------- | ----------- |
+| HTML | Hypertext Markup Language |
+| CSS | Style Sheet Language |
+| JavaScript | Programming Language |
+| Python | Programming Language |
+| Bootstrap | Frontend toolkit |
+| jQuery | JavaScript library |
+| Django | Python web framework |
+| CI Database | Code Institute Postgres Database |
+| EmailJS | Sending Email from Code Service |
+| GitHub | Development Platform |
+| Gitpod | Cloud Development Environment |
+| Heroku | Development Platform |
+| Chrome DevTools | Web developer toolkit |
+| Jira | Project Management Tool |
+| Wave Evaluation Tool | Accessibility evaluation tool |
+| CI Python Linter | Code Institute Python code style convention checker |
+| JShint | Static code JavaScript code analysis tool |
+| W3C Markup Validation Service | HTML Validator |
+| W3C CSS Validation Service | CSS Validator | 
+
+### 3.2 Agile Development
+
+The philosophy adopted to develop SalesWare follows the Agile methodology. The project is broke down into five Epics. Each epic is further broke down into user stories. The backlog is then created. It consists of five Epics which contains 32 User Stories, please refer to [Epics and User Stories subsection](README.md#2231-epics-and-user-stories) to review the complete list of the stories. 
+
+The work is then executed in iterations. Each iteration (Sprint) is set to span two weeks except the third sprint. The third sprint is extended by 6 days to add additional features where not first included into the backlog. The entire development consumed seven weeks excluding documentation. The project development commencement on 21.07.2024 which is the date of starting the first sprint. Due to summer break, the second sprint started on 19.08.2024. The third sprint is then followed and ends on 22.09.2024. The figure below shows Jira project timeline.
+
+![TimeLine](docs/agile_development/development_timeline.png)
+
+Epics' user stories are distributed over the sprints according to the User Story priority. The user stories distribution over each sprint is summarized in Jira-export excel sheet.
+
+![Sprint Distribution](docs/agile_development/sprints_distribution.png)
+ 
+The development velocity is increased during the second sprint and significantly in the third sprint. There are technical and management reasons for that. With respect to the technicality, two main issues are considered to be the cause. On one hand, the learning curve possessed a low slop due to the structural complexity of Django project. In particular, the phase of creating the project with its first two Apps were a bit of challenge with respect to connecting the main components of the project together, namely: urls, views, templates and how to correctly pass the information from one to the other. On the other hand, the difficulty that comes with implementing Bootstrap and making the templates content responsive.
+
+The management difficulty is related to the author undertaking of two roles at the same time. On other words, being the developer and the product owner simultaneously. Being more focused on getting the code working has left some user stories defined in the first two sprints to be quite general with less adequate granularity than what it needs to be. The reader could observe this by comparing the quality of the user stories descriptions of the third sprint and those of the first two sprints.
+
+In the third sprint, the author becomes technically more comfortable. Consequently, this is translated into a better management style and quality. This two dimensional improvement (Technical and management) resulted into the inclusion of additional user stories to the third sprint. The reader might expect this should be obvious, considering that the third sprint is **40%** longer than a two-week sprint. Which is quite true, the additional time certainly contributed. But in the same time, the reader can see from the figure below that in the third sprint alone, the author got **60%** of the user stories done with significantly better user story scop granularity definition. Please review the [user stories](/README.md#2231-epics-and-user-stories) again for description quality comparison. 
+
+![Velocity Report](docs/agile_development/velocity_report.PNG)
 
 ### 5.2. Features
 
