@@ -306,27 +306,269 @@ In the third sprint, the author becomes technically more comfortable. Consequent
 
 ![Velocity Report](docs/agile_development/velocity_report.PNG)
 
-### 5.2. Features
+### 3.3. Features
 
-#### 5.2.1 Communication App
+This subsection provides a comprehensive list and screenshot presentation of the SalesWare features. The first subsection introduce features that are shared by all the pages of SalesWare. Then a dedicate subsection is devoted to list the unique features according their distribution to their respective Epic.
 
-Describe home and contact pages of the website.
+#### 3.3.1 Shared Features
 
-#### 5.2.2 Prospect App
+SalesWare brand comes with two logos. The first logo (the picture on the right below) is large and you can find it on the header of each page. the small logo is used in the footer. It is also used to create the Favicon of the website. Below both logos are presented.
 
-Detail the prospect page of the website.
+![SalesWare Logo](docs/features/shared_features/logo.jpg)
+![SalesWare Footer logo and Favicon](docs/features/shared_features/favicon_footer_logo.jpg)
 
-#### 5.2.3 Product App
+The header of SalesWare is shown below in two different scenarios for large screen case. One where the user is logged in and the other where the user is not yed logged in:
 
-Describe product page of the website.
+![SalesWare Header User Not Logged IN](docs/features/shared_features/header_not_logged_in.png)
+![SalesWare Header User Logged IN](docs/features/shared_features/header_logged_in.png)
 
-#### 5.2.3 Opportunity App
+The header in small screen is shown below:
 
-Describe opportunity page of the website.
+![SalesWare Header Small Screen](docs/features/shared_features/header_sm.png)
 
-#### 5.2.4 Login, logout and sign up pages
+The footer of SalesWare is shown in the following screenshot. The first view is for large screen while the second for small screens.
 
-Describe Login, logout and sign up pages of the website.
+![SalesWare Footer](docs/features/shared_features/footer.png)
+
+![SalesWare Footer Small Screens](docs/features/shared_features/footer_sm.png)
+
+SalesWare makes use of Modal when opening/creating/editing/deleting an object record. The model design follows the same patterns. Those patterns are presented here.
+
+1. Modal General Header. The text varies depending on the purpose of the modal.
+
+![Modal General Header - Create Object ](docs/features/shared_features/modal_header_create.png)
+![Modal General Header - Open Object ](docs/features/shared_features/modal_header_open.png)
+
+2. Modal General Footer. The buttons varies depending on the purpose of the modal.
+
+![Modal General Footer - Create Object](docs/features/shared_features/modal_footer_create.png)
+![Modal General Footer - delete Object](docs/features/shared_features/modal_footer_detail.png)
+
+3. Modal General Footer after an execution of an action or before executing a delete action.
+
+![Modal General Footer after an execution of an action](docs/features/shared_features/modal_footer_after_action_close.png)
+![Modal General Footer after an execution of an action](docs/features/shared_features/modal_footer_delete_confirm.png)
+
+#### 3.3.2 Communication Epic Related Features
+
+The communication management consists of two pages. The home page and contact page.
+
+1. Home Page
+The home page contains two parts. The first part is a teaser. While the second part is an invitation to connect with SalesWare support team The screen shots below for large screens.
+
+*Part One*
+
+![Home Part One Large Screen](docs/features/communication/home_teaser_one_lg.png)
+
+*Part Two*
+
+![Home Part Two Large Screen](docs/features/communication/home_teaser_two_lg.png)
+
+---
+
+The screen shots below are for small screens.
+
+*Part One*
+
+![Home Part One Small Screen](docs/features/communication/home_teaser_one_sm.png)
+
+*Part Two*
+
+![Home Part One Small Screen](docs/features/communication/home_teaser_two_sm.png)
+
+2. Contact Page
+
+The contact page consists of a contact form. The screen shot of wide and small screens are provided below respectively.
+
+![Contact Form Wide Screen](docs/features/communication/contact_lg.png)
+
+![Contact Form Wide Screen](docs/features/communication/contact_sm.png)
+
+Once a submission is executed, a modal message with a response pops up. The figures below provides the popup messages of success and of an error respectively. There are no differences between large or small screens when showing the modal messages.
+
+![Contact Form Modal Message Success](docs/features/communication/contact_form_submission_success.png)
+
+
+![Contact Form Modal Message Error](docs/features/communication/contact_form_submission_fail.png)
+
+#### 3.3.3 Prospect Management
+
+The prospect management provides the user the ability to read/create/edit/delete prospect. The prospect list page is the main page and it lists all the saved prospect.
+A screen shot of the prospect list is provided below.
+
+![Prospect List](docs/features/propsect/prospect_list.png)
+
+The prospect detail modal shows the prospect detail and provides the capability to edit or delete the prospect. A screen shot of the modal is below:
+
+![Prospect Detail Modal](docs/features/propsect/prospect_detail_modal.png)
+   
+If a user edit a prospect, two cases are considered. One is the formation entered correctly and the second if the information entered incorrectly. In both cases a modal message appears to inform the user the result. An example of each case is shown below respectively.
+
+![Prospect Edit Message Success](docs/features/propsect/prospect_edit_modal_success.png)
+
+![Prospect Edit Message Error](docs/features/propsect/prospect_edit_modal_error.png)
+
+If the user click on the delete a prospect, a conformation message appears asking for conformation.
+
+![Prospect Delete Message Confirmation](docs/features/propsect/prospect_delete_modal_confirmation.png)
+
+If the user confirms, two possibility are considered. The first is success when the user is authorized as an owner of the prospect to do so. The second case is when the action is denied if the user is neither the owner of the prospect nor the Admin. Both cases are shown below.
+
+![Prospect Delete Message Success](docs/features/propsect/prospect_delete_modal_success.png)
+
+![Prospect Delete Message Error](docs/features/propsect/prospect_delete_modal_error.png)
+
+In the same way, create prospect modal and the associated modal as responses of the create action are provided below.
+
+![Prospect Create Modal](docs/features/propsect/prospect_create_modal.png)
+
+Success Message
+
+![Prospect Create Message Success](docs/features/propsect/prospect_create_modal_success.png)
+
+Error Message
+
+![Prospect Create Message Error](docs/features/propsect/prospect_create_modal_error.png)
+
+#### 3.3.4 Product Management
+
+The product management provides the user the ability to read/create/edit/delete product. The product list page is the main page and it lists all the saved product.
+A screen shot of the product list is provided below.
+
+![Product List](docs/features/product/product_list.png)
+
+The product detail modal shows the product detail and provides the capability to edit or delete the product. A screen shot of the modal is below:
+
+![Product Detail Modal](docs/features/product/product_modal_detail.png)
+   
+If a user edit a product, two cases are considered. One is the formation entered correctly and the second if the information entered incorrectly. In both cases a modal message appears to inform the user the result. An example of each case is shown below respectively.
+
+![Product Edit Message Success](docs/features/product/product_edit_modal_success.png)
+
+![Product Edit Message Error](docs/features/product/product_edit_modal_error.png)
+
+If the user click on the delete a product, a conformation message appears asking for conformation.
+
+![Product Delete Message Confirmation](docs/features/product/product_delete_modal_confirmation.png)
+
+If the user confirms, two possibility are considered. The first is success when the user is authorized as an owner of the product to do so. The second case is when the action is denied if the user is neither the owner of the product nor the Admin. Both cases are shown below.
+
+![Product Delete Message Success](docs/features/product/product_delete_modal_success.png)
+
+![Product Delete Message Error](docs/features/product/product_delete_modal_error.png)
+
+In the same way, create product modal and the associated modal as responses of the create action are provided below.
+
+![Product Create](docs/features/product/product_create_modal.png)
+
+Success Message
+
+![Product Create Message Success](docs/features/product/product_create_modal_success.png)
+
+Error Message
+
+![Product Create Message Error](docs/features/product/product_create_modal_error.png)
+
+#### 3.3.5 Opportunity Management
+
+The opportunity management provides the user the ability to read/create/edit/delete opportunity. The opportunity list page is the main page and it lists all the saved opportunity.
+
+A screen shot of the opportunity list is provided below.
+
+![opportunity List](docs/features/opportunity/opportunity_list.png)
+
+By clicking on the + Opportunity, the create new opportunity page opens. As shown below.
+
+![opportunity Create](docs/features/opportunity/opportunity_create.png)
+
+As shown above the opportunity page has multiple features. The first feature is the Sales Process Flow. This represent the four steps sales process explained in the process layer section. It is represented by a progress bar. See the chain of screen shots that show the different process step this progress bar display.
+
+![Opportunity Progress Bar Zero](docs/features/opportunity/opportunity_progress_bar_zero.png)
+![Opportunity Progress Bar One](docs/features/opportunity/opportunity_progress_bar_one.png)
+![Opportunity Progress Bar Two](docs/features/opportunity/opportunity_progress_bar_two.png)
+![Opportunity Progress Bar Three](docs/features/opportunity/opportunity_progress_bar_three.png)
+![Opportunity Progress Bar Four](docs/features/opportunity/opportunity_progress_bar_four.png)
+
+The progress bar shown above moves according to the Sales Process Stage Selector shown below.
+
+![Opportunity Sales Stages](docs/features/opportunity/opportunity_sales_stage.png)
+
+There are other important features in the Opportunity create or detail page. This is the prospect and product selection features where the user can select from the available records of the prospects or products to attach them to the opportunity. See the screen shots below.
+
+![Opportunity Prospect Select](docs/features/opportunity/opportunity_prospect.png)
+![Opportunity Product Select](docs/features/opportunity/opportunity_product.png)
+
+The product price field is not active. It only changes when you select a product. It then shows the price of that selected product. The other fields are very self explained fields.
+
+Once you create a new opportunity, a modal message pops up with a response. The response can be a success with a conformation the opportunity is saved or the response can be an error. Two selected examples are shown below.
+
+Success Message
+
+![opportunity Create Message Success](docs/features/opportunity/opportunity_create_modal_success.png)
+
+Error Message
+
+![opportunity Create Message Error](docs/features/opportunity/opportunity_create_modal_error.png)
+
+The opportunity detail modal shows the opportunity detail and provides the capability to edit or delete the opportunity. A screen shot of the modal is below:
+
+![opportunity Detail](docs/features/opportunity/opportunity_detail.png)
+   
+If a user edit a opportunity, two cases are considered. One is the formation entered correctly and the second if the information entered incorrectly. In both cases a modal message appears to inform the user the result. An example of each case is shown below respectively.
+
+![opportunity Edit Message Success](docs/features/opportunity/opportunity_edit_modal_success.png)
+
+![opportunity Edit Message Error](docs/features/opportunity/opportunity_edit_modal_error.png)
+
+If the user click on the delete a opportunity, a conformation message appears asking for conformation.
+
+![opportunity Delete Message Confirmation](docs/features/opportunity/opportunity_delete_modal_confirmation.png)
+
+If the user confirms, two possibility are considered. The first is success when the user is authorized as an owner of the opportunity to do so. The second case is when the action is denied if the user is neither the owner of the opportunity nor the Admin. Both cases are shown below.
+
+![opportunity Delete Message Success](docs/features/opportunity/opportunity_delete_modal_success.png)
+
+![opportunity Delete Message Error](docs/features/opportunity/opportunity_delete_modal_error.png)
+
+#### 3.3.6 Account Management
+
+This subsection focuses on Account management features, namely: Sign Up, Sign In and Sign Out pages features.
+
+1. Sign Up
+
+The sign up page main page screen shots are shown below for large and small screens respectively.
+
+![Sign Up Page Large](docs/features/account/signup_page_lg.png)
+
+![Sign Up Page Small](docs/features/account/signup_page_sm.png)
+
+If the entered data is not correct, the error message will appear in red. See the screen shots for both large and small screens.
+
+![Sign Up Page Large with Error](docs/features/account/signup_page_lg_error.png)
+
+![Sign Up Page small with Error](docs/features/account/signup_page_sm_error.png)
+
+2. Sign In
+
+The sign in page main page screen shots are shown below for large and small screens respectively.
+
+![Sign In Page Large](docs/features/account/signin_page_lg.png)
+
+![Sign In Page Small](docs/features/account/signin_page_sm.png)
+
+If the entered data is not correct, the error message will appear in red. See the screen shots for both large and small screens.
+
+![Sign In Page Large with Error](docs/features/account/signin_page_lg_error.png)
+
+![Sign In Page small with Error](docs/features/account/signin_page_sm_error.png)
+
+3. Sign Up
+
+Clicking on the Sign Out button, would lead the user to the Sign Out confirmation page. Screen shots of the page for large and small screens are provided below.
+
+![Sign Out Page Large Confirmation](docs/features/account/signout_page_lg.png)
+
+![Sign Out Page Small Confirmation](docs/features/account/signout_page_sm.png)
 
 ### 5.3 Test
 
