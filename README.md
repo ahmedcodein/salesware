@@ -646,61 +646,143 @@ If the user clicks on the Sign Out, the sign-out confirmation page will open. Sc
 If the user clicks on Sign Out button, the user will be signed out and sent back to the home page.
 This concludes the Feature subsection. The next subsection will dive into the testing activity.
 
-### 5.3 Test
+### 3.4 Test
 
-#### 5.3.1 Javascript Code Quality Test
+#### 3.4.1 Javascript Code Quality Test
 
 Describe the verification tests conducted.
 
-#### 5.3.2 Python Code Quality Test
+#### 3.4.2 Python Code Quality Test
 
 List the validation tests and their outcomes.
 
-#### 5.3.3 HTML Validation
+#### 3.4.3 HTML Validation
 
 Explain the process and results of HTML validation.
 
-#### 5.3.4 CSS Validation
+#### 3.4.4 CSS Validation
 
 Detail CSS validation process and results.
 
-#### 5.3.5 Accessibility
+#### 3.4.5 Accessibility
 
 Describe how accessibility was ensured.
 
-#### 5.3.6 Lighthouse Validation
+#### 3.4.6 Lighthouse Validation
 
 Provide details and results of Lighthouse validation.
 
-#### 5.3.7 Device Testing
+#### 3.4.7 Device Testing
 
 Explain how device testing was conducted and the results.
 
-#### 5.3.8 Browser Compatibility
+#### 3.4.8 Browser Compatibility
 
 Detail the browser compatibility checks that were performed.
 
-#### 5.3.9 Manual Tests
+#### 3.4.9 Manual Tests
 
-#### 5.3.10 Unit Tests
+#### 5.4.10 Unit Tests
 
-### 5.3.11 Bugs
+#### 3.4.11 Bugs
 
-#### 5.3.12 Fixed Bugs
+##### 5.4.11.a Fixed Bugs
 
 List the bugs that were identified and fixed.
 
-#### 5.3.13 Unfixed Bugs
+#### 5.4.11.b Unfixed Bugs
 
 Mention any bugs that have not yet been fixed.
 
 ## 6 Deployment
 
-Explain how the website is deployed and any steps needed to deploy it to a new environment.
+This section is devoted to explain procedures conducted by the author to deploy and clone SalesWare code. Additionally, for those who are interested to create fork from the main branch, a dedicated procedure is also provided.
 
-### 6.1 Github Setup
+### 6.1 Heroku
 
-### Heroku Setup
+The following procedure is implemented to deploy SalesWare on Heroku platform:
+
+1. Create a list of requirements/dependencies for Software. In order to that, the following steps is to be executed:
+    - Go to the command line terminal of development environment (Gitpod)
+    - Type "pip3 freeze > requirements.txt" (requirements.txt is the file where the list of requirements is stored)
+    - Add this change and commit it
+    - Push the change to the GitHub repository
+2. Sign in to Heroku account 
+3. On Heroku dashboard, click on "Create a new app" button
+4. Within the "Create New App" window, go to the "App name" input field and type in an App name
+5. Within the same window, choose your region from the "Choose region" dropdown menu
+6. Click on "Create app" button
+7. New window opens for the App that is just created
+8. Within this window, from the 7 taps available, select "Settings"
+9. Within the setting tap window, go to "Confg Vars"
+10. Click on "Create Confg Vars"
+11. Two input fields appear, one for key and one for value
+    - Within the "key" input field add the key variable name
+    - Within the "value" field add the key corresponding value
+    - Click on "Add"
+12. Scroll down to "Buildpacks", within the Buildpacks, follow the listed sub-steps below:
+    - Click on "Add buildpacks"
+    - A "Add buildpack" window opens
+    - From the list, choose "Python" first
+    - Click on "Save changes" button
+    - From the same list, choose "nodejs" second
+    - Click on "Save changes" button
+    - Ensure Keeping the order packs as described in last 4 sub-steps
+13. Now go to the "Deploy" tap right at the top of the window
+14. Within the "Deployment method" row, click on "GitHub" button
+15. Within the "Connect to GitHub" (One row down the Deployment method) click on "Connect to GitHub"
+16. Wait a bit for loading
+17. Now on the same row and within the search field, type the name of the project repository and click on "Search" button
+18. Now click connect
+19. Once it is connected to the project repository, scroll down to "Manual Deploy"
+20. Within this row, click on "Deploy Branch"
+21. Once the deploy log is finished, a message appears and hopefully says: "You app was successfully deployed"
+22. Below it a "View" button appears as well
+23. Click on the "View" to open the deployed project on a new browser tap 
+
+**Note: Throughout the development, the author chooses only the manual deployment.**
+
+### 6.2 GitHub
+
+The following procedure is followed to create the software repository
+
+1. Go to your repositories 
+2. Open CI P3-template
+3. On the top right, click on "Use this template"
+4. Click on "Create a new repository"
+5. New window opens
+6. In the field of "Repository name" type the project name
+7. Choose public
+8. Then click on "Create repository"
+
+### 6.3 Clone into Gitpod
+
+The following procedure is implemented to clone from the GiTHub repo into Gitpod:
+
+1. Go to the "code" in the upper right corner
+2. Select "local" 
+3. Select "Clone/HTTPs"
+4. Copy the url provided
+5. Open new browser tap
+6. Open your Gitpod Workspace
+7. Click on "Create new workspace"
+8. Click on "select new Repository"
+9. Paste the url in input window
+10. Click continue
+
+### 6.4 Fork
+
+For any person interested to work on the source code of this project, here is the procedure that needs to be followed to make a fork.
+
+1. Go to ahmedcodein repositories
+2. Click on "salesware" repo
+3. In the upper right corner, click of "fork" drop down menu
+4. Click on "create new fork"
+5. Create new fork window opens
+6. Select the "owner" of the repo
+7. Add a name to "Repository name"
+8. Add a description to the "Description" field if needed
+9. Click on "Create fork "
 
 ## 7 Future Work
 
