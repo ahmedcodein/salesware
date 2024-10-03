@@ -774,7 +774,18 @@ For any person interested to work on the source code of this project, here is th
 
 ## 7 Future Work
 
-Explain the future work
+SalesWare is a sales module of a larger Customer Relation Management Solution. Therefore, the long term objective of this project is to extend this project to include Marketing, Customer Service, Customer Support and Customer Data modules.
+
+With respect to the short and midterm features, there is simply no limit as to what features can be included into SalesWare. This is because Sales Activity involves numerous metrics and details. Those can be reflected into SalesWare to make it more valuable to any Sales Team. For instance, additional fields could be added to the prospect, product and opportunity models. There is no limitation as to what fields should be added. So the question is Should the author add those fields? The author believes this question should be left to the early adopters of SalesWare to answer. The best feature to develop is the one that the customer ask for. SalesWare at its current state aims to get the author at the step door of potential users and ask this question.
+
+Nevertheless, Here are some of features that the author thinks are important and could be developed in the meantime.
+
+1. Sales Funnel to track expected revenue in the end of the next quarter or by the end of the fiscal year.
+2. Sales revenue estimation by region or country.
+3. Sales revenue estimation by industry.
+4. Data Analytics to provide additional value to the user. For instance, having data about how much time in average is required to acquire a customer from the Lead stage to the Close stage. 
+
+The first three points could be included in a new app called Dashboard. While the fourth in a new app dedicated for data analytics. **It is worth noting here that SalesWare Models today support such extension. Wheres the author considers them from day one of development**.
 
 ## 8 Credits
 
