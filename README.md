@@ -664,7 +664,7 @@ The following table summarizes various Quality and Validation tests conducted fo
 |4| CSS Validation | W3C CSS Validation Service | All pages of salesWare| 10 + Authors CSS file |Author's CSS file is Pass. All pages test shows warnings on each page | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation | 
 |5| Accessibility | Wave tool | All pages of SalesWare | x10 | Pass. All pages show alert of Redundant link. In addition, Opportunity Create Page shows 2 X Redundant title text alerts | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation. See the test result [screenshots](/TEST.md#wave-accessibility-tool) |
 |6| Google DevTools | Chrome DevTools | All pages of SalesWare | x10 | Pass | No Comment |
-|7| Lighthouse Validation | Chrome Lighthouse | Desktop and Mobile | x20 | In average for Desktop: Performance > 98, Accessibility = 100, Best Practice = 100, SEO = 100. In average for Mobile: Performance is very low on some pages, Accessibility = 100, Best Practice = 100, SEO = 100  | See the test result [screenshots](/TEST.md#lighthouse-tests-captures) |
+|7| Lighthouse Validation | Chrome Lighthouse | Desktop and Mobile | x20 | Minimum value for Desktop: Performance = 99, Accessibility = 100, Best Practice = 100, SEO = 100. Minimum value for Mobile: Performance = 83, Accessibility = 100, Best Practice = 100, SEO = 100  | See the test result [screenshots](/TEST.md#lighthouse-tests-captures) |
 |8| Browser Compatibility | NA | Microsoft Edge, Google Chrome and Mozilla Firefox | x3 | Pass | No comment |
 |9| Device Testing | NA | PC and Mobile | x2 | Pass | No comment |
 
