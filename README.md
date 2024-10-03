@@ -646,39 +646,27 @@ If the user clicks on the Sign Out, the sign-out confirmation page will open. Sc
 If the user clicks on Sign Out button, the user will be signed out and sent back to the home page.
 This concludes the Feature subsection. The next subsection will dive into the testing activity.
 
+---
+
 ### 3.4 Test
 
-#### 3.4.1 Javascript Code Quality Test
+This subsection is divided into Four main subsections. The first subsection concerns with code quality and validation tests. The second subsection summarizes the conducted manual tests. The third section provides detailed account of all the unit tests developed for this project. Finally the Test subsection concludes with discussion on Bugs encountered during the development of this project.
 
-Describe the verification tests conducted.
+#### 3.4.1 Code Quality and Validation Tests
 
-#### 3.4.2 Python Code Quality Test
+The following table summarizes various Quality and Validation tests conducted for each code and page of SalesWare.
 
-List the validation tests and their outcomes.
-
-#### 3.4.3 HTML Validation
-
-Explain the process and results of HTML validation.
-
-#### 3.4.4 CSS Validation
-
-Detail CSS validation process and results.
-
-#### 3.4.5 Accessibility
-
-Describe how accessibility was ensured.
-
-#### 3.4.6 Lighthouse Validation
-
-Provide details and results of Lighthouse validation.
-
-#### 3.4.7 Device Testing
-
-Explain how device testing was conducted and the results.
-
-#### 3.4.8 Browser Compatibility
-
-Detail the browser compatibility checks that were performed.
+|No.| Test Name | Tool Name | Test Explanation | Number of Tests | Test Result | Comment |
+|--| ----------------- | ------ | ---------------- | --------------- | ----------- | ------- |
+|1| Static code JavaScript code analysis tool | JShint | Conducted on each JS file | x4 | Pass. One warning is observed: bootstrap as undefined variable |  See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation |
+|2| Python code style convention checker | CI Python Linter | Every code in .py file developed by the author is tested | x31 | Pass | No Comment |
+|3| HTML Validation | W3C Markup Validation Service | All pages of SalesWare | x10 | 9 pages pass. Only Sign up page shows 3 errors | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation |
+|4| CSS Validation | W3C CSS Validation Service | All pages of salesWare| 10 + Authors CSS file |Author's CSS file is Pass. All pages test shows warnings on each page | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation | 
+|5| Accessibility | Wave tool | All pages of SalesWare | x10 | Pass. All pages show alert of Redundant link. In addition, Opportunity Create Page shows 2 X Redundant title text alerts | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation. See the test result [screenshots](/TEST.md#wave-accessibility-tool) |
+|6| Google DevTools | Chrome DevTools | All pages of SalesWare | x10 | Pass | No Comment |
+|7| Lighthouse Validation | Chrome Lighthouse | Desktop and Mobile | x20 | In average for Desktop: Performance > 98, Accessibility = 100, Best Practice = 100, SEO = 100. In average for Mobile: Performance is very low on some pages, Accessibility = 100, Best Practice = 100, SEO = 100  | See the test result [screenshots](/TEST.md#lighthouse-tests-captures) |
+|8| Browser Compatibility | NA | Microsoft Edge, Google Chrome and Mozilla Firefox | x3 | Pass | No comment |
+|9| Device Testing | NA | PC and Mobile | x2 | Pass | No comment |
 
 #### 3.4.9 Manual Tests
 
