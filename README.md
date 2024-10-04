@@ -682,105 +682,105 @@ The tests and the results are summarized in the tables below.
 
 **Tests on Prospect Management**
 
-| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
-| -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
-|          | prospect      |                |                            |                        |                                                       |        |
-|          |               | test_models.py | models.py                  |                        |                                                       |        |
-| 1        |               |                |                            | SuperUserModelTest     | test_create_superuser                                 | Pass   |
-| 2        |               |                |                            | UserModelTest          | test_create_user                                      | Pass   |
-| 3        |               |                |                            | ProspectModelTest      | test_create_prospect_models                           | Pass   |
-| 4        |               |                |                            |                        | test_meta_ordering_method_of_prospect_models          | Pass   |
-| 5        |               |                |                            |                        | test_str_method_of_prospect_models                    | Pass   |
-| 6        |               |                |                            |                        | test_upper_case_converter_on_prospect_models          | Pass   |
-|          |               | test_urls.py   | urls.py                    |                        |                                                       |        |
-| 7        |               |                |                            | TestProspectUrls       | test_prospect_list_url                                | Pass   |
-| 8        |               |                |                            |                        | test_prospect_detail_url                              | Pass   |
-| 9        |               |                |                            |                        | test_prospect_create_url                              | Pass   |
-| 10       |               |                |                            |                        | test_prospect_edit_url                                | Pass   |
-| 11       |               |                |                            |                        | test_prospect_delete_url                              | Pass   |
-|          |               | test_forms.py  | forms.py                   |                        |                                                       |        |
-| 12       |               |                |                            | TestProspectForm       | test_prospect_form_is_valid                           | Pass   |
-| 13       |               |                |                            |                        | test_prospect_form_is_not_valid                       | Pass   |
-| 14       |               |                |                            |                        | test_prospect_form_is_not_valid_empty_field           | Pass   |
-|          |               | test_views.py  | views.py                   |                        |                                                       |        |
-| 15       |               |                |                            | TestProspectViews      | test_prospect_list_view                               | Pass   |
-| 16       |               |                |                            |                        | test_prospect_detail_view                             | Pass   |
-| 17       |               |                |                            |                        | test_prospect_create_view                             | Pass   |
-| 18       |               |                |                            |                        | test_prospect_edit_view                               | Pass   |
-| 19       |               |                |                            |                        | test_prospect_delete_view                             | Pass   |
+| Test No. | App Name | File Name      | Tested On Python File Name | Test Case          | Test Name                                    | Result |
+| -------- | -------- | -------------- | -------------------------- | ------------------ | -------------------------------------------- | ------ |
+|          | prospect |                |                            |                    |                                              |        |
+|          |          | test_models.py | models.py                  |                    |                                              |        |
+| 1        |          |                |                            | SuperUserModelTest | test_create_superuser                        | Pass   |
+| 2        |          |                |                            | UserModelTest      | test_create_user                             | Pass   |
+| 3        |          |                |                            | ProspectModelTest  | test_create_prospect_models                  | Pass   |
+| 4        |          |                |                            |                    | test_meta_ordering_method_of_prospect_models | Pass   |
+| 5        |          |                |                            |                    | test_str_method_of_prospect_models           | Pass   |
+| 6        |          |                |                            |                    | test_upper_case_converter_on_prospect_models | Pass   |
+|          |          | test_urls.py   | urls.py                    |                    |                                              |        |
+| 7        |          |                |                            | TestProspectUrls   | test_prospect_list_url                       | Pass   |
+| 8        |          |                |                            |                    | test_prospect_detail_url                     | Pass   |
+| 9        |          |                |                            |                    | test_prospect_create_url                     | Pass   |
+| 10       |          |                |                            |                    | test_prospect_edit_url                       | Pass   |
+| 11       |          |                |                            |                    | test_prospect_delete_url                     | Pass   |
+|          |          | test_forms.py  | forms.py                   |                    |                                              |        |
+| 12       |          |                |                            | TestProspectForm   | test_prospect_form_is_valid                  | Pass   |
+| 13       |          |                |                            |                    | test_prospect_form_is_not_valid              | Pass   |
+| 14       |          |                |                            |                    | test_prospect_form_is_not_valid_empty_field  | Pass   |
+|          |          | test_views.py  | views.py                   |                    |                                              |        |
+| 15       |          |                |                            | TestProspectViews  | test_prospect_list_view                      | Pass   |
+| 16       |          |                |                            |                    | test_prospect_detail_view                    | Pass   |
+| 17       |          |                |                            |                    | test_prospect_create_view                    | Pass   |
+| 18       |          |                |                            |                    | test_prospect_edit_view                      | Pass   |
+| 19       |          |                |                            |                    | test_prospect_delete_view                    | Pass   |
 
 ...
 
 **Tests on Product Management**
 
-| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
-| -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
-|          | product       |                |                            |                        |                                                       |        |
-|          |               | test_models.py | models.py                  |                        |                                                       |        |
-| 20       |               |                |                            | ProductModelTest       | test_create_product_models                            | Pass   |
-| 21       |               |                |                            |                        | test_meta_ordering_method_of_product_models           | Pass   |
-| 22       |               |                |                            |                        | test_str_method_of_product_models                     | Pass   |
-| 23       |               |                |                            |                        | test_product_price_method_of_product_models           | Pass   |
-| 24       |               |                |                            |                        | test_upper_case_converter_on_product_models           | Pass   |
-|          |               | test_urls.py   | urls.py                    |                        |                                                       |        |
-| 25       |               |                |                            | TestProductUrls        | test_product_list_url                                 | Pass   |
-| 26       |               |                |                            |                        | test_product_detail_url                               | Pass   |
-| 27       |               |                |                            |                        | test_product_create_url                               | Pass   |
-| 28       |               |                |                            |                        | test_product_edit_url                                 | Pass   |
-| 29       |               |                |                            |                        | test_product_delete_url                               | Pass   |
-|          |               | test_forms.py  | forms.py                   |                        |                                                       |        |
-| 30       |               |                |                            | TestProductForm        | test_product_form_is_valid                            | Pass   |
-| 31       |               |                |                            |                        | test_product_form_is_not_valid                        | Pass   |
-| 32       |               |                |                            |                        | test_product_form_is_not_valid_empty_field            | Pass   |
-|          |               | test_views.py  | views.py                   |                        |                                                       |        |
-| 33       |               |                |                            | TestProductViews       | test_product_list_view                                | Pass   |
-| 34       |               |                |                            |                        | test_product_detail_view                              | Pass   |
-| 35       |               |                |                            |                        | test_product_create_view                              | Pass   |
-| 36       |               |                |                            |                        | test_product_edit_view                                | Pass   |
-| 37       |               |                |                            |                        | test_product_delete_view                              | Pass   |
+| Test No. | App Name | File Name      | Tested On Python File Name | Test Case        | Test Name                                   | Result |
+| -------- | -------- | -------------- | -------------------------- | ---------------- | ------------------------------------------- | ------ |
+|          | product  |                |                            |                  |                                             |        |
+|          |          | test_models.py | models.py                  |                  |                                             |        |
+| 20       |          |                |                            | ProductModelTest | test_create_product_models                  | Pass   |
+| 21       |          |                |                            |                  | test_meta_ordering_method_of_product_models | Pass   |
+| 22       |          |                |                            |                  | test_str_method_of_product_models           | Pass   |
+| 23       |          |                |                            |                  | test_product_price_method_of_product_models | Pass   |
+| 24       |          |                |                            |                  | test_upper_case_converter_on_product_models | Pass   |
+|          |          | test_urls.py   | urls.py                    |                  |                                             |        |
+| 25       |          |                |                            | TestProductUrls  | test_product_list_url                       | Pass   |
+| 26       |          |                |                            |                  | test_product_detail_url                     | Pass   |
+| 27       |          |                |                            |                  | test_product_create_url                     | Pass   |
+| 28       |          |                |                            |                  | test_product_edit_url                       | Pass   |
+| 29       |          |                |                            |                  | test_product_delete_url                     | Pass   |
+|          |          | test_forms.py  | forms.py                   |                  |                                             |        |
+| 30       |          |                |                            | TestProductForm  | test_product_form_is_valid                  | Pass   |
+| 31       |          |                |                            |                  | test_product_form_is_not_valid              | Pass   |
+| 32       |          |                |                            |                  | test_product_form_is_not_valid_empty_field  | Pass   |
+|          |          | test_views.py  | views.py                   |                  |                                             |        |
+| 33       |          |                |                            | TestProductViews | test_product_list_view                      | Pass   |
+| 34       |          |                |                            |                  | test_product_detail_view                    | Pass   |
+| 35       |          |                |                            |                  | test_product_create_view                    | Pass   |
+| 36       |          |                |                            |                  | test_product_edit_view                      | Pass   |
+| 37       |          |                |                            |                  | test_product_delete_view                    | Pass   |
 
 ...
 
 **Tests on Opportunity Management**
 
-| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
-| -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
-|          | opportunity   |                |                            |                        |                                                       |        |
-|          |               | test_models.py | models.py                  |                        |                                                       |        |
-| 38       |               |                |                            | OpportunityModelTest   | test_create_opportunity_models                        | Pass   |
-| 39       |               |                |                            |                        | test_upper_case_converter_on_opportunity_models       | Pass   |
-| 40       |               |                |                            |                        | test_winning_probability_method_of_opportunity_models | Pass   |
-| 41       |               |                |                            |                        | test_estimation_of_opportunity_models                 | Pass   |
-|          |               | test_urls.py   | urls.py                    |                        |                                                       |        |
-| 42       |               |                |                            | TestOpportunityUrls    | test_opportunity_list_url                             | Pass   |
-| 43       |               |                |                            |                        | test_opportunity_detail_url                           | Pass   |
-| 44       |               |                |                            |                        | test_opportunity_create_url                           | Pass   |
-| 45       |               |                |                            |                        | test_opportunity_edit_url                             | Pass   |
-| 46       |               |                |                            |                        | test_opportunity_delete_url                           | Pass   |
-|          |               | test_forms.py  | forms.py                   |                        |                                                       |        |
-| 47       |               |                |                            | TestOpportunityForm    | test_opportunity_form_is_valid                        | Pass   |
-| 48       |               |                |                            |                        | test_opportunity_form_is_not_valid                    | Pass   |
-| 49       |               |                |                            |                        | test_opportunity_form_is_not_valid_empty_field        | Pass   |
-|          |               | test_views.py  | views.py                   |                        |                                                       |        |
-| 50       |               |                |                            | TestOpportunityViews   | test_opportunity_list_view                            | Pass   |
-| 51       |               |                |                            |                        | test_opportunity_detail_view                          | Pass   |
-| 52       |               |                |                            |                        | test_opportunity_create_view                          | Pass   |
-| 53       |               |                |                            |                        | test_opportunity_edit_view                            | Pass   |
-| 54       |               |                |                            |                        | test_opportunity_delete_view                          | Pass   |
+| Test No. | App Name    | File Name      | Tested On Python File Name | Test Case            | Test Name                                             | Result |
+| -------- | ----------- | -------------- | -------------------------- | -------------------- | ----------------------------------------------------- | ------ |
+|          | opportunity |                |                            |                      |                                                       |        |
+|          |             | test_models.py | models.py                  |                      |                                                       |        |
+| 38       |             |                |                            | OpportunityModelTest | test_create_opportunity_models                        | Pass   |
+| 39       |             |                |                            |                      | test_upper_case_converter_on_opportunity_models       | Pass   |
+| 40       |             |                |                            |                      | test_winning_probability_method_of_opportunity_models | Pass   |
+| 41       |             |                |                            |                      | test_estimation_of_opportunity_models                 | Pass   |
+|          |             | test_urls.py   | urls.py                    |                      |                                                       |        |
+| 42       |             |                |                            | TestOpportunityUrls  | test_opportunity_list_url                             | Pass   |
+| 43       |             |                |                            |                      | test_opportunity_detail_url                           | Pass   |
+| 44       |             |                |                            |                      | test_opportunity_create_url                           | Pass   |
+| 45       |             |                |                            |                      | test_opportunity_edit_url                             | Pass   |
+| 46       |             |                |                            |                      | test_opportunity_delete_url                           | Pass   |
+|          |             | test_forms.py  | forms.py                   |                      |                                                       |        |
+| 47       |             |                |                            | TestOpportunityForm  | test_opportunity_form_is_valid                        | Pass   |
+| 48       |             |                |                            |                      | test_opportunity_form_is_not_valid                    | Pass   |
+| 49       |             |                |                            |                      | test_opportunity_form_is_not_valid_empty_field        | Pass   |
+|          |             | test_views.py  | views.py                   |                      |                                                       |        |
+| 50       |             |                |                            | TestOpportunityViews | test_opportunity_list_view                            | Pass   |
+| 51       |             |                |                            |                      | test_opportunity_detail_view                          | Pass   |
+| 52       |             |                |                            |                      | test_opportunity_create_view                          | Pass   |
+| 53       |             |                |                            |                      | test_opportunity_edit_view                            | Pass   |
+| 54       |             |                |                            |                      | test_opportunity_delete_view                          | Pass   |
 
 ...
 
 **Tests on Communication Management**
 
-| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
-| -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
-|          | communication |                |                            |                        |                                                       |        |
-|          |               | test_urls.py   | urls.py                    |                        |                                                       |        |
-| 55       |               |                |                            | TestCommunicationUrls  | test_home_view                                        | Pass   |
-| 56       |               |                |                            |                        | test_contact_view                                     | Pass   |
-|          |               | test_views.py  | views.py                   |                        |                                                       |        |
-| 57       |               |                |                            | TestCommunicationViews | test_home_view                                        | Pass   |
-| 58       |               |                |                            |                        | test_contact_view                                     | Pass   |
+| Test No. | App Name      | File Name     | Tested On Python File Name | Test Case              | Test Name         | Result |
+| -------- | ------------- | ------------- | -------------------------- | ---------------------- | ----------------- | ------ |
+|          | communication |               |                            |                        |                   |        |
+|          |               | test_urls.py  | urls.py                    |                        |                   |        |
+| 55       |               |               |                            | TestCommunicationUrls  | test_home_view    | Pass   |
+| 56       |               |               |                            |                        | test_contact_view | Pass   |
+|          |               | test_views.py | views.py                   |                        |                   |        |
+| 57       |               |               |                            | TestCommunicationViews | test_home_view    | Pass   |
+| 58       |               |               |                            |                        | test_contact_view | Pass   |
 
 ---
 
@@ -792,26 +792,25 @@ This subsection provides detailed explanation on Bugs identified during the deve
 
 This section lists the bugs that are identified and fixed during the development.
 
-| Bug ID No. | Bug Position                                         | Bug Description                                                                                                                                 | Bug Solution                                                                                 |
-| ---------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| 1          | Prospect/product/opportunity views.py                | Passing prospect id to show the prospect detail on the edit/delete modal                                                                        | Use request.session to get the id, then store it to be used in the edit/delete view function |
-| 2          | Prospect/product/opportunity views.py                | Extracting error code for evaluation                                                                                                            | Use errors.as_data().items() method and loop through errors and get error.code               |
-| 3          | Prospect/product/opportunity js files                | Close button and X symbol close are once clicked before executing edit/delete action does not reset modal data when initiating the action again | Use event listener and execute location.reload() method                                      |
-| 4          | Opportunity js file with opportunity create template | product price is null when open opportunity create leading to an console error                                                                  | Add condition if product price null then define empty value to prevent error                 |
-| 5          | Contact js file                                      | No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly    | Add else to if statement of "form is not valid" and response message for this case           |
-
+| Bug ID No. | Bug Position | Bug Description | Bug Solution |
+| ---------- | ------------ | --------------- | ------------ |
+| 1| Prospect/product/opportunity views.py| save prospect/product id when prospect detail modal is called, and passing it to the edit/delete views.py| Use request.session to get the id, then store it to be used in the edit/delete view functions |
+| 2| Prospect/product/opportunity views.py| Extracting error code for evaluation| Use errors.as_data().items() method and loop through errors and get the error.code|
+| 3| Prospect/product/opportunity js files| If Close button and X symbol close are clicked to cancel edit/delete action the modal data does not reset | Use event listener and execute location.reload() method|
+| 4| Opportunity js file with opportunity create template | product price is null when open opportunity create page. This leads to console error| Add condition if product price null then define product value as an empty value to prevent error|
+| 5| Contact js file| No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly| Add else to the if statement of "form is valid" with a response message to inform the user|
 
 ##### 5.4.11.b Unfixed Bugs
 
 This section lists the bugs that are identified and not fixed. Most of those bugs are not errors but rather alerts or warnings.Related screenshots and further information can be found in
 
-| Bug ID No. | Bug Position            | Bug Description                                                                                                                                                                      | Comment                                                                                                                                                                                                                                                                              |
-| ---------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1          | contact.js              | JSHint observes bootstrap.Modal as undefined variable                                                                                                                                | This due to JSHint does not import Bootstrap CDN                                                                                                                                                                                                                                     |
-| 2          | Sign Up page            | Four errors are identified by the HTML validator                                                                                                                                     | The errors are **django-allauth** package. These errors frequently appear on other CI student PP4 project. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** package that are above .55                                             |
-| 3          | All pages               | CSS Validation warnings appear on every page of SalesWare                                                                                                                            | Those warnings come from Bootstrap package. The Author validates the CSS file of this project and neither error nor a warning is identified. Please refer to [the HTML Validation Selected Test Screenshot ](/TEST.md#html-validation-selected-test-screenshot) for more information |
-| 4          | Home Page               | Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page                                                                       | The author has no solution to this alert at point                                                                                                                                                                                                                                    |
-| 5          | Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert | The author has no solution to this alert at point because the author does not have direct access to this method                                                                                                                                                                      |
+| Bug ID No. | Bug Position | Bug Description | Comment |
+| ---------- | ------------ | --------------- | ------- |
+| 1| contact.js| JSHint observes bootstrap.Modal as undefined variable| This due to JSHint does not import Bootstrap CDN. No solution is suggested|
+| 2| Sign Up page| Four errors are identified by the HTML validator| The errors are originated by **django-allauth** package itself. These errors frequently appear on other CI student PP4 projects. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** packages that are above .55. Please refer to [the HTML Validation Selected Test Screenshot ](/TEST.md#html-validation-selected-test-screenshot) for more information|
+| 3| All pages| CSS Validation warnings appear on every page of SalesWare| Those warnings come from **Bootstrap package**. The CSS file developed by the author ofin this project is validated. Neither errors nor warnings are identified |
+| 4| Home Page| Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page| The author has no solution to this alert at point|
+| 5| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert | The author has no solution to this alert at this point because the author does not have direct access to internal code of **jQuery select2** method|
 
 ## 6 Deployment
 
