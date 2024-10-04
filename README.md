@@ -678,9 +678,11 @@ The author developed 58 python automated tests. The coverage report is extracted
 | ---------- | ------- | -------- | -------- |
 | 790        | 71      | 0        | 91%      |
 
-The tests and the results are summarized in the table below.
+The tests and the results are summarized in the tables below.
 
-| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | result |
+**Tests on Prospect Management**
+
+| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
 | -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
 |          | prospect      |                |                            |                        |                                                       |        |
 |          |               | test_models.py | models.py                  |                        |                                                       |        |
@@ -706,6 +708,13 @@ The tests and the results are summarized in the table below.
 | 17       |               |                |                            |                        | test_prospect_create_view                             | Pass   |
 | 18       |               |                |                            |                        | test_prospect_edit_view                               | Pass   |
 | 19       |               |                |                            |                        | test_prospect_delete_view                             | Pass   |
+
+...
+
+**Tests on Product Management**
+
+| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
+| -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
 |          | product       |                |                            |                        |                                                       |        |
 |          |               | test_models.py | models.py                  |                        |                                                       |        |
 | 20       |               |                |                            | ProductModelTest       | test_create_product_models                            | Pass   |
@@ -729,6 +738,13 @@ The tests and the results are summarized in the table below.
 | 35       |               |                |                            |                        | test_product_create_view                              | Pass   |
 | 36       |               |                |                            |                        | test_product_edit_view                                | Pass   |
 | 37       |               |                |                            |                        | test_product_delete_view                              | Pass   |
+
+...
+
+**Tests on Opportunity Management**
+
+| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
+| -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
 |          | opportunity   |                |                            |                        |                                                       |        |
 |          |               | test_models.py | models.py                  |                        |                                                       |        |
 | 38       |               |                |                            | OpportunityModelTest   | test_create_opportunity_models                        | Pass   |
@@ -751,6 +767,13 @@ The tests and the results are summarized in the table below.
 | 52       |               |                |                            |                        | test_opportunity_create_view                          | Pass   |
 | 53       |               |                |                            |                        | test_opportunity_edit_view                            | Pass   |
 | 54       |               |                |                            |                        | test_opportunity_delete_view                          | Pass   |
+
+...
+
+**Tests on Communication Management**
+
+| Test No. | App Name      | File Name      | Tested On Python File Name | Test Case              | Test Name                                             | Result |
+| -------- | ------------- | -------------- | -------------------------- | ---------------------- | ----------------------------------------------------- | ------ |
 |          | communication |                |                            |                        |                                                       |        |
 |          |               | test_urls.py   | urls.py                    |                        |                                                       |        |
 | 55       |               |                |                            | TestCommunicationUrls  | test_home_view                                        | Pass   |
