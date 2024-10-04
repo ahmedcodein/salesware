@@ -238,14 +238,14 @@ The following color pallette is used for building up the website text, line brea
 
 The following table explains the usage of those colors.
 
-| Color Code | Usage | Usage |
-| ----------- | ----------- | ----------- |
-| #ffffff: White | Buttons text, text over #0e253f |  |
-| #6c757d: Slate-gray | Close or Cancel background buttons, background color of select options elements | Bootstrap Secondary Background Color|
-| #198754: Sea-green | Update background button | Bootstrap Success Background Color  |
-| #dc3545: Rusty-red | Delete and Confirm buttons, Account Management error messages | Bootstrap Danger Background Color |
-| #213e60: Indigo-dye | Text over #ffffff Background | SalesWare Brand Text Color |
-| #0e253f: Oxford-blue | General background color, "Send" and "+" buttons  | SalesWare Brand Background Color |
+| Color Code           | Usage                                                                           | Usage                                |
+| -------------------- | ------------------------------------------------------------------------------- | ------------------------------------ |
+| #ffffff: White       | Buttons text, text over #0e253f                                                 |                                      |
+| #6c757d: Slate-gray  | Close or Cancel background buttons, background color of select options elements | Bootstrap Secondary Background Color |
+| #198754: Sea-green   | Update background button                                                        | Bootstrap Success Background Color   |
+| #dc3545: Rusty-red   | Delete and Confirm buttons, Account Management error messages                   | Bootstrap Danger Background Color    |
+| #213e60: Indigo-dye  | Text over #ffffff Background                                                    | SalesWare Brand Text Color           |
+| #0e253f: Oxford-blue | General background color, "Send" and "+" buttons                                | SalesWare Brand Background Color     |
 
 The contrast evaluation of the selected colors is provided in the figure below.
 
@@ -264,27 +264,27 @@ The sections explains the execution activity. The section begins with the Techno
 
 a List of the technologies and tools used to develop this project is provided below:
 
-| Technology | Description | 
-| ----------- | ----------- |
-| HTML | Hypertext Markup Language |
-| CSS | Style Sheet Language |
-| JavaScript | Programming Language |
-| Python | Programming Language |
-| Bootstrap | Frontend toolkit |
-| jQuery | JavaScript library |
-| Django | Python web framework |
-| CI Database | Code Institute Postgres Database |
-| EmailJS | Sending Email from Code Service |
-| GitHub | Development Platform |
-| Gitpod | Cloud Development Environment |
-| Heroku | Development Platform |
-| Chrome DevTools | Web developer toolkit |
-| Jira | Project Management Tool |
-| Wave Evaluation Tool | Accessibility evaluation tool |
-| CI Python Linter | Code Institute Python code style convention checker |
-| JShint | Static code JavaScript code analysis tool |
-| W3C Markup Validation Service | HTML Validator |
-| W3C CSS Validation Service | CSS Validator | 
+| Technology                    | Description                                         |
+| ----------------------------- | --------------------------------------------------- |
+| HTML                          | Hypertext Markup Language                           |
+| CSS                           | Style Sheet Language                                |
+| JavaScript                    | Programming Language                                |
+| Python                        | Programming Language                                |
+| Bootstrap                     | Frontend toolkit                                    |
+| jQuery                        | JavaScript library                                  |
+| Django                        | Python web framework                                |
+| CI Database                   | Code Institute Postgres Database                    |
+| EmailJS                       | Sending Email from Code Service                     |
+| GitHub                        | Development Platform                                |
+| Gitpod                        | Cloud Development Environment                       |
+| Heroku                        | Development Platform                                |
+| Chrome DevTools               | Web developer toolkit                               |
+| Jira                          | Project Management Tool                             |
+| Wave Evaluation Tool          | Accessibility evaluation tool                       |
+| CI Python Linter              | Code Institute Python code style convention checker |
+| JShint                        | Static code JavaScript code analysis tool           |
+| W3C Markup Validation Service | HTML Validator                                      |
+| W3C CSS Validation Service    | CSS Validator                                       |
 
 ### 3.2 Agile Development
 
@@ -656,17 +656,17 @@ This subsection is divided into Four main subsections. The first subsection conc
 
 The following table summarizes various Quality and Validation tests conducted for each code and page of SalesWare.
 
-|No.| Test Name | Tool Name | Test Explanation | Number of Tests | Test Result | Comment |
-|--| ----------------- | ------ | ---------------- | --------------- | ----------- | ------- |
-|1| Static code JavaScript code analysis tool | JShint | Conducted on each JS file | x4 | Pass. One warning is observed: bootstrap as undefined variable |  See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation |
-|2| Python code style convention checker | CI Python Linter | Every code in .py file developed by the author is tested | x31 | Pass | No Comment |
-|3| HTML Validation | W3C Markup Validation Service | All pages of SalesWare | x10 | 9 pages pass. Only Sign up page shows 3 errors | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation |
-|4| CSS Validation | W3C CSS Validation Service | All pages of salesWare| 10 + Authors CSS file |Author's CSS file is Pass. All pages test shows warnings on each page | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation | 
-|5| Accessibility | Wave tool | All pages of SalesWare | x10 | Pass. All pages show alert of Redundant link. In addition, Opportunity Create Page shows 2 X Redundant title text alerts | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation. See the test result [screenshots](/TEST.md#wave-accessibility-tool) |
-|6| Google DevTools | Chrome DevTools | All pages of SalesWare | x10 | Pass | No Comment |
-|7| Lighthouse Validation | Chrome Lighthouse | Desktop and Mobile | x20 | Minimum value for Desktop: Performance = 99, Accessibility = 100, Best Practice = 100, SEO = 100. Minimum value for Mobile: Performance = 83, Accessibility = 100, Best Practice = 100, SEO = 100  | See the test result [screenshots](/TEST.md#lighthouse-tests-captures) |
-|8| Browser Compatibility | NA | Microsoft Edge, Google Chrome and Mozilla Firefox | x3 | Pass | No comment |
-|9| Device Testing | NA | PC and Mobile | x2 | Pass | No comment |
+| No. | Test Name                                 | Tool Name                     | Test Explanation                                         | Number of Tests       | Test Result                                                                                                                                                                                       | Comment                                                                                                                                            |
+| --- | ----------------------------------------- | ----------------------------- | -------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Static code JavaScript code analysis tool | JShint                        | Conducted on each JS file                                | x4                    | Pass. One warning is observed: bootstrap as undefined variable                                                                                                                                    | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation                                                                      |
+| 2   | Python code style convention checker      | CI Python Linter              | Every code in .py file developed by the author is tested | x31                   | Pass                                                                                                                                                                                              | No Comment                                                                                                                                         |
+| 3   | HTML Validation                           | W3C Markup Validation Service | All pages of SalesWare                                   | x10                   | 9 pages pass. Only Sign up page shows 3 errors                                                                                                                                                    | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation                                                                      |
+| 4   | CSS Validation                            | W3C CSS Validation Service    | All pages of salesWare                                   | 10 + Authors CSS file | Author's CSS file is Pass. All pages test shows warnings on each page                                                                                                                             | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation                                                                      |
+| 5   | Accessibility                             | Wave tool                     | All pages of SalesWare                                   | x10                   | Pass. All pages show alert of Redundant link. In addition, Opportunity Create Page shows 2 X Redundant title text alerts                                                                          | See the [unfixed bugs](/README.md#5411b-unfixed-bugs) for further explanation. See the test result [screenshots](/TEST.md#wave-accessibility-tool) |
+| 6   | Google DevTools                           | Chrome DevTools               | All pages of SalesWare                                   | x10                   | Pass                                                                                                                                                                                              | No Comment                                                                                                                                         |
+| 7   | Lighthouse Validation                     | Chrome Lighthouse             | Desktop and Mobile                                       | x20                   | Minimum value for Desktop: Performance = 99, Accessibility = 100, Best Practice = 100, SEO = 100. Minimum value for Mobile: Performance = 83, Accessibility = 100, Best Practice = 100, SEO = 100 | See the test result [screenshots](/TEST.md#lighthouse-tests-captures)                                                                              |
+| 8   | Browser Compatibility                     | NA                            | Microsoft Edge, Google Chrome and Mozilla Firefox        | x3                    | Pass                                                                                                                                                                                              | No comment                                                                                                                                         |
+| 9   | Device Testing                            | NA                            | PC and Mobile                                            | x2                    | Pass                                                                                                                                                                                              | No comment                                                                                                                                         |
 
 #### 3.4.9 Manual Tests
 
@@ -680,26 +680,26 @@ This subsection provides detailed explanation on Bugs identified during the deve
 
 This section lists the bugs that are identified and fixed during the development.
 
-| Bug ID No. | Bug Position | Bug Description | Bug Solution |
-| ---------- | ------------ | --------------- | ------------ |
-|1| Prospect/product/opportunity views.py |Passing prospect id to show the prospect detail on the edit/delete modal | Use request.session to get the id, then store it to be used in the edit/delete view function |
-|2| Prospect/product/opportunity views.py | Extracting error code for evaluation | Use errors.as_data().items() method and loop through errors and get error.code |
-|3| Prospect/product/opportunity js files | Close button and X symbol close are once clicked before executing edit/delete action does not reset modal data when initiating the action again | Use event listener and execute location.reload() method |
-|4| Opportunity js file with opportunity create template | product price is null when open opportunity create leading to an console error | Add condition if product price null then define empty value to prevent error |
-|5| Contact js file | No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly  | Add else to if statement of "form is not valid" and response message for this case |
+| Bug ID No. | Bug Position                                         | Bug Description                                                                                                                                 | Bug Solution                                                                                 |
+| ---------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 1          | Prospect/product/opportunity views.py                | Passing prospect id to show the prospect detail on the edit/delete modal                                                                        | Use request.session to get the id, then store it to be used in the edit/delete view function |
+| 2          | Prospect/product/opportunity views.py                | Extracting error code for evaluation                                                                                                            | Use errors.as_data().items() method and loop through errors and get error.code               |
+| 3          | Prospect/product/opportunity js files                | Close button and X symbol close are once clicked before executing edit/delete action does not reset modal data when initiating the action again | Use event listener and execute location.reload() method                                      |
+| 4          | Opportunity js file with opportunity create template | product price is null when open opportunity create leading to an console error                                                                  | Add condition if product price null then define empty value to prevent error                 |
+| 5          | Contact js file                                      | No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly    | Add else to if statement of "form is not valid" and response message for this case           |
 
 
 ##### 5.4.11.b Unfixed Bugs
 
 This section lists the bugs that are identified and not fixed. Most of those bugs are not errors but rather alerts or warnings.Related screenshots and further information can be found in
 
-| Bug ID No. | Bug Position | Bug Description | Comment|
-| ---------- | ------------ |---------------- | ------ |
-|1| contact.js |JSHint observes bootstrap.Modal as undefined variable | This due to JSHint does not import Bootstrap CDN |
-|2| Sign Up page  | Four errors are identified by the HTML validator | The errors are **django-allauth** package. These errors frequently appear on other CI student PP4 project. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** package that are above .55 |
-|3| All pages |CSS Validation warnings appear on every page of SalesWare | Those warnings come from Bootstrap package. The Author validates the CSS file of this project and neither error nor a warning is identified. Please refer to [the HTML Validation Selected Test Screenshot ](/TEST.md#html-validation-selected-test-screenshot) for more information |
-|4| Home Page | Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page | The author has no solution to this alert at point |
-|5| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert | The author has no solution to this alert at point because the author does not have direct access to this method |
+| Bug ID No. | Bug Position            | Bug Description                                                                                                                                                                      | Comment                                                                                                                                                                                                                                                                              |
+| ---------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1          | contact.js              | JSHint observes bootstrap.Modal as undefined variable                                                                                                                                | This due to JSHint does not import Bootstrap CDN                                                                                                                                                                                                                                     |
+| 2          | Sign Up page            | Four errors are identified by the HTML validator                                                                                                                                     | The errors are **django-allauth** package. These errors frequently appear on other CI student PP4 project. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** package that are above .55                                             |
+| 3          | All pages               | CSS Validation warnings appear on every page of SalesWare                                                                                                                            | Those warnings come from Bootstrap package. The Author validates the CSS file of this project and neither error nor a warning is identified. Please refer to [the HTML Validation Selected Test Screenshot ](/TEST.md#html-validation-selected-test-screenshot) for more information |
+| 4          | Home Page               | Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page                                                                       | The author has no solution to this alert at point                                                                                                                                                                                                                                    |
+| 5          | Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert | The author has no solution to this alert at point because the author does not have direct access to this method                                                                                                                                                                      |
 
 ## 6 Deployment
 
@@ -810,15 +810,30 @@ The first three points could be included in a new app called Dashboard. While th
 
 ### 8.1 References
 
-List any references used in the development of the project.
+- CI Study Materials, [Code Institute](https://codeinstitute.net/de/bildungsgutschein/?utm_term=code%20institute&utm_campaign=CI%2B-%2BUK%2B-%2BSearch%2B-%2BBrand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=16493764737&hsa_grp=132915436966&hsa_ad=635790877675&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNlk5PQerlGAVupYRw0WPKtdiPb9QBFPzUv-YEGIv5cb6FJe1G24uVwaAoZKEALw_wcB).
 
-### 8.2 Content
+- EmailJS, [EmailJS documentation](https://www.emailjs.com/docs/).
+- Django, [Django documentation](https://docs.djangoproject.com/en/5.1/).
+- The Dumbfounds, [Django Testing Tutorial](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM).
+- Markdown Cheat Sheet, [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
+- Conventional Commits, [A specification for adding human and machine readable meaning to commit messages](https://www.conventionalcommits.org/en/v1.0.0/).
+- Hoberman, Steve, Michael Blaha, Bill Inmon, Graeme Simsion, and Carol Lehn. Data modeling made simple: a practical guide for business and IT professionals. Technics Publications, LLC, 2009.
+- Czarnecki, Christian, and Christian Dietze. "Reference architecture for the telecommunications industry." Transformation of Strategy, Organi-zation, Processes, Data, and Applications (2017).
 
-Credit the sources of website content.
+### 8.2. Content and Tools
 
-### 8.3 Tools
-
-List the tools used in the project.
+- [ChatGPT](https://chat.openai.com/auth/login?sso) is used to understand various programming concepts.
+- [Google Gemini](https://gemini.google.com/) is used to understand various programming concepts.
+- [Word counter](https://wordcounter.net/character-count) is used to track the number of characters of each git commit.
+- [Favicon Generator](https://www.favicon.cc/?) is used to generate the Favicon file.
+- [Image Resizer](https://redketchup.io/image-resizer) is used to convert the favicon row image from Web Picture (Webp) into Portable Network Graphics (PNG) extension.
+- [Lucid](https://lucid.app/documents#/documents?folder_id=home) is used to create the Conceptual Data Model and the Business Process.
+- [Balsamiq Wireframes for Desktop](https://balsamiq.com/wireframes/desktop/) is used to create the Wireframes.
+- [Coolors](https://coolors.co/fdf6da-dcbf87-dcb36f-ac8144-744b1e-704116-6b350f-210e03) is used to create the color palette.
+- [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23fdf6daff%3B%0D%0A%23dcbf87ff%3B%0D%0A%23dcb36fff%3B%0D%0A%23ac8144ff%3B%0D%0A%23744b1eff%3B%0D%0A%23704116ff%3B%0D%0A%236b350fff%3B%0D%0A%23210e03ff%3B%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) is used to create the color contrast matrix.
+- [Favicon Generator](https://www.favicon.cc/?) is used to create SalesWare favicon.
+- [GIMP GNU Image Manipulation Program](https://www.gimp.org/) is used to create SalesWare logos and the teaser image in the home page.
+- [Leonardo](https://app.leonardo.ai/) is used to create two images of the fist part of the home page.
 
 ## 9 Acknowledgements
 
