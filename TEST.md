@@ -125,6 +125,34 @@ The additional Alerts has the following explanation.
 
 ![Wave Tool Alert Reference of Opportunity Create Page](docs/tests/wave_opportunity_create_alert_explanation.png)
 
----
+# HTML Validation Selected Test Screenshot
 
+The test of the Sign Up page using HTML returns the following errors.
+
+![Sign Up Page HTML Validator Result](docs/tests/signup_page_html_validator.png)
+
+As the reader can see the errors are related to a code that comes with django-alluath package. The author extracted the code using the "view source code ". The code is then analyzed by extracting the defected code to see if one can identify any issue. The code is provided below.
+
+```
+                                <p>
+                                    <label for="id_password1">Password:</label>
+                                    <input type="password" name="password1" placeholder="Password"
+                                        autocomplete="new-password" required aria-describedby="id_password1_helptext"
+                                        id="id_password1">
+                                    <span class="helptext" id="id_password1_helptext">
+                                        <ul>
+                                            <li>Your password can’t be too similar to your other personal information.
+                                            </li>
+                                            <li>Your password must contain at least 8 characters.</li>
+                                            <li>Your password can’t be a commonly used password.</li>
+                                            <li>Your password can’t be entirely numeric.</li>
+                                        </ul>
+                                    </span>
+                                </p> 
+
+```
+
+The author could not identify a clear indication of an error in the above code. However, when the the author removed removed the defected code from the entire source code then pasted the cleaned code again into the HTML validator, all errors disappear.
+
+---
 [Go Back](README.md)
