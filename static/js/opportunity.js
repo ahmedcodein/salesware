@@ -11,6 +11,8 @@ $(document).ready(function () {
     /* Select prospect/product records with search functionality */
     $(opportunityCreateProspect).select2();
     $(opportunityCreateProduct).select2();
+    $('#select2-opportunity-create-prospect-container').attr('title', 'prospect options');
+    $('#select2-opportunity-create-product-container').attr('title', 'product options');
     /* Display Product price based on product selected */
     $(opportunityCreateProduct).on('change', function (event) {
         const productPrice = document.getElementById('opportunity-create-product-price');

@@ -59,7 +59,7 @@
                             {% if user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}"
-                                    href="/">Home</a>
+                                    href="/#">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {% if request.path == prospect_url %}active{% endif %}"
@@ -73,10 +73,14 @@
                                 <a class="nav-link text-white {% if request.path == opportunity_url %}active{% endif %}"
                                     href="{% url 'opportunity_list' %}">Opportunity</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {% if request.path == contact_url %}active{% endif %}"
+                                    href="{% url 'contact' %}">Contact</a>
+                            </li>
                             {% else %}
                             <li class="nav-item">
                                 <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}"
-                                    href="/">Home</a>
+                                    href="/#">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {% if request.path == contact_url %}active{% endif %} text-white"
@@ -93,8 +97,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item nav-link {% if request.path == logout_url %}active{% endif %}"
                                             href="{% url 'account_logout' %}">Sign out</a></li>
-                                    <li><a class="dropdown-item nav-link {% if request.path == contact_url %}active{% endif %}"
-                                            href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
                                 {% else %}
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
