@@ -923,14 +923,14 @@ This section lists the bugs that are identified and not fixed. Most of those bug
 
 ## 6 Deployment
 
-This section is devoted to explain procedures conducted by the author to deploy and clone SalesWare code. Additionally, for those who are interested to create fork from the main branch, a dedicated procedure is also provided.
+This section is devoted to explain the procedures conducted by the author to deploy and clone SalesWare code. Additionally, for those who are interested to create a fork from the main branch, a dedicated procedure is also provided.
 
 ### 6.1 Heroku
 
 The following procedure is implemented to deploy SalesWare on Heroku platform:
 
 1. Create a list of requirements/dependencies for Software. In order to that, the following steps is to be executed:
-    - Go to the command line terminal of development environment (Gitpod)
+    - Go to the command line terminal of the development environment (Gitpod)
     - Type "pip3 freeze > requirements.txt" (requirements.txt is the file where the list of requirements is stored)
     - Add this change and commit it
     - Push the change to the GitHub repository
