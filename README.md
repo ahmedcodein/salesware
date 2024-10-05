@@ -668,9 +668,116 @@ The following table summarizes various Quality and Validation tests conducted fo
 | 8   | Browser Compatibility                     | NA                            | Microsoft Edge, Google Chrome and Mozilla Firefox        | x3                    | Pass                                                                                                                                                                                              | No comment                                                                                                                                         |
 | 9   | Device Testing                            | NA                            | PC and Mobile                                            | x2                    | Pass                                                                                                                                                                                              | No comment                                                                                                                                         |
 
-#### 3.4.9 Manual Tests
+#### 3.4.2 Manual Tests
 
-#### 5.4.10 Automated Tests
+This subsection provides a comprehensive account of the manual test conducted for this project. The tests follow the epics structure. The tests are explained in the following table.
+
+- Epic SW-1 Account Management
+  - **User Story**: Register a User account
+    - Acceptance Criteria
+      - Given the visitor in the sign up page, the visitor can register and the visitor is then sent back to the home page with his name appearing as signed in on to of the dropdown menu -- Pass
+  - **User Story**: Store login information
+    - Acceptance Criteria
+      - Given the user is signed out and on the sign in page, the visitor can sign in again and the user is then sent back to the home page with his name appearing as signed in on to of the dropdown menu -- Pass
+  - **User Story**: Admin User Account
+    - Acceptance Criteria
+      - Given the user is registered as an Admin, the Admin can sign in into the admin page and get access to the functionality of seeing all the registered users -- Pass
+
+- Epic SW-2 Prospect Management
+  - **User Story**: Prospect Page
+    - Acceptance Criteria
+      - Given the user is on the home page and when clicking on the prospect link the user lands on the prospect page to see all the saved prospects -- pass
+  - **User Story**: Create Prospect Entry
+    - Acceptance Criteria
+      - Given the user is on the prospect create modal and when entering the new prospect information and clicking on the Create button, the user receives a confirmation message informing the user that the prospect is successfully created -- pass
+  - **User Story**: Open and Read Prospect Entry
+    - Acceptance Criteria
+      - Given the user is on the prospect page and when clicking on the prospect name, a modal opens showing the detail of that prospect -- pass
+  - **User Story**: Edit Prospect Entry
+    - Acceptance Criteria
+      - Given the user is on the prospect detail modal and when entering the updated prospect information and clicking on the Edit button, the user receives a confirmation message informing the user that the prospect is successfully updated -- pass
+  - **User Story**: Delete Prospect Entry
+    - Acceptance Criteria
+      - Given the user is on the prospect detail modal and when clicking on the Delete button, the user receives a confirmation message informing the user that the prospect is successfully deleted -- pass
+  - **User Story**: Prospect Name Case Sensitive
+    - Acceptance Criteria
+      - Given the user has just successfully created a new prospect and when the user gets automatically back to the prospect list page, the user can see the new created prospect is saved in capital letters -- pass
+
+- Epic SW-3 Product Management
+  - **User Story**: Product Page
+    - Acceptance Criteria
+      - Given the user is on the home page and when clicking on the product link the user lands on the product page to see all the saved products -- pass
+  - **User Story**: Create Product Entry
+    - Acceptance Criteria
+      - Given the user is on the product create modal and when entering the new product information and clicking on the Create button, the user receives a confirmation message informing the user that the product is successfully created -- pass
+  - **User Story**: Open and Read Product Entry
+    - Acceptance Criteria
+      - Given the user is on the product page and when clicking on the product name, a modal opens showing the detail of that product -- pass
+  - **User Story**: Edit Product Entry
+    - Acceptance Criteria
+      - Given the user is on the product detail modal and when entering the updated product information and clicking on the Edit button, the user receives a confirmation message informing the user that the product is successfully updated -- pass
+  - **User Story**: Delete Product Entry
+    - Acceptance Criteria
+      - Given the user is on the product detail modal and when clicking on the Delete button, the user receives a confirmation message informing the user that the product is successfully deleted -- pass
+  - **User Story**: Product Name Case Sensitive
+    - Acceptance Criteria
+      - Given the user has just successfully created a new product and when the user gets automatically back to the product list page, the user can see the new created product is saved in capital letters -- pass
+
+- Epic SW-4 Opportunity Management
+  - **User Story**: Opportunity Page
+    - Acceptance Criteria
+      - Given the user is on the home page and when clicking on the opportunity link the user lands on the opportunity page to see all the saved opportunities -- pass
+  - **User Story**: Create Opportunity Entry
+    - Acceptance Criteria
+      - Given the user is on the opportunity create page and when entering the new opportunity information and clicking on the Create button, the user receives a confirmation message informing the user that the opportunity is successfully created -- pass
+  - **User Story**: Open and Read Opportunity Entry
+    - Acceptance Criteria
+      - Given the user is on the opportunity page and when clicking on the opportunity name, a opportunity detail page opens showing the detail of that opportunity -- pass
+  - **User Story**: Edit Opportunity Entry
+    - Acceptance Criteria
+      - Given the user is on the opportunity detail page and when entering the updated opportunity information and clicking on the Edit button, the user receives a confirmation message informing the user that the opportunity is successfully updated -- pass
+  - **User Story**: Delete Opportunity Entry
+    - Acceptance Criteria
+      - Given the user is on the opportunity detail page and when clicking on the Delete button, the user receives a confirmation message informing the user that the opportunity is successfully deleted -- pass
+  - **User Story**: Opportunity Name Case Sensitive
+    - Acceptance Criteria
+      - Given the user has just successfully created a new opportunity and when the user gets automatically back to the opportunity list page, the user can see the new created opportunity is saved in capital letters -- pass
+  - **User Story**: Return to Opportunity list
+    - Acceptance Criteria
+      - Given the user has just been confirmed by the modal message that new opportunity is successfully saved and when clicks on the Close button, the user is automatically sent back to the opportunity page  -- pass
+      - Given the user has just been confirmed by the modal message that updated opportunity is successfully saved and when clicks on the Close button, the user is automatically sent back to the opportunity page  -- pass
+      - Given the user has just been confirmed by the modal message that opportunity is deleted and when clicks on the Close button, the user is automatically sent back to the opportunity page  -- pass
+  - **User Story**: Opportunity Back Button links to Opportunity List Page
+    - Acceptance Criteria
+      - Given the user is on the opportunity create or detail page and when clicks on the Back button, the user is sent back to the opportunity page  -- pass
+  - **User Story**: Opportunity Record Control*
+    - Acceptance Criteria
+      - Given the user is not the owner of the opportunity record or is not the Admin user, and when clicks on Edit or Delete button, the user is denied the action  -- pass
+
+- Epic SW-6 Opportunity Management
+  - **User Story**: Home Page
+    - Acceptance Criteria
+      - Given a visitor is on the home page and when scrolling over the home page, the visitor finds all the needed information to encouraged to sign up for the application -- pass
+  - **User Story**: Contact Page
+    - Acceptance Criteria
+      - Given a visitor or a user is on any page of the application and when need to contact the SalesWare support team, the user or the visitor can go to the contact page to fill in the contact form and send it a contact request -- pass
+  - **User Story**: Email Received
+    - Acceptance Criteria
+      - Given a visitor or a user is correctly filled out the contact form and when clicks on the Send Button, the visitor or the user receives a confirmation email that the request is received -- pass
+    - **User Story**: Confirmation Modal Message
+    - Acceptance Criteria
+      - Given a visitor or a user is correctly filled out the contact form and when clicks on the Send Button, a modal message pops up confirming the request is submitted successfully -- pass
+    - **User Story**: Contact Form Received
+    - Acceptance Criteria
+      - Given a visitor or a user is correctly filled out the contact form and when clicks on the Send Button, an email is sent to the author of SalesWare containing all information in the request -- pass
+    - **User Story**: Link to Contact Page
+    - Acceptance Criteria
+      - Given a visitor or a user is on the home page and when reading about the SalesWare customization offering, the use can click on a Contact Us link beneath the text to send the visitor or the user to the contact page -- pass
+    - **User Story**: Active Page
+    - Acceptance Criteria
+      - Given a visitor or a user is on any page of SalesWare and when the user wants to know where in the website the user or the visitor currently is, the nav bar provides a dark color signifier over the page name that the user or the visitor is currently on right now -- pass
+
+#### 5.4.3 Automated Tests
 
 The author developed 58 python automated tests. The coverage report is extracted and the summary is provided in the table below.
 
@@ -782,13 +889,13 @@ The tests and the results are summarized in the tables below.
 | 57       |               |               |                            | TestCommunicationViews | test_home_view    | Pass   |
 | 58       |               |               |                            |                        | test_contact_view | Pass   |
 
----
+--- 
 
-#### 3.4.11 Bugs
+#### 3.4.4 Bugs
 
 This subsection provides detailed explanation on Bugs identified during the development SalesWare. It is divided into two sections. The first treat the Fixed bugs while the second is devoted to list and explain the unfixed bugs.
 
-##### 5.4.11.a Fixed Bugs
+##### 3.4.4.1 Fixed Bugs
 
 This section lists the bugs that are identified and fixed during the development.
 
@@ -800,7 +907,7 @@ This section lists the bugs that are identified and fixed during the development
 | 4| Opportunity js file with opportunity create template | product price is null when open opportunity create page. This leads to console error| Add condition if product price null then define product value as an empty value to prevent error|
 | 5| Contact js file| No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly| Add else to the if statement of "form is valid" with a response message to inform the user|
 
-##### 5.4.11.b Unfixed Bugs
+##### 3.4.4.2 Unfixed Bugs
 
 This section lists the bugs that are identified and not fixed. Most of those bugs are not errors but rather alerts or warnings.Related screenshots and further information can be found in
 
@@ -810,7 +917,9 @@ This section lists the bugs that are identified and not fixed. Most of those bug
 | 2| Sign Up page| Four errors are identified by the HTML validator| The errors are originated by **django-allauth** package itself. These errors frequently appear on other CI student PP4 projects. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** packages that are above .55. Please refer to [the HTML Validation Selected Test Screenshot ](/TEST.md#html-validation-selected-test-screenshot) for more information|
 | 3| All pages| CSS Validation warnings appear on every page of SalesWare| Those warnings come from **Bootstrap package**. The CSS file developed by the author ofin this project is validated. Neither errors nor warnings are identified |
 | 4| Home Page| Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page| The author has no solution to this alert at point|
-| 5| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert | The author has no solution to this alert at this point because the author does not have direct access to internal code of **jQuery select2** method|
+| 5| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert | The author has no solution to this alert at this point because the author does not have direct access to internal code of **jQuery select2** method|        
+
+---
 
 ## 6 Deployment
 
