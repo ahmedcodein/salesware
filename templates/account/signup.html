@@ -15,7 +15,11 @@
                 <div class="row mt-3 mb-3">
                     <div>
                         {% block translate %}Already a <strong>SalesWare</strong> user? then please
-                        <a class="salesware-txt-color" href="{{ login_url }}">Sign In</a>.
+                        <a class="salesware-txt-color" href="{{ login_url }}#">Sign In</a>.
+                        <!-- The # on the url above is added to remove Wave tool Redundant link.
+                         The solution is inspired by studying the work:
+                         https://github.com/leonp84/code-institute-project-4?tab=readme-ov-file
+                         -->
                         {% endblock translate %}
                     </div>
                 </div>
