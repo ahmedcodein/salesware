@@ -1015,16 +1015,16 @@ For any person interested to work on the source code of this project, here is th
 
 SalesWare is a sales module of a larger Customer Relation Management Solution. Therefore, the long term objective of this project is to extend this project to include Marketing, Customer Service, Customer Support and Customer Data modules.
 
-With respect to the short and midterm features, there is simply no limit as to what features can be included into SalesWare. This is because Sales Activity involves numerous metrics and details. Those can be reflected into SalesWare to make it more valuable to any Sales Team. For instance, additional fields could be added to the prospect, product and opportunity models. There is no limitation as to what fields should be added. So the question is Should the author add those fields? The author believes this question should be left to the early adopters of SalesWare to answer. The best feature to develop is the one that the customer ask for. SalesWare at its current state aims to get the author at the step door of potential users and ask this question.
+With respect to the short and midterm features, there is simply no limit as to what features can be included into SalesWare. This is because Sales Activity involves numerous metrics and details. Those can be reflected into SalesWare to make it more valuable to any Sales Team. For instance, additional fields could be added to the prospect, product and opportunity models. There is no limitation as to what fields should be added. So the question is should the author add those fields? The author believes this question should be left to the early adopters of SalesWare to answer. The best feature to develop is the one that the customer asks for. SalesWare at its current state aims to get the author at the door step of potential users and start collecting those important first-to-develop features.
 
-Nevertheless, Here are some of features that the author thinks are important and could be developed in the meantime.
+Nevertheless, here are some of the features that the author thinks are important and could be developed in the meantime.
 
-1. Sales Funnel to track expected revenue in the end of the next quarter or by the end of the fiscal year.
-2. Sales revenue estimation by region or country.
+1. Sales Funnel to track expected revenue at the end of each fiscal quarter or by the end of each fiscal year.
+2. Sales revenue estimation by country.
 3. Sales revenue estimation by industry.
-4. Data Analytics to provide additional value to the user. For instance, having data about how much time in average is required to acquire a customer from the Lead stage to the Close stage. 
+4. Data Analytics to provide additional value to the user. For instance, having data about how much time in average is required to acquire a customer from the time of creating the Lead up to the time of Closing the opportunity, i.e, the Close stage. 
 
-The first three points could be included in a new app called Dashboard. While the fourth in a new app dedicated for data analytics. **It is worth noting here that SalesWare Models today support such extension. Wheres the author considers them from day one of development**.
+The first three points could be included in a new app called Dashboard. While the fourth could be implemented in a new app dedicated for data analytics. **It is worth noting here that SalesWare Models today support such extensions. Wheres the author considered them already when developing the models from day one**.
 
 ## 8 Credits
 
@@ -1057,5 +1057,5 @@ The first three points could be included in a new app called Dashboard. While th
 
 ## 9 Acknowledgements
 
-I would like to express my sincere gratitude to Mr. David Bowers for his outstanding mentorship. His follow up and the provision of additional time to answer questions are extraordinary. He is always available to offer help in finding solutions. His recommendations on further readings on a variety of related topic are so much appreciated and always spot on in terms of timing of sharing those recommendation. Those spectacular traits of Mr. Bowers comes only second to his genuine passion of helping others to succeed. The PP4 is my last project under his mentorship, I truly hope that we cross paths again in the near future. 
+I would like to express my sincere gratitude to Mr. David Bowers for his outstanding mentorship. His follow up and the provision of additional time to answer questions are extraordinary. He is always available to offer help in finding solutions. His recommendations on further readings on a variety of related topics are so much appreciated and always spot on in terms of timing of sharing those recommendations. Those spectacular traits of Mr. Bowers comes only second to his genuine passion of helping others to succeed. The PP4 is my last project under his mentorship, I truly hope that we cross paths again in the near future. 
 Finally, I would also like to thank my family for helping me throughout this project by providing the continuous encouragement and with the valuable help with the manual testing.
