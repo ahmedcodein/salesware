@@ -103,6 +103,10 @@ caption {
     opacity: 1;
 }
 
+#id_password_helptext {
+    display: none;
+}
+
 label[for="id_password"],
 label[for="id_password1"] {
     padding-right: 5px;
