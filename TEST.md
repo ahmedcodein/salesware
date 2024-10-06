@@ -109,25 +109,36 @@
 
 # Wave Accessibility Tool
 
-The Wave tool shows on every page an alert. The screenshot of the alert is shown below.
+The first tests conducted by using the Wave tool show on every page an alert. The screenshot of the alert is shown below.
 
-![Wave Tool Report](docs/tests/wave_every_page.png)
+![Wave Tool Report With Alert](docs/tests/wave_every_page.png)
 
 The alert reference is provided in the screenshot below.
 
 ![Wave Tool Alert Reference](docs/tests/wave_alert_explanation.png)
 
-In addition to Redundant Link Alert, the opportunity create page has two additional alert with the same reference. The report is provided below.
+The author added **#** after the home page url. This seems to be an effective solution. The alert is cleared from all the pages. See the screenshot below.
+
+> Note: The solution to the Redundant Link Alert  is found by looking at other CI student projects. Then the author tested those projects with Wave tool. Some projects do not produce such alert. In one of those projects, namely: [TaskFlow](https://github.com/leonp84/code-institute-project-4?tab=readme-ov-file), the author noticed that the developer of TaskFlow added **#** at the end of the home page url. The author put this # into the home page url and then tested the page again with Wave tool. The author found out that this action resolves the issue.
+
+![Wave Tool Report Alert Free](docs/tests/wave_every_page_alert_error_free.png)
+
+In addition to Redundant Link Alert, the opportunity create page had two additional alerts both with the same reference. The report is provided below.
 
 ![Wave Tool Opportunity Create Page Report](docs/tests/wave_opportunity_create.png)
 
-The additional Alerts has the following explanation.
+The additional Alerts reference is shown below.
 
 ![Wave Tool Alert Reference of Opportunity Create Page](docs/tests/wave_opportunity_create_alert_explanation.png)
 
+The author resolves the issue by removing the automatically invoked title attribute of **jQuery select2** using Javascript in opportunity.js file. The result of the test is shown below. Notice that the three alerts are removed now. The first one by using the earlier explained approach, that is of using **#** on the page url. The other two alerts by using JavaScript remove attribute.
+
+![Wave Tool Alert Reference of Opportunity Create Page Alert and Error Free](docs/tests/wave_every_page_alert_error_free.png)
+
+
 # HTML Validation Selected Test Screenshot
 
-The test of the Sign Up page using HTML returns the following errors.
+The first test of the Sign Up page using HTML returns the following errors.
 
 ![Sign Up Page HTML Validator Result](docs/tests/signup_page_html_validator.png)
 
@@ -152,7 +163,11 @@ As the reader can see the errors are related to a code that comes with django-al
 
 ```
 
-The author could not identify a clear indication of an error in the above code. However, when the the author removed removed the defected code from the entire source code then pasted the cleaned code again into the HTML validator, all errors disappear.
+The author could not identify a clear source for the errors in the above code. However, when the the author removed the defected code from the entire source code and then pasted the cleaned code again into the HTML validator, all errors disappear.
+
+Seeking the remove of this error, multiple approaches are evaluated. The use of crispy forms, however, proves to be helpful. The result of the validation shows no errors after implementing crispy form. A screenshot of the html validator after implementing the crispy form is provided below.
+
+![Sign Up Page HTML Validator Result Error Free ](docs/tests/signup_page_html_validator_error_free.png)
 
 ---
 [Go Back](README.md)
