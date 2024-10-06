@@ -777,7 +777,7 @@ This subsection provides a comprehensive account of the manual test conducted fo
     - Acceptance Criteria
       - Given a visitor or a user is on any page of SalesWare and when the user wants to know where in the website the user or the visitor currently is, the nav bar provides a dark color signifier over the page name that the user or the visitor is currently on right now -- pass
 
-#### 5.4.3 Automated Tests
+#### 3.4.3 Automated Tests
 
 The author developed 58 python automated tests. The coverage report is extracted and the summary is provided in the table below.
 
@@ -906,6 +906,9 @@ This section lists the bugs that are identified and fixed during the development
 | 3| Prospect/product/opportunity js files| If Close button and X symbol close are clicked to cancel edit/delete action the modal data does not reset | Use event listener and execute location.reload() method|
 | 4| Opportunity js file with opportunity create template | product price is null when open opportunity create page. This leads to console error| Add condition if product price null then define product value as an empty value to prevent error|
 | 5| Contact js file| No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly| Add else to the if statement of "form is valid" with a response message to inform the user|
+| 6| Sign Up page | Four errors are identified by the HTML validator. The errors are originated by **django-allauth** package itself. These errors frequently appear on other CI student PP4 projects. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** packages that are above .55| Use Crispy forms. Information: [Click here ](/TEST.md#html-validation-selected-test-screenshot)|
+| 7|  Home Page | Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page | Attach # to page url |
+| 8| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert| In the related JS file remove the title attribute |
 
 ##### 3.4.4.2 Unfixed Bugs
 
@@ -913,11 +916,8 @@ This section lists the bugs that are identified and not fixed. Most of those bug
 
 | Bug ID No. | Bug Position | Bug Description | Comment |
 | ---------- | ------------ | --------------- | ------- |
-| 1| contact.js| JSHint observes bootstrap.Modal as undefined variable| This due to JSHint does not import Bootstrap CDN. No solution is suggested|
-| 2| Sign Up page| Four errors are identified by the HTML validator| The errors are originated by **django-allauth** package itself. These errors frequently appear on other CI student PP4 projects. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** packages that are above .55. Please refer to [the HTML Validation Selected Test Screenshot ](/TEST.md#html-validation-selected-test-screenshot) for more information|
-| 3| All pages| CSS Validation warnings appear on every page of SalesWare| Those warnings come from **Bootstrap package**. The CSS file developed by the author ofin this project is validated. Neither errors nor warnings are identified |
-| 4| Home Page| Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page| The author has no solution to this alert at point|
-| 5| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert | The author has no solution to this alert at this point because the author does not have direct access to internal code of **jQuery select2** method|        
+| 1| contact.js| JSHint warning: bootstrap as undefined variable| This is due to JSHint does not import Bootstrap CDN. No solution is suggested|
+| 2| All pages| CSS Validation warnings appear on every page of SalesWare| Those warnings come from **Bootstrap CDN URI**: https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css. The CSS file developed by the author in this project is validated. Neither errors nor warnings are identified in the latter file |       
 
 ---
 
