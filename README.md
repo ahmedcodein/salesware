@@ -328,7 +328,7 @@ SalesWare brand comes with two logos. The first (the picture on the right) is la
 
 2. SalesWare Header
 
-The header of SalesWare is shown below in two different scenarios for large screen case. One where the user is logged in and the other where the user is not logged in:
+The header of SalesWare is shown below in two different scenarios for large screen case. One where the user is **not logged in** and the other where the user is **logged in** respectively:
 
 ![SalesWare Header User Not Logged IN](docs/features/shared_features/header_not_logged_in.png)
 ![SalesWare Header User Logged IN](docs/features/shared_features/header_logged_in.png)
