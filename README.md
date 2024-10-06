@@ -237,7 +237,7 @@ The presentation of Wireframes in this section is according to the sequence of t
 
 ### 2.4 Color
 
-The following color pallette is used for building up the website text, line breaks, buttons background the general background colors.
+The following color pallette is used for building up the website text, line breaks, buttons background and the general background colors.
 
 ![Color Pallet](docs/colors/color_palette.PNG)
 
@@ -263,7 +263,7 @@ No specific font is used for this project. The author decides to implement the d
 
 ## 3 Execution
 
-The sections explains the execution activity. The section begins with the Technologies used to develop SalesWare. It also provides a summary about the agile methodology implemented with brief summary about the project management performance evaluation. Another subsection is devoted to list all SalesWare features followed by a comprehensive testing documentation. A separate subsection is dedicated to discuss the bugs and a brief discussion on the public API of EmailJS service. The section then concludes with subsection dedicated for the deployment procedure.
+This section explains the execution activity. The section begins with the Technologies used to develop SalesWare. It also provides a summary about the agile methodology implemented with brief summary about the project management performance evaluation. Another subsection is devoted to list all SalesWare features followed by a comprehensive testing documentation. A separate subsection is dedicated to discuss the bugs and a brief discussion on the public API of EmailJS service. The section then concludes with subsection dedicated for the deployment procedure.
 
 ### 3.1 Technologies Used
 
