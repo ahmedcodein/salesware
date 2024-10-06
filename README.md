@@ -66,23 +66,24 @@ The SalesWare User Manual is available on the following link: [User Manual](MANU
 
 This section is devoted to explain the rational behind developing SalesWare. It aims to answer the following questions:
 
-Why SalesWare?
-What drives the author to develop SalesWare?
-Why the user should care about using SalesWare?
+> Why SalesWare?
+> What drives the author to develop SalesWare?
+> Which users SalesWare is developed for?
+> Why the user should care about using SalesWare?
 
-Sales activity is one of the main activities of any businesses. It produces important metrics of any organization. Senior-level executives use those metrics to analyze and evaluate the firm's health, competitions, product demands etc.. In addition, sales forecast drives most of the firm's future plans that touch upon every aspect of a business.
+Sales is one of the main activities of any businesses. It produces important metrics of any organization. Senior-level executives use those metrics to analyze and evaluate the firm's health, competitions, product demands etc.. In addition, sales forecast drives most of the firm's future plans that touch upon every aspect of a business.
 
-Having a sales software that collects, stores and present such data like, customers' data, firm's offerings, opportunities tracking, historical sales data, customer acquisition metrics and sales pipeline is , therefore, of a great help to the firm decision makers.
+Having a sales software that collects, stores and present such data like, customers' data, firm's offerings, opportunities tracking, historical sales data, customer acquisition metrics and sales pipeline is, therefore, of a great help to the firm decision makers.
 
 The Software As A Service (SAAS) has taped into this need. We witnessed in the last couple of decades an explode in the number of Sales tools and CRM systems. Yet, there is still a nontrivial number of organizations, small businesses and startups, use excel sheets or similar products to track and record their sales activity. This is due to the fact that the license cost of the sophisticated SAAS solutions are quite high making it a burden on those small businesses to acquire.
 
-On the other hand, tools like excel sheets are not designed to serve sales people. They are built for general purposes, hence they are not easy to use. Furthermore, the customization of such tools comes with high cost. In addition, any change to the firm sales activity in terms of process, business rules or metrics will lead to massive adaptation cost.
+On the other hand, tools like excel sheets are not designed to serve sales people. They are built for general purposes. Hence, they are difficult to use. Furthermore, the customization of such tools comes with high cost. In addition, any change to the firm sales activity in terms of process, business rules or metrics will lead to massive adaptation cost.
 
 All that led the author to consider developing a sales tool that can support those businesses by providing an affordable sales activity-tailored solution.
 
 ### 2.2 Design Concept
 
-The design concept of SalesWare is based on the general Reference Model used to develop an information system. This reference model is widely used in the enterprise architecture design. The adopted Reference Model core layers are Process, Data and application layers. The other two layers are the strategy and the infrastructure. The former is briefly explained in the previous section. It involves the strategic rational behind developing and/or integrating an enterprise solution to the business operation. The latter layer is the infrastructure layer. It is concerned with the infrastructure required to build and integrate the information system (solution). This layer is out of this project scope.
+The design concept of SalesWare is based on the general Reference Model used to develop an information system. This reference model is widely used in the enterprise architecture design [Reference](/README.md#81-references). The adopted Reference Model core layers are Process, Data and Application layers. The other two layers are the strategy and the infrastructure. The former is briefly explained in the previous section. It involves the strategic rational behind developing and/or integrating an enterprise solution to the business operation. The latter layer is the infrastructure layer. It is concerned with the infrastructure required to build and integrate the information system (solution). This layer is out of this project scope.
 
 The following subsections aim to provide a detailed account of the main three layers mentioned above to shed some light on how the solution is designed.
 
@@ -94,11 +95,11 @@ The devised sales process is shown in the figure below.
 
 ![process](docs/design_concept/process.png)
 
-By establishing the process, the main entities and business rules can easily be extracted. Those entities and business rules are essential to design the data model, the logic to be implemented into the code and also to extract the general requirements of the application. For instance, one can observe that there are four entities that are essential to this business scenario. These are Prospect, Product and Opportunity. In addition, one can notice, that the process goes into different stages these are Lead, Proposal, Negotiation and finally Close. The process is said to be Closed if it is a Won or Lost. Such information are crucial to the development of the logical data model which is the subject of the next subsection.
+By establishing the process, the main entities and business rules can now easily be extracted. Those entities and business rules are essential to design the data model, the logic to be implemented into the code and also to extract the general requirements of the application. For instance, one can observe that there are four entities that are essential to this business scenario. These are Prospect, Product and Opportunity. In addition, one can notice, that the process goes into different stages. These are Lead, Proposal, Negotiation and finally Close. The process is said to be Closed if it is a Won or Lost. Such information are crucial to the development of the logical data model which is the subject of the next subsection.
 
 #### 2.2.2 Data
 
-This section is devoted to present the data model of SalesWare. The Data Model is built to reflect the business process described in the Process subsection. The data model implemented is depicted in the figure below.
+This section is devoted to present the data model of SalesWare. The Data Model is built to reflect the business process described in the Process layer. The data model implemented is depicted in the figure below.
 
 ![Data Model](docs/design_concept/data.png)
 
@@ -115,7 +116,7 @@ The application layer is the last layer of the reference model. In the context o
 - Opportunity Management Capability\
   read/create/update/delete of opportunity
 - Communication Management Capability\
-  Means of communication between user/visitor and the software developer
+  Means of communication between user/visitor and SalesWare Support Team
 
 ##### 2.2.3.1 Epics and User Stories
 
@@ -205,9 +206,9 @@ Agile methodology is used to develop the Software. The high-level requirements p
   - **Active Page** 
     - As a Site Visitor or User, I can see the page I am in using a signifier, so that I can always know what page I am at.
   
-Further detail on the Agile Methodology followed in this project is provided in the execution section.
+Further detail on the Agile Methodology followed in this project is provided in [the Execution section/Agile Development](/README.md#32-agile-development).
 
-> **Note:** There is a discrepancy in the Epics numberings. Where Epic 5 is missing. This is due to the fact that Jira keeps the numbering continue even if an epic is deleted. The author deleted Epic 5 as this Epic is shifted to be part of the future work. The author touches upon this point in the section of Future Work.
+> **Note:** There is a discrepancy in the Epics numberings. Where Epic 5 is missing. This is due to the fact that Jira keeps the numbering continue even if an epic is deleted. The author deleted Epic 5 as this Epic is shifted to be part of future work.
 >  
 
 ### 2.3 Wireframes
@@ -1034,15 +1035,15 @@ The first three points could be included in a new app called Dashboard. While th
 
 ### 8.1 References
 
-- CI Study Materials, [Code Institute](https://codeinstitute.net/de/bildungsgutschein/?utm_term=code%20institute&utm_campaign=CI%2B-%2BUK%2B-%2BSearch%2B-%2BBrand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=16493764737&hsa_grp=132915436966&hsa_ad=635790877675&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNlk5PQerlGAVupYRw0WPKtdiPb9QBFPzUv-YEGIv5cb6FJe1G24uVwaAoZKEALw_wcB).
+1. CI Study Materials, [Code Institute](https://codeinstitute.net/de/bildungsgutschein/?utm_term=code%20institute&utm_campaign=CI%2B-%2BUK%2B-%2BSearch%2B-%2BBrand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=16493764737&hsa_grp=132915436966&hsa_ad=635790877675&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNlk5PQerlGAVupYRw0WPKtdiPb9QBFPzUv-YEGIv5cb6FJe1G24uVwaAoZKEALw_wcB).
 
-- EmailJS, [EmailJS documentation](https://www.emailjs.com/docs/).
-- Django, [Django documentation](https://docs.djangoproject.com/en/5.1/).
-- The Dumbfounds, [Django Testing Tutorial](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM).
-- Markdown Cheat Sheet, [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
-- Conventional Commits, [A specification for adding human and machine readable meaning to commit messages](https://www.conventionalcommits.org/en/v1.0.0/).
-- Hoberman, Steve, Michael Blaha, Bill Inmon, Graeme Simsion, and Carol Lehn. Data modeling made simple: a practical guide for business and IT professionals. Technics Publications, LLC, 2009.
-- Czarnecki, Christian, and Christian Dietze. "Reference architecture for the telecommunications industry." Transformation of Strategy, Organi-zation, Processes, Data, and Applications (2017).
+2. EmailJS, [EmailJS documentation](https://www.emailjs.com/docs/).
+3. Django, [Django documentation](https://docs.djangoproject.com/en/5.1/).
+4. The Dumbfounds, [Django Testing Tutorial](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM).
+5. Markdown Cheat Sheet, [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
+6. Conventional Commits, [A specification for adding human and machine readable meaning to commit messages](https://www.conventionalcommits.org/en/v1.0.0/).
+7. Hoberman, Steve, Michael Blaha, Bill Inmon, Graeme Simsion, and Carol Lehn. Data modeling made simple: a practical guide for business and IT professionals. Technics Publications, LLC, 2009.
+8. Czarnecki, Christian, and Christian Dietze. "Reference architecture for the telecommunications industry." Transformation of Strategy, Organi-zation, Processes, Data, and Applications (2017).
 
 ### 8.2. Content and Tools
 
