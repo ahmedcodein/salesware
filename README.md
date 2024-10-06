@@ -658,10 +658,10 @@ The following table summarizes various Quality and Validation tests conducted fo
 
 | No. | Test Name| Tool Name| Test Explanation| No. of Tests| Test Result| Comment|
 | --- | -------- | -------- | --------------- | -------------- | ---------- | ------ |
-| 1   | JavaScript code analysis | JShint|All JS files| x4| Pass. Warning: bootstrap as undefined var| Explanation: [unfixed bugs](/README.md#5411b-unfixed-bugs)|
+| 1   | JavaScript code analysis | JShint|All JS files| x4| Pass. Warning: bootstrap as undefined var| Explanation: [unfixed bugs](/README.md#3442-unfixed-bugs)|
 | 2   | Python code style checker| CI Linter| Every .py file developed by the author | x31| Pass| No Comment|
 | 3   | HTML Validation| W3C Markup Validation | All pages| x10| Pass| No Comment|
-| 4   | CSS Validation| W3C CSS Validation| All pages| 10 + Author's CSS | 10 + Author's CSS are pass, no errors. The 10 pages show warnings| Explanation: [unfixed bugs](/README.md#5411b-unfixed-bugs)|
+| 4   | CSS Validation| W3C CSS Validation| All pages| 10 + Author's CSS | 10 + Author's CSS are pass, no errors. The 10 pages show warnings| Explanation: [unfixed bugs](/README.md#3442-unfixed-bugs)|
 | 5   | Accessibility| Wave tool| All pages| x10| Pass| No Comment |
 | 6   | Google DevTools| Chrome DevTools| All pages| x10|Pass|No Comment|
 | 7   | Lighthouse Validation| Chrome Lighthouse| Desktop and Mobile| x20| Min value P: 83, A: 100, BP: 100, SEO = 100 |Test [screenshots](/TEST.md#lighthouse-tests-captures)|
@@ -901,14 +901,14 @@ This section lists the bugs that are identified and fixed during the development
 
 | Bug ID No. | Bug Position | Bug Description | Bug Solution |
 | ---------- | ------------ | --------------- | ------------ |
-| 1| Prospect/product/opportunity views.py| save prospect/product id when prospect detail modal is called, and passing it to the edit/delete views.py| Use request.session to get the id, then store it to be used in the edit/delete view functions |
+| 1| Prospect/product/opportunity views.py| no direct way to pass prospect/product id when prospect detail modal is called, and passing the id to the edit/delete views.py| Use request.session to get the id, then store it to be used in the edit/delete view functions |
 | 2| Prospect/product/opportunity views.py| Extracting error code for evaluation| Use errors.as_data().items() method and loop through errors and get the error.code|
 | 3| Prospect/product/opportunity js files| If Close button and X symbol close are clicked to cancel edit/delete action the modal data does not reset | Use event listener and execute location.reload() method|
 | 4| Opportunity js file with opportunity create template | product price is null when open opportunity create page. This leads to console error| Add condition if product price null then define product value as an empty value to prevent error|
-| 5| Contact js file| No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly| Add else to the if statement of "form is valid" with a response message to inform the user|
-| 6| Sign Up page | Four errors are identified by the HTML validator. The errors are originated by **django-allauth** package itself. These errors frequently appear on other CI student PP4 projects. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** packages that are above .55| Use Crispy forms. Information: [Click here ](/TEST.md#html-validation-selected-test-screenshot)|
-| 7|  Home Page | Wave tool shows Redundant link alert. This is related to having two links to the contact page in the home page | Attach # to page url |
-| 8| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert| In the related JS file remove the title attribute |
+| 5| Contact js file| No Modal message response appears if only spaces are entered to the form fields. HTML required attribute does not handel this issue properly| Add else to the if statement of "form is valid" with a response message to inform the user of empty fields|
+| 6| Sign Up page | Four errors are identified by the HTML validator. The errors are originated by **django-allauth** package itself. These errors frequently appear on other CI student PP4 projects. One of Slack members indicates that this issue appears in the newer versions of **django-allauth** packages that are above .55| Use Crispy forms, see [explanation ](/TEST.md#html-validation-selected-test-screenshot)|
+| 7|  Home Page | Wave tool shows Redundant link alert. This is related to having two links to the home page | Attach # to page url, see [explanation](/TEST.md#wave-accessibility-tool) |
+| 8| Opportunity Create Page | Wave tool shows Page shows 2 X Redundant title text alerts. This is related to **jQuery select2**. It seems **jQuery select2** automatically produces titles that trigger this alert| In the related JS file remove the title attribute, see [explanation](/TEST.md#wave-accessibility-tool) |
 
 ##### 3.4.4.2 Unfixed Bugs
 
