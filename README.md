@@ -922,7 +922,13 @@ This section lists the bugs that are identified and not fixed. Most of those bug
 | Bug ID No. | Bug Position | Bug Description | Comment |
 | ---------- | ------------ | --------------- | ------- |
 | 1| contact.js| JSHint warning: bootstrap as undefined variable| This is due to JSHint does not import Bootstrap CDN. No solution is suggested|
-| 2| All pages| CSS Validation warnings appear on every page of SalesWare| Those warnings come from **Bootstrap CDN URI**: https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css. The CSS file developed by the author in this project is validated. Neither errors nor warnings are identified in the latter file |       
+| 2| All pages| CSS Validation warnings appear on every page of SalesWare| Those warnings come from **Bootstrap CDN URI**: https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css. The CSS file developed by the author in this project is validated. Neither errors nor warnings are identified in the latter file |
+
+### 3.5 EmailJS Public API Security Issue
+
+The EmailJS service is implemented in this project to handle users request for information or technical support. EmailJS provides this free service by offering a public API to send email from EmailJS service user website. In order for the service to work, some public keys need to be used. These are service_id, template_id and user_id. Those ids can be found in contact.js file, where the requests submission is handled. 
+
+The contact.js in this project is a Frontend component, hence it is exposed. This means that those keys are also exposed. This is because, any information in the frontend is fundamentally exposed. Nevertheless, this exposure does not mean there is a security breach or security vulnerability.Even if a bad actor wants to use those keys to send emails, the emails only contain the content of the template the EmailJS user defined. There is no other information can be accessed by knowing those ids. In addition, EmailJS is a Frontend level service, hence, by design it is meant to work on the frontend level. For more information, please refer to [EmailJS documentation](https://www.emailjs.com/docs/faq/is-it-okay-to-expose-my-public-key/)
 
 ---
 
