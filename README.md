@@ -213,7 +213,7 @@ Further detail on the Agile Methodology followed in this project is provided in 
 
 ### 2.3 Wireframes
 
-The Wireframes design concept is structured in a way that reflects the sequence of the Epics presented in the Application requirements section. For example, Account Management consists of the pages that is responsible for Sign Up, Sign In and Sign Out and so on for the rest of the epics and their respective pages. The Wireframes designs presented in this section cover both PC and Mobile screen view scenarios.
+The presentation of Wireframes in this section is according to the sequence of the Epics presented in the Application requirements section. For example, Account Management consists of the pages that is responsible for Sign Up, Sign In and Sign Out. And this is how their respective Wireframes are presented and so on for the rest of the components. The Wireframes designs presented in this section cover both PC and Mobile screen view scenarios.
 
 #### 2.3.1 Account Management
 
