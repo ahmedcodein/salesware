@@ -11,7 +11,7 @@ The market entry of **SalesWare** is small businesses and startups. More specifi
 
 **SalesWare** in its current state should not be viewed as a solution that promises all the expected features an established sales process tool or a CRM tool is assumed to have. But rather as a minimum viable product (MVP) with the main purpose of getting the Author at the door step of potential buyers. Through their feedbacks and through analyzing their unique sales processes, **SalesWare** can be further developed to evolve into much more sophisticated sales tool.
 
-![Main View](docs/introduction/amIresponsive.PNG)
+![Main View](docs/introduction/amIresponsive.png)
 
 ## 1 Introduction
 
