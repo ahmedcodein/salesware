@@ -1067,7 +1067,7 @@ The first three points could be included in a new app called Dashboard. While th
 
 ### 8.2. Content and Tools
 
-- [ChatGPT](https://chat.openai.com/auth/login?sso) is used to understand various programming concepts.
+- [ChatGPT](https://chat.openai.com/auth/login?sso) is used to understand various programming concepts. It is also used to create prospects fictional records to be used as dummy data.
 - [Google Gemini](https://gemini.google.com/) is used to understand various programming concepts.
 - [Word counter](https://wordcounter.net/character-count) is used to track the number of characters of each git commit.
 - [Image Resizer](https://redketchup.io/image-resizer) is used to resize images.
