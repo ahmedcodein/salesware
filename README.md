@@ -9,7 +9,7 @@ The market entry of **SalesWare** is small businesses and startups. More specifi
 
 **SalesWare** is built as a foundational module of a Customer Relationship Management (CRM) software. The envisioned CRM then represents the ultimate vision of this project. This vision includes other modules like MarketingWare, ServiceWare, SupportWare and DataWare. Moreover, each of those modules will integrate Data Analytics to bring additional value to our users.
 
-**SalesWare** in its current state should not be viewed as a solution that promises all the expected features an established sales process tool or a CRM tool is assumed to have. But rather as a minimum viable product (MVP) with the main purpose of getting the Author at the door step of potential buyers. Through their feedbacks and through analyzing their unique sales processes, **SalesWare** can be further developed to evolve into much more sophisticated sales tool.
+**SalesWare** in its current state should not be viewed as a solution that promises all the expected features an established sales process tool or a CRM tool is assumed to have. But rather as a minimum viable product (MVP) with the main purpose of getting the Author at the door step of potential buyers. Through their feedbacks and through analyzing their unique sales processes, **SalesWare** can be further developed to evolve into much more sophisticated sales tool. Here is a link to [SalesWare](https://sales-ware-7d441e6db481.herokuapp.com/).
 
 ![Main View](docs/introduction/amIresponsive.png)
 
