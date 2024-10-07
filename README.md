@@ -429,9 +429,13 @@ The sender will also receive a confirmation email, as shown in the following scr
 #### 3.3.3 Prospect Management
 
 The prospect management provides the user the ability to read/create/edit/delete prospect. The prospect list page is the main page. It lists all the saved prospect.
-A screenshot of the prospect list is provided below.
+Screenshot of the prospect list with pagination examples are provided below.
 
 ![Prospect List](docs/features/propsect/prospect_list.png)
+
+![Prospect Pagination One](docs/features/propsect/prospect_pagination_one.png)
+
+![Prospect Pagination Two](docs/features/propsect/prospect_pagination_two.png)
 
 The prospect detail modal shows the prospect detail and provides the capability to edit or delete the prospect. A screenshot of the modal is below:
 
@@ -472,9 +476,13 @@ The same pattern is used to create prospect. The create prospect modal and the a
 #### 3.3.4 Product Management
 
 The product management provides the user the ability to read/create/edit/delete product. The product list page is the main page. It lists all the saved product.
-A screenshot of the product list is provided below.
+A screenshot of the product list page with pagination examples are provided below.
 
 ![Product List](docs/features/product/product_list.png)
+
+![Product Pagination One](docs/features/product/product_pagination_one.png)
+
+![Product Pagination Two](docs/features/product/product_pagination_two.png)
 
 The product detail modal shows the product detail and provides the capability to edit or delete the product. A screenshot of the modal is below:
 
@@ -514,11 +522,13 @@ The same pattern is used to create product. The create product modal and the ass
 
 #### 3.3.5 Opportunity Management
 
-The opportunity management provides the user the ability to read/create/edit/delete opportunity. The opportunity list page is the main page. It lists all the saved opportunity.
-
-A screenshot of the opportunity list is provided below.
+The opportunity management provides the user the ability to read/create/edit/delete opportunity. The opportunity list page is the main page. It lists all the saved opportunity. Screenshots of the opportunity list with pagination features examples are provided below.
 
 ![opportunity List](docs/features/opportunity/opportunity_list.png)
+
+![opportunity Pagination One](docs/features/opportunity/opportunity_pagination_one.png)
+
+![opportunity Pagination Two](docs/features/opportunity/opportunity_pagination_two.png)
 
 By clicking on the + Opportunity, the create new opportunity page opens. As shown below.
 
