@@ -67,8 +67,11 @@ The SalesWare User Manual is available on the following link: [User Manual](MANU
 This section is devoted to explain the rational behind developing SalesWare. It aims to answer the following questions:
 
 > Why SalesWare?
+
 > What drives the author to develop SalesWare?
+
 > Which users SalesWare is developed for?
+
 > Why the user should care about using SalesWare?
 
 Sales is one of the main activities of any businesses. It produces important metrics of any organization. Senior-level executives use those metrics to analyze and evaluate the firm's health, competitions, product demands etc.. In addition, sales forecast drives most of the firm's future plans that touch upon every aspect of a business.
@@ -679,73 +682,73 @@ This subsection provides a comprehensive account of the manual tests conducted f
 
 - Epic SW-1 Account Management
   - **User Story**: Register a User account
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the visitor in the sign up page, the visitor can register and the visitor is then sent back to the home page with her name appearing as signed in on top of the dropdown menu -- **Pass**
   - **User Story**: Store login information
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is signed out and when being on the sign in page, the visitor can sign in again and the user is then sent back to the home page with her name appearing as signed in on top of the dropdown menu -- **Pass**
   - **User Story**: Admin User Account
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is registered as an Admin, the Admin can sign in into the admin page and get access to the functionality of seeing all the registered users -- **Pass**
 
 - Epic SW-2 Prospect Management
   - **User Story**: Prospect Page
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the home page and when clicking on the prospect page link the user lands on the prospect page to see all the saved prospects -- **Pass**
   - **User Story**: Create Prospect Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the prospect create modal and when entering the new prospect information and clicking on the Create button, the user receives a confirmation message informing the user that the prospect is successfully created -- **Pass**
   - **User Story**: Open and Read Prospect Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the prospect page and when clicking on the prospect company name, a modal opens showing the detail of that prospect -- **Pass**
   - **User Story**: Edit Prospect Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the prospect detail modal and when entering the updated prospect information and clicking on the Edit button, the user receives a confirmation message informing the user that the prospect is successfully updated -- **Pass**
   - **User Story**: Delete Prospect Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the prospect detail modal and when clicking on the Delete button, the user receives a confirmation message informing the user that the prospect is successfully deleted -- **Pass**
   - **User Story**: Prospect Name Case Sensitive
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user has just successfully created a new prospect and when the user gets automatically back to the prospect list page, the user can see the new created prospect is saved in capital letters -- **Pass**
 
 - Epic SW-3 Product Management
   - **User Story**: Product Page
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the home page and when clicking on the product page link the user lands on the product page to see all the saved products -- **Pass**
   - **User Story**: Create Product Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the product create modal and when entering the new product information and clicking on the Create button, the user receives a confirmation message informing the user that the product is successfully created -- **Pass**
   - **User Story**: Open and Read Product Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the product page and when clicking on the product name, a modal opens showing the detail of that product -- **Pass**
   - **User Story**: Edit Product Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the product detail modal and when entering the updated product information and clicking on the Edit button, the user receives a confirmation message informing the user that the product is successfully updated -- **Pass**
   - **User Story**: Delete Product Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the product detail modal and when clicking on the Delete button, the user receives a confirmation message informing the user that the product is successfully deleted -- **Pass**
   - **User Story**: Product Name Case Sensitive
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user has just successfully created a new product and when the user gets automatically back to the product list page, the user can see the new created product is saved in capital letters -- **Pass**
 
 - Epic SW-4 Opportunity Management
   - **User Story**: Opportunity Page
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the home page and when clicking on the opportunity page link the user lands on the opportunity page to see all the saved opportunities -- **Pass**
   - **User Story**: Create Opportunity Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the opportunity create page and when entering the new opportunity information and clicking on the Create button, the user receives a confirmation message informing the user that the opportunity is successfully created -- **Pass**
   - **User Story**: Open and Read Opportunity Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the opportunity page and when clicking on the opportunity name, a opportunity detail page opens showing the detail of that opportunity -- **Pass**
   - **User Story**: Edit Opportunity Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the opportunity detail page and when entering the updated opportunity information and clicking on the Edit button, the user receives a confirmation message informing the user that the opportunity is successfully updated -- **Pass**
   - **User Story**: Delete Opportunity Entry
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the opportunity detail page and when clicking on the Delete button, the user receives a confirmation message informing the user that the opportunity is successfully deleted -- **Pass**
   - **User Story**: Opportunity Name Case Sensitive
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user has just successfully created a new opportunity and when the user gets automatically back to the opportunity list page, the user can see the new created opportunity is saved in capital letters -- **Pass**
   - **User Story**: Return to Opportunity list
     - Acceptance Criteria
@@ -753,33 +756,33 @@ This subsection provides a comprehensive account of the manual tests conducted f
       - Given the user has just been confirmed by the modal message that updated opportunity is successfully saved and when clicks on the Close button, the user is automatically sent back to the opportunity page  -- **Pass**
       - Given the user has just been confirmed by the modal message that opportunity is deleted and when clicks on the Close button, the user is automatically sent back to the opportunity page  -- **Pass**
   - **User Story**: Opportunity Back Button links to Opportunity List Page
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is on the opportunity create or detail pages and when clicks on the Back button, the user is sent back to the opportunity page  -- **Pass**
   - **User Story**: Opportunity Record Control*
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given the user is not the owner of the opportunity record or is not the Admin user, and when clicks on Edit or Delete button, the user is denied the action  -- **Pass**
 
 - Epic SW-6 Opportunity Management
   - **User Story**: Home Page
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given a visitor is on the home page and when scrolling down the home page, the visitor finds all the needed information to encouraged to sign up for the application -- **Pass**
   - **User Story**: Contact Page
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given a visitor or a user has some question or enquiries about SalesWare and when need to contact the SalesWare support team, the user or the visitor can go to the contact page to fill in the contact form and send it a contact request -- **Pass**
   - **User Story**: Email Received
-    - Acceptance Criteria
+    - Acceptance criterion
       - Given a visitor or a user is correctly filled out the contact form and when clicks on the Send Button, the visitor or the user receives a confirmation email that the request is received -- **Pass**
-    - **User Story**: Confirmation Modal Message
-    - Acceptance Criteria
+  - **User Story**: Confirmation Modal Message
+    - Acceptance criterion
       - Given a visitor or a user is correctly filled out the contact form and when clicks on the Send Button, a modal message pops up confirming the request is submitted successfully -- **Pass**
-    - **User Story**: Contact Form Received
-    - Acceptance Criteria
+  - **User Story**: Contact Form Received
+    - Acceptance criterion
       - Given a visitor or a user is correctly filled out the contact form and when clicks on the Send Button, an email is sent to the author of SalesWare containing all information in the request -- **Pass**
-    - **User Story**: Link to Contact Page
-    - Acceptance Criteria
+  - **User Story**: Link to Contact Page
+    - Acceptance criterion
       - Given a visitor or a user is on the home page and when reading about the SalesWare customization offering, the use can click on a Contact Us link beneath the teaser text to send the visitor or the user to the contact page -- **Pass**
-    - **User Story**: Active Page
-    - Acceptance Criteria
+  - **User Story**: Active Page
+    - Acceptance criterion
       - Given a visitor or a user is on any page of SalesWare and when the user wants to know where in the website the user or the visitor currently is, the nav bar provides a dark color signifier over the page name that the user or the visitor is currently on right now -- **Pass**
 
 #### 3.4.3 Automated Tests
