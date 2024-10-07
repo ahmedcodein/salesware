@@ -772,13 +772,13 @@ This subsection provides a comprehensive account of the manual tests conducted f
     - Acceptance criterion
       - Given the user is not the owner of the opportunity record or is not the Admin user, and when clicks on Edit or Delete button, the user is denied the action  -- **Pass**
 
-- Epic SW-6 Opportunity Management
+- Epic SW-6 Communication Management
   - **User Story**: Home Page
     - Acceptance criterion
       - Given a visitor is on the home page and when scrolling down the home page, the visitor finds all the needed information to encouraged to sign up for the application -- **Pass**
   - **User Story**: Contact Page
     - Acceptance criterion
-      - Given a visitor or a user has some question or enquiries about SalesWare and when need to contact the SalesWare support team, the user or the visitor can go to the contact page to fill in the contact form and send it a contact request -- **Pass**
+      - Given a visitor or a user has some questions or enquiries about SalesWare and when need to contact the SalesWare support team, the user or the visitor can go to the contact page to fill in the contact form and send it a contact request -- **Pass**
   - **User Story**: Email Received
     - Acceptance criterion
       - Given a visitor or a user is correctly filled out the contact form and when clicks on the Send Button, the visitor or the user receives a confirmation email that the request is received -- **Pass**
@@ -794,6 +794,10 @@ This subsection provides a comprehensive account of the manual tests conducted f
   - **User Story**: Active Page
     - Acceptance criterion
       - Given a visitor or a user is on any page of SalesWare and when the user wants to know where in the website the user or the visitor currently is, the nav bar provides a dark color signifier over the page name that the user or the visitor is currently on right now -- **Pass**
+  - **User Story**: Sign-Up or Sign-In Errors Related Messages
+    - Acceptance criterion
+      - Given a visitor or a user is on Sign-Up or Sign-In pages and when the user enters the required passwords or username incorrectly, the page provides the error feedback error messages highlighted in red -- **Pass**
+
 
 #### 3.4.3 Automated Tests
 
