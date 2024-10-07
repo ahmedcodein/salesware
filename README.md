@@ -1063,6 +1063,7 @@ The first three points could be included in a new app called Dashboard. While th
 - [Coolors](https://coolors.co/fdf6da-dcbf87-dcb36f-ac8144-744b1e-704116-6b350f-210e03) is used to create the color palette.
 - [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23fdf6daff%3B%0D%0A%23dcbf87ff%3B%0D%0A%23dcb36fff%3B%0D%0A%23ac8144ff%3B%0D%0A%23744b1eff%3B%0D%0A%23704116ff%3B%0D%0A%236b350fff%3B%0D%0A%23210e03ff%3B%0D%0A&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) is used to create the color contrast matrix.
 - [Favicon Generator](https://www.favicon.cc/?) is used to create SalesWare favicon.
+- [Am I Responsive](https://ui.dev/amiresponsive) is used to create the introduction image.
 - [Looka](https://looka.com/) is inspired the design concept of SalesWare logos and the teaser image in the home page.
 - [GIMP GNU Image Manipulation Program](https://www.gimp.org/) is used to design and create SalesWare logos and the teaser image in the home page.
 - [Leonardo](https://app.leonardo.ai/) is used to create two images of the fist part of the home page.
