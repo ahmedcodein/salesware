@@ -49,3 +49,5 @@ urlpatterns = [
         include('django_summernote.urls')
     ),
 ]
+
+handler404 = 'communication.views.error_404'

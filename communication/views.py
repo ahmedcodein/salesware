@@ -23,3 +23,7 @@ def contact(request):
         request,
         'communication/contact.html'
     )
+
+
+def error_404(request, exception):
+    return render(request, 'communication/404.html', status=404)
