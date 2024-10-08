@@ -46,7 +46,11 @@
         <div class="container-fluid">
             <div class="row">
                 <nav class="navbar navbar-expand-md">
-                    <a class="navbar-brand text-white" href="/">
+                    <a class="navbar-brand text-white" href="/#">
+                        <!-- The # on the url above is added to remove Wave tool Redundant link.
+                         The solution is taken from the work:
+                         https://github.com/leonp84/code-institute-project-4?tab=readme-ov-file
+                         -->
                         <img src="/static/images/medium_logo.jpg" alt="SalesWare Logo" width="132" height="74"
                             style="object-fit: cover;">
                     </a>
@@ -59,11 +63,7 @@
                             {% if user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}"
-                                    href="/#">Home</a>
-                                <!-- The # on the url above is added to remove Wave tool Redundant link.
-                                 The solution is taken from the work:
-                                 https://github.com/leonp84/code-institute-project-4?tab=readme-ov-file
-                                 -->
+                                    href="/">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {% if request.path == prospect_url %}active{% endif %}"
