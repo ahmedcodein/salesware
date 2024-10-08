@@ -1108,12 +1108,13 @@ With respect to the short and midterm features, there is simply no limit as to w
 
 Nevertheless, here are some of the features that the author thinks are important and could be developed in the meantime.
 
-1. Sales Funnel to track expected revenue at the end of each fiscal quarter or by the end of each fiscal year.
-2. Sales revenue estimation by country.
-3. Sales revenue estimation by industry.
-4. Data Analytics to provide additional value to the user. For instance, having data about how much time in average is required to acquire a customer from the time of creating the Lead up to the time of Closing the opportunity, i.e, the Close stage. 
+1. Search functionality on prospect/product/opportunity list page.
+2. Sales Funnel to track expected revenue at the end of each fiscal quarter or by the end of each fiscal year.
+3. Sales revenue estimation by country.
+4. Sales revenue estimation by industry.
+5. Data Analytics to provide additional value to the user. For instance, having data about how much time in average is required to acquire a customer from the time of creating the Lead up to the time of Closing the opportunity, i.e, the Close stage. 
 
-The first three points could be included in a new app called Dashboard. While the fourth could be implemented in a new app dedicated for data analytics. **It is worth noting here that SalesWare Models today support such extensions. Wheres the author considered them already when developing the models from day one**.
+The points 2, 3, and 4 could be included in a new app called Dashboard. The fourth could be implemented in a new app dedicated for data analytics. **It is worth noting here that SalesWare Models today support such extensions. Wheres the author considered them already when developing the models from day one**.
 
 ## 8 Credits
 
