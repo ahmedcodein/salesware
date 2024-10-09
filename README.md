@@ -300,7 +300,9 @@ a List of the technologies and tools used to develop this project is provided be
 
 ### 3.2 Agile Development
 
-The philosophy adopted to develop SalesWare follows the Agile methodology. The project is broke down into five Epics. Each epic is further broke down into user stories. The backlog is then created. It consists of five Epics which contains 34 User Stories, please refer to [Epics and User Stories subsection](README.md#2231-epics-and-user-stories) to review the complete list of SalesWar user stories. 
+The philosophy adopted to develop SalesWare follows the Agile methodology. Jira is used to track the development progress. A link to the Jira Project is provided in the [here](https://almudhafar4codeinstitute.atlassian.net/jira/software/projects/SW/boards/5/timeline?shared=&atlOrigin=eyJpIjoiMDllNmMwMTA4N2VhNDhkMzk0ODUzZjA0NGY1YjRkYTgiLCJwIjoiaiJ9). 
+
+The project is broke down into five Epics. Each epic is further broke down into user stories. The backlog is then created. It consists of five Epics which contains 34 User Stories, please refer to [Epics and User Stories subsection](README.md#2231-epics-and-user-stories) to review the complete list of SalesWar user stories. 
 
 The work is then executed in iterations. Each iteration (Sprint) is set to span two weeks except the third sprint. The third sprint is extended by 6 days to add additional features where not first included into the backlog. The entire development consumed seven weeks excluding documentation. The project development commencement on 21.07.2024 which is the date of starting the first sprint. Due to summer break, the second sprint started on 19.08.2024. The third sprint is then followed and ends on 22.09.2024. The figure below shows Jira project timeline.
 
