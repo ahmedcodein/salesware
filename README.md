@@ -5,7 +5,7 @@
 **SalesWar** is a sales process tracking software tool. It aims to digitalize the sales activity in order to boost the productivity of your sales team.
 The market entry of **SalesWare** is small businesses and startups. More specifically, those businesses that:
  - are neither content with using excel sheets to track their sales activity due to excel sheets complexity and generality.
- - nor can offered the subscription fees of the established Software tools like Microsoft Dynamic or SalesForce.
+ - nor can offered the subscription fees of established Software tools like Microsoft Dynamic or SalesForce.
 
 **SalesWare** is built as a foundational module of a Customer Relationship Management (CRM) software. The envisioned CRM then represents the ultimate vision of this project. This vision includes other modules like MarketingWare, ServiceWare, SupportWare and DataWare. Moreover, each of those modules will integrate Data Analytics to bring additional value to our users.
 
@@ -15,7 +15,7 @@ The market entry of **SalesWare** is small businesses and startups. More specifi
 
 ## 1 Introduction
 
-SalesWare is developed to help sales team to digitalize their sales process and track opportunities progress. In this introduction, the user will find all the required information to start working with SalesWare.
+SalesWare is developed to help sales teams to digitalize their sales process and track opportunities progress. In this introduction, the user will find all the required information to start working with SalesWare.
 
 In this section, we provide you with what you need to use SalesWare. First we define the important terms and then provide a complete user manual which will help you start working with SalesWare.
 
@@ -33,10 +33,10 @@ The admin is a member of the organization's Sales department. The admin has unli
 A user is a member of the organization's sales department with limited user permission. Most likely, the user is a sales manager, business developer etc.
 
 #### Prospect:
-A prospect is an external firm that is interested in one or more of the organization offerings.
+A prospect is an external firm that is interested in one or more of the organization's offerings.
 
 #### Product:
-A product is one of the organization offerings. It can be either a product or a service.
+A product is one of the organization's offerings. It can be either a product or a service.
 
 #### Opportunity:
 An opportunity is a chance of selling one of the organization's offerings to a prospect.
@@ -54,7 +54,7 @@ Since the main terms now are established, we can provide some detail about the s
 - **Opportunity Management:**\
   The Opportunity Management concerns with the listing/reading/creating/updating/deleting an opportunity record.  
 
-  More information on each of the five component is provided in the next section. We will also explain how these terms and components are implemented and used to track your sales deals in addition to how to sign up, sing in and sign out of SalesWare.
+More information on each of the five component is provided in the next section. We will also explain how these terms and components are implemented and used to track your sales deals in addition to how to sign up, sing in and sign out of SalesWare.
 
 ### 1.2 SalesWare User Manual
 
@@ -66,7 +66,7 @@ The SalesWare User Manual is available on the following link: [User Manual](MANU
 
 This section is devoted to explain the rational behind developing SalesWare. It aims to answer the following questions:
 
-> Why SalesWare?
+> Why sales activity tracking tool?
 
 > What drives the author to develop SalesWare?
 
@@ -78,7 +78,7 @@ Sales is one of the main activities of any businesses. It produces important met
 
 Having a sales software that collects, stores and present such data like, customers' data, firm's offerings, opportunities tracking, historical sales data, customer acquisition metrics and sales pipeline is, therefore, of a great help to the firm decision makers.
 
-The Software As A Service (SAAS) has taped into this need. We witnessed in the last couple of decades an explode in the number of Sales tools and CRM systems. Yet, there is still a nontrivial number of organizations, small businesses and startups, use excel sheets or similar products to track and record their sales activity. This is due to the fact that the license cost of the sophisticated SAAS solutions are quite high making it a burden on those small businesses to acquire.
+The Software As A Service (SAAS) has taped into this need. We witnessed in the last couple of decades an explode in the number of Sales tools and CRM systems. Yet, there is still a nontrivial number of organizations, specifically, small businesses and startups, use excel sheets or similar products to track and record their sales activity. This is due to the fact that the license cost of the sophisticated SAAS solutions are quite high making it a burden on those small businesses to acquire.
 
 On the other hand, tools like excel sheets are not designed to serve sales people. They are built for general purposes. Hence, they are difficult to use. Furthermore, the customization of such tools comes with high cost. In addition, any change to the firm sales activity in terms of process, business rules or metrics will lead to massive adaptation cost.
 
@@ -98,17 +98,17 @@ The devised sales process is shown in the figure below.
 
 ![process](docs/design_concept/process.png)
 
-By establishing the process, the main entities and business rules can now easily be extracted. Those entities and business rules are essential to design the data model, the logic to be implemented into the code and also to extract the general requirements of the application. For instance, one can observe that there are four entities that are essential to this business scenario. These are Prospect, Product and Opportunity. In addition, one can notice, that the process goes into different stages. These are Lead, Proposal, Negotiation and finally Close. The process is said to be Closed if it is a Won or Lost. Such information are crucial to the development of the logical data model which is the subject of the next subsection.
+By establishing the process, the main entities and business rules can now easily be extracted. Those entities and business rules are essential to design the data model, the logic to be implemented into the code and also to extract the general requirements of the application. For instance, one can observe that there are three entities that are essential to this business. These are Prospect, Product and Opportunity. In addition, one can notice, that the process goes into different stages. These are Lead, Proposal, Negotiation and finally Close. The process is said to be Closed if it is a Won or Lost. Such information are crucial to the development of the logical data model which is the subject of the next subsection.
 
 #### 2.2.2 Data
 
-This section is devoted to present the data model of SalesWare. The Data Model is built to reflect the business process described in the Process layer. The data model implemented is depicted in the figure below.
+This section is devoted to present the data model of SalesWare. The Data Model is built to reflect the business process described in the Process layer. The implemented data model is depicted in the figure below.
 
 ![Data Model](docs/design_concept/data.png)
 
 #### 2.2.3 Application
 
-The application layer is the last layer of the reference model. In the context of this project, the author first extracts only a list of high-level requirements of the application based on the outcomes of the process and data layers. Then the author uses this list as the basis for creating the Epics and breaks down those Epics into a comprehensive list of user stories. The list of the high-level requirements are listed below .
+The application layer is the last layer of the reference model. In the context of this project, the author first extracts a list of high-level requirements following the outcomes of the process and the data layers. Then the author uses this list as the basis for creating the epics. The epics are then broke down into a comprehensive list of user stories. The list of the high-level requirements are listed below.
 
 - Account Management Capability\
   Sign in, sing out and sign up, admin user with unlimited permissions, users with limited permissions, 
@@ -314,7 +314,7 @@ Epics' user stories are distributed over the sprints according to the User Story
  
 The development velocity is increased during the second sprint and significantly in the third. There are technical and management reasons for that. With respect to the technicality, two main issues are considered to be the cause. On one hand, the learning curve possessed a low slop due to the structural complexity of Django project. In particular, the phase of creating the project with its first two Apps were a bit of challenge with respect to connecting the main components of the project together, namely: urls, views, templates and how to correctly pass the information from one to the other. On the other hand, the difficulty that comes with implementing Bootstrap and making the templates content responsive.
 
-The management difficulty is related to the author undertaking of two roles at the same time. On other words, being the developer and the product owner simultaneously. Being more focused on getting the code working has left some user stories defined in the first two sprints to be quite general with less adequate granularity than what it needs to be. The reader could observe this by comparing the quality of the user stories descriptions of the third sprint and those of the first two sprints.
+The management difficulty is related to the author undertaking of two roles at the same time. In other words, being the developer and the product owner simultaneously. Being more focused on getting the code working has left some user stories executed in the first two sprints to be quite general with less adequate granularity than what it needs to be. The reader could observe this by comparing the quality of the user stories descriptions of the third sprint and those of the first two sprints.
 
 In the third sprint, the author becomes technically more comfortable. Consequently, this is translated into a better management style and quality. This two dimensional improvement (Technical and management) resulted into the inclusion of additional user stories to the third sprint. The reader might expect this should be obvious, considering that the third sprint is **40%** longer than a two-week sprint. Which is quite true, the additional time certainly contributed. But in the same time, the reader can see from the figure below that in the third sprint alone, the author got **60%** of the user stories done with significantly better user story scop granularity definition. Please review the [user stories](/README.md#2231-epics-and-user-stories) again for description quality comparison. 
 
@@ -1003,7 +1003,7 @@ The tests and the results are summarized in the tables below.
 
 #### 3.4.4 Bugs
 
-This subsection provides detailed explanation on Bugs identified during the development SalesWare. It is divided into two sections. The first treat the Fixed bugs while the second is devoted to list and explain the unfixed bugs.
+This subsection provides detailed explanation on Bugs identified during the development of SalesWare. It is divided into two sections. The first treat the Fixed bugs while the second is devoted to list and explain the unfixed bugs.
 
 ##### 3.4.4.1 Fixed Bugs
 
@@ -1033,7 +1033,7 @@ This section lists the bugs that are identified and not fixed. Most of those bug
 
 The EmailJS service is implemented in this project to handle users request for information or technical support. EmailJS provides this free service by offering a public API to send email from EmailJS service user website. In order for the service to work, some public keys need to be used. These are service_id, template_id and user_id. Those ids can be found in contact.js file, where the requests submission is handled. 
 
-The contact.js in this project is a Frontend component, hence it is exposed. This means that those keys are also exposed. This is because, any information in the frontend is fundamentally exposed. Nevertheless, this exposure does not mean there is a security breach or security vulnerability.Even if a bad actor wants to use those keys to send emails, the emails only contain the content of the template the EmailJS user defined. There is no other information can be accessed by knowing those ids. In addition, EmailJS is a Frontend level service, hence, by design it is meant to work on the frontend level. For more information, please refer to [EmailJS documentation](https://www.emailjs.com/docs/faq/is-it-okay-to-expose-my-public-key/)
+The contact.js in this project is a Frontend component. By definition, any information in the frontend is fundamentally exposed. This means that any keys in this file are exposed. Nevertheless, this exposure does not mean security breach or security vulnerability. Even if a bad actor wants to use those keys to send emails, the emails only contain the content of the template the EmailJS user defined. There is no other information can be accessed by knowing those keys. In addition, EmailJS is a Frontend level service, hence, by design it is meant to work on the frontend level. For more information, please refer to [EmailJS documentation](https://www.emailjs.com/docs/faq/is-it-okay-to-expose-my-public-key/)
 
 ---
 
@@ -1131,12 +1131,14 @@ For any person interested to work on the source code of this project, here is th
 
 SalesWare is a sales module of a larger Customer Relation Management Solution. Therefore, the long term objective of this project is to extend this project to include Marketing, Customer Service, Customer Support and Customer Data modules.
 
-With respect to the short and midterm features, there is simply no limit as to what features can be included into SalesWare. This is because Sales Activity involves numerous metrics and details. Those can be reflected into SalesWare to make it more valuable to any Sales Team. For instance, additional fields could be added to the prospect, product and opportunity models. There is no limitation as to what fields should be added. So the question is should the author add those fields? The author believes this question should be left to the early adopters of SalesWare to answer. The best feature to develop is the one that the customer asks for. SalesWare at its current state aims to get the author at the door step of potential users and start collecting those important first-to-develop features.
+With respect to the short and midterm features, there is simply no limit as to what features to be included into SalesWare. This is because Sales Activity involves numerous metrics and details. All of those features can be integrated into SalesWare to make it more valuable to any Sales Team. So the right question is not Can the author implement this or that feature. But rather, should the author build this feature in the first place?
+
+The author believes this question should be left to the early adopters of SalesWare to answer. The best feature to develop is the one that the customer asks for. SalesWare at its current state aims to get the author at the door step of potential users and to ask which feature I should develop for you?
 
 Nevertheless, here are some of the features that the author thinks are important and could be developed in the meantime.
 
 1. Search functionality on prospect/product/opportunity list page.
-2. Sales Funnel to track expected revenue at the end of each fiscal quarter or by the end of each fiscal year.
+2. Sales Funnel to track expected revenue by the end of each fiscal quarter or year.
 3. Sales revenue estimation by country.
 4. Sales revenue estimation by industry.
 5. Data Analytics to provide additional value to the user. For instance, having data about how much time in average is required to acquire a customer from the time of creating the Lead up to the time of Closing the opportunity, i.e, the Close stage. 
