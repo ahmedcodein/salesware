@@ -24,6 +24,10 @@ def contact(request):
         'communication/contact.html'
     )
 
+# The usage of error pages views function is taken from:
+# https://github.com/dnlbowers/jobs-a-gooden/tree/main
+# https://studygyaan.com/django/django-custom-404-error-template-page
+
 
 def error_404(request, exception):
     """

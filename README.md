@@ -123,7 +123,7 @@ The application layer is the last layer of the reference model. In the context o
 
 ##### 2.2.3.1 Epics and User Stories
 
-Agile methodology is used to develop the Software. The high-level requirements presented in the previous section are followed to define the five Epics of the project. Those Epics are then broke down into 32 User Stories.
+Agile methodology is used to develop the Software. The high-level requirements presented in the previous section are followed to define the five Epics of the project. Those Epics are then broke down into 34 User Stories.
 
 **Epic SW-1 Account Management**\
 *Description:* A set of features that allows the site visitor to create user accounts and for the user to access and use the application features. Additionally, this part also concerns with dedicated features for the admin account.
@@ -208,6 +208,10 @@ Agile methodology is used to develop the Software. The high-level requirements p
     - As A User or Site Visitor, I can reach the contact page from the home page, so that I got directly to the contact page
   - **Active Page** 
     - As a Site Visitor or User, I can see the page I am in using a signifier, so that I can always know what page I am at.
+  - **404 Error Page** 
+    - As a Site Visitor or a Site User, I can see a user friendly error page when I request a non existing page so that I can know that this page does not exists and I can go back to the home page.
+  - **500 Error Page** 
+    - As a Site Visitor or a Site User, I can see a user friendly error page when something goes wrong with my request so that I can know that there is an issue with the request and I can go back to the home page.
   
 Further detail on the Agile Methodology followed in this project is provided in [the Execution section/Agile Development](/README.md#32-agile-development).
 
@@ -296,9 +300,11 @@ a List of the technologies and tools used to develop this project is provided be
 
 ### 3.2 Agile Development
 
-The philosophy adopted to develop SalesWare follows the Agile methodology. The project is broke down into five Epics. Each epic is further broke down into user stories. The backlog is then created. It consists of five Epics which contains 32 User Stories, please refer to [Epics and User Stories subsection](README.md#2231-epics-and-user-stories) to review the complete list of SalesWar user stories. 
+The philosophy adopted to develop SalesWare follows the Agile methodology. The project is broke down into five Epics. Each epic is further broke down into user stories. The backlog is then created. It consists of five Epics which contains 34 User Stories, please refer to [Epics and User Stories subsection](README.md#2231-epics-and-user-stories) to review the complete list of SalesWar user stories. 
 
 The work is then executed in iterations. Each iteration (Sprint) is set to span two weeks except the third sprint. The third sprint is extended by 6 days to add additional features where not first included into the backlog. The entire development consumed seven weeks excluding documentation. The project development commencement on 21.07.2024 which is the date of starting the first sprint. Due to summer break, the second sprint started on 19.08.2024. The third sprint is then followed and ends on 22.09.2024. The figure below shows Jira project timeline.
+
+> Two use stories are executed out of the three sprints. These are the 404 and 500 pages. The Author decides to include those stories right before the submission.
 
 ![TimeLine](docs/agile_development/development_timeline.png)
 
@@ -382,7 +388,7 @@ SalesWare makes use of Modal when opening/creating/editing/deleting an object re
 
 #### 3.3.2 Communication Management
 
-The communication management consists of two pages. The home page and the contact page.
+The communication management consists of four pages. The home page, the contact page, 404 error, and 500 error pages.
 
 1. Home Page
 
@@ -433,6 +439,22 @@ An email notification is sent to the SalesWare support team once the contact for
 The sender will also receive a confirmation email, as shown in the following screenshot.
 
 ![Confirmation Email from SalesWare Support](docs/features/communication/contact_form_confirmation_email.png)
+
+3. 404 Error Page
+
+The 404 Error page serves the purpose of informing the user or the visitor that the requested page does not exists. It also offers the user a link to go back to the home page. Two screenshots are provided, one for large screen while the other for small screen.
+
+![404 Error Page Large Screen](docs/features/communication/400_error_page_lg.png)
+
+![404 Error Page Small Screen](docs/features/communication/400_error_page_sm.png)
+
+1. 505 Error Page
+
+The 505 Error page serves the purpose of informing the user or the visitor that the request experienced a technical issue. It also offers the user a link to go back to the home page. Two screenshots are provided, one for large screen while the other for small screen.
+
+![500 Error Page Large Screen](docs/features/communication/500_error_page_lg.png)
+
+![500 Error Page Small Screen](docs/features/communication/500_error_page_sm.png)
 
 ---
 #### 3.3.3 Prospect Management
@@ -729,7 +751,7 @@ This concludes the Feature subsection. The next subsection will dive into the te
 
 ### 3.4 Test
 
-This subsection is divided into Four main subsections. The first subsection concerns with code quality and validation tests. The second subsection summarizes the conducted manual tests. The third section provides detailed account of all the unit tests developed for this project. Finally the Test subsection concludes with discussion on Bugs encountered during the development of this project.
+This subsection is divided into Four main subsections. The first subsection concerns with code quality and validation tests. The second subsection summarizes the conducted manual tests. The third section provides detailed account of all the automated tests developed for this project. Finally the Test subsection concludes with discussion on Bugs encountered during the development of this project.
 
 #### 3.4.1 Code Quality and Validation Tests
 
@@ -739,11 +761,11 @@ The following table summarizes various Quality and Validation tests conducted fo
 | --- | -------- | -------- | --------------- | -------------- | ---------- | ------ |
 | 1   | JavaScript code analysis | JShint|All JS files| x4| Pass. Warning: bootstrap as undefined var| Explanation: [unfixed bugs](/README.md#3442-unfixed-bugs)|
 | 2   | Python code style checker| CI Linter| Every .py file developed by the author | x31| Pass| No Comment|
-| 3   | HTML Validation| W3C Markup Validation | All pages| x10| Pass| No Comment|
+| 3   | HTML Validation| W3C Markup Validation | All pages| x12| Pass| No Comment|
 | 4   | CSS Validation| W3C CSS Validation| All pages| 10 + Author's CSS | 10 + Author's CSS are pass, no errors. The 10 pages show warnings| Explanation: [unfixed bugs](/README.md#3442-unfixed-bugs)|
-| 5   | Accessibility| Wave tool| All pages| x10| Pass| No Comment |
-| 6   | Google DevTools| Chrome DevTools| All pages| x10|Pass|No Comment|
-| 7   | Lighthouse Validation| Chrome Lighthouse| Desktop and Mobile| x20| Min value P: 83, A: 100, BP: 100, SEO = 100 |Test [screenshots](/TEST.md#lighthouse-tests-captures)|
+| 5   | Accessibility| Wave tool| All pages| x12| Pass| No Comment |
+| 6   | Google DevTools| Chrome DevTools| All pages| x12|Pass|No Comment|
+| 7   | Lighthouse Validation| Chrome Lighthouse| Desktop and Mobile| x22| Min value (page 404 mobile case) P: 80, A: 100, BP: 100, SEO = 92 |Test [screenshots](/TEST.md#lighthouse-tests-captures)|
 | 8   | Browser Compatibility| NA| Edge, Chrome and Firefox| x3| Pass| No comment|
 | 9   | Device Testing| NA| PC and Mobile| x2| Pass| No comment|
 
@@ -858,7 +880,12 @@ This subsection provides a comprehensive account of the manual tests conducted f
   - **User Story**: Sign-Up or Sign-In Errors Related Messages
     - Acceptance criterion
       - Given a visitor or a user is on Sign-Up or Sign-In pages and when the user enters the required passwords or username incorrectly, the page provides the error feedback error messages highlighted in red -- **Pass**
-
+  - **User Story**: 404 Error Page
+    - Acceptance criterion
+      - AC-01: Given the visitor or the site user requested a non existing page and when the error page opens, then the user can click on a link to go back to the home page -- **Pass**
+  - **User Story**: 500 Error Page
+    - Acceptance criterion
+      - AC-01: Given the visitor or the site user request comes with unexpected error and when error page opens, then the user can click on a link to go back to the home page -- **Pass**
 
 #### 3.4.3 Automated Tests
 
@@ -866,7 +893,7 @@ The author developed 58 python automated tests. The coverage report is extracted
 
 | Statements | Missing | Excluded | Coverage |
 | ---------- | ------- | -------- | -------- |
-| 790        | 71      | 0        | 91%      |
+| 798        | 91      | 0        | 89%      |
 
 The tests and the results are summarized in the tables below.
 
@@ -1130,6 +1157,8 @@ The points 2, 3, and 4 could be included in a new app called Dashboard. The four
 7. Hoberman, Steve, Michael Blaha, Bill Inmon, Graeme Simsion, and Carol Lehn. Data modeling made simple: a practical guide for business and IT professionals. Technics Publications, LLC, 2009.
 8. Czarnecki, Christian, and Christian Dietze. "Reference architecture for the telecommunications industry." Transformation of Strategy, Organi-zation, Processes, Data, and Applications (2017).
 9. CI Student PP4 Project [TaskFlow](https://github.com/leonp84/code-institute-project-4)
+10. CI Student PP4 Project [Jobs-A-Gooden](https://github.com/dnlbowers/jobs-a-gooden/tree/main)
+11. [Custom 404 Error Page](https://studygyaan.com/django/django-custom-404-error-template-page)
 
 ### 8.2. Content and Tools
 

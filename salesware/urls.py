@@ -50,5 +50,9 @@ urlpatterns = [
     ),
 ]
 
+# The usage of handlers is taken from:
+# https://github.com/dnlbowers/jobs-a-gooden/tree/main
+# https://studygyaan.com/django/django-custom-404-error-template-page
+
 handler404 = 'communication.views.error_404'
 handler500 = 'communication.views.error_500'

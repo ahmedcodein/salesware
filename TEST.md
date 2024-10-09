@@ -8,11 +8,19 @@
 
 **Home Page**
 
-![Home Page Desktop ](docs/tests/home_lighthouse_lg.png)
+![Home Page Desktop](docs/tests/home_lighthouse_lg.png)
 
 **Contact Page**
 
 ![Contact Page Desktop](docs/tests/contact_lighthouse_lg.png)
+
+**404 Error Page**
+
+![404 Error Page Desktop](docs/tests/404_lighthouse_lg.png)
+
+**500 Error Page**
+
+![500 Error Page Desktop](docs/tests/500_lighthouse_lg.png)
 
 ### Prospect Management 
 
@@ -66,6 +74,14 @@
 **Contact Page**
 
 ![Contact Page Mobile](docs/tests/contact_lighthouse_sm.png)
+
+**404 Error Page**
+
+![404 Error Page Mobile](docs/tests/404_lighthouse_sm.png)
+
+**500 Error Page**
+
+![500 Error Page Mobile](docs/tests/500_lighthouse_sm.png)
 
 ### Prospect Management 
 
