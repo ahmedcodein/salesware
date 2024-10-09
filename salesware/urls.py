@@ -51,3 +51,4 @@ urlpatterns = [
 ]
 
 handler404 = 'communication.views.error_404'
+handler500 = 'communication.views.error_500'

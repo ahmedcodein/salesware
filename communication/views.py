@@ -26,4 +26,16 @@ def contact(request):
 
 
 def error_404(request, exception):
+    """
+    View function that views the 404 error
+    page
+    """
     return render(request, 'communication/404.html')
+
+
+def error_500(request):
+    """
+    View function that views the 500 error
+    page
+    """
+    return render(request, 'communication/500.html')
