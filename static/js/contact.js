@@ -13,9 +13,9 @@ $(document).ready(function () {
         event.preventDefault(); // prevent reload
 
         const formData = new FormData(contactForm);
-        formData.append('service_id', 'service_cmj5z1c');
-        formData.append('template_id', 'template_h8t73vr');
-        formData.append('user_id', 'dxEqK4OEkA7Rdb0Tz');
+        formData.append('service_id', 'service_bba1681');
+        formData.append('template_id', 'template_efxib52');
+        formData.append('user_id', 'zYSPWHBW8IEnrjQYz');
         formData.append('recipient', 'SalesWare Support');
 
         /* The validation step is added to prevent user from entering
